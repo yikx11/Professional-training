@@ -44,8 +44,9 @@
 			}
 			
 			.a{
-			text-decoration:none;
-			color:gray;}
+			  text-decoration:none;
+			  color:gray;
+			}
 			
 			.a:hover{
 			color:dimgray;
@@ -292,14 +293,14 @@
 				<li class="info_1"><input type="checkbox" name="ch"/></li>
 				<li class="info_2"><img src="img/u358.jpg"></li>
 				<li class="info_3"><a href="">IPhone8 128G/256G 金色银色苹果手机</a></li>
-				<li class="info_4">￥<span id="price_1">6999</span></li>
+				<li class="info_4">￥<span id="price_1" class="product-price">6999</span></li>
 				<li class="info_5">
-				<button onclick="minus(1)">-</button>
-			    <input type="text" name="amount" id="amount1" value="1" />
-				<button class="bot" onclick="plus(1)">+</button>
+				<button onclick="minus(this)">-</button>
+			    <input type="text" class="text_box" name="amount" id="amount1" value="1" />
+				<button class="bot" onclick="plus(this)">+</button>
 				</li>
-				<li class="info_6">￥<span id="total_1">6999</span></li>
-				<li class="info_7"><a href="###" onclick="del(1)">删除</a></li>
+				<li class="info_6">￥<span id="total_1" class="total-price">6999</span></li>
+				<li class="info_7"><a href="###" onclick="deleted(this)">删除</a></li>
 			</ul>	
 
 
@@ -307,14 +308,14 @@
 				<li class="info_1"><input type="checkbox" name="ch"/></li>
 				<li class="info_2"><img src="img/u358.jpg"></li>
 				<li class="info_3"><a href="">IPhone8 128G/256G 金色银色苹果手机</a></li>
-				<li class="info_4">￥<span id="price_2">6999</span></li>
+				<li class="info_4">￥<span id="price_2" class="product-price">6999</span></li>
 				<li class="info_5">
-				<button onclick="minus(2)">-</button>
-			    <input type="text" name="amount" id="amount2" value="1" />
-				<button class="bot" onclick="plus(2)">+</button>
+				<button onclick="minus(this)">-</button>
+			    <input type="text" class="text_box" name="amount" id="amount2" value="1" />
+				<button class="bot" onclick="plus(this)">+</button>
 				</li>
-				<li class="info_6">￥<span id="total_2">6999</span></li>
-				<li class="info_7"><a href="###" onclick="del(2)">删除</a></li>
+				<li class="info_6">￥<span id="total_2" class="total-price">6999</span></li>
+				<li class="info_7"><a href="###" onclick="deleted(this)">删除</a></li>
 			</ul>	
 		</div>
 		
@@ -345,6 +346,7 @@
 				}
 			}
 			
+			/**
 			function minus(index){
 				var amounts=document.getElementsByName("amount");
 				if(amounts[index-1].value==0) alert("不能再减了！")
@@ -355,13 +357,18 @@
 				var price=document.getElementById("price_"+index).innerHTML;
 				var total=parseInt(amount)*parseInt(price);
 				document.getElementById("total_"+index).innerHTML=total;
-				//总计
+				//总计,实现复选框选中时统计总计
 				var blc=0;
-				for(var i=1;i<=amounts.length;i++){
-				blc=blc+parseInt(document.getElementById("total_"+i).innerHTML);
+				var chs=document.getElementsByName("ch");
+				for(var i=1;i<=chs.length;i++){
+					if(chs[i-1].checked==true){
+						blc=blc+parseInt(document.getElementById("total_"+i).innerHTML);
+					}
 				}
 				document.getElementById("blc").innerHTML="￥"+blc;
+				
 			}
+			
 			
 			function plus(index){
 				var amounts=document.getElementsByName("amount");
@@ -373,11 +380,16 @@
 				document.getElementById("total_"+index).innerHTML=total;
 				//总计
 				var blc=0;
-				for(var i=1;i<=amounts.length;i++){
-				blc=blc+parseInt(document.getElementById("total_"+i).innerHTML);
+				var chs=document.getElementsByName("ch");
+				
+				for(var i=1;i<=chs.length;i++){
+					if(chs[i-1].checked==true){
+						blc=blc+parseInt(document.getElementById("total_"+i).innerHTML);
+					}
 				}
 				document.getElementById("blc").innerHTML="￥"+blc;
 			}
+			
 			
 			
 			function del(index){
@@ -387,7 +399,66 @@
 				alert("删除成功！！");
 				
 			}
+			**/
+			
+			function plus(q){
+				//加法操作
+			    var good_num=$(q).parent().find('input[class*=text_box]');  //找到商品数量
+			    var old_num = $(good_num).val();　//获取商品数量的值
+			    var new_num=parseInt(old_num)+1; //商品数量+1
+			    $(good_num).val(new_num);　　　　//商品数量赋值
+				//单个商品总价
+			    var one_price=$(q).parent().parent().find('span[class*=product-price]').text();  //找到该商品单价
+				var new_money=parseInt(one_price)*parseInt((good_num).val());　//获取单价*数量的总价的值
+				var total_price = $(q).parent().parent().find('span[class*=total-price]');　//找到该商品总价
+				$(total_price).text(new_money);　//该商品总价赋值
+				//总价
+				var a= $(".total-price");//找到所有商品的总价
+				var chs=document.getElementsByName("ch");
+				var m=0;      //遍历,获取,将字符串转化为数字,并相加
+				for(var i=0;i<a.length;i++){
+				    if(chs[i].checked==true)
+					m+=Number(a[i].textContent);
+				    }
+				$("#blc").text("￥"+m);    //赋值给总商品价格
+				}
+						 
+		   function minus(q){
+		   	    //减法操作
+		        var good_num=$(q).parent().find('input[class*=text_box]');　//找到商品数量
+		        var old_num = $(good_num).val();　 //获取商品数量的值
+				if(old_num==0)
+				{alert("不能再减了！")}
+				else
+				{var new_num=parseInt(old_num)-1;　//商品数量-1
+		           $(good_num).val(new_num);  //商品数量赋值
+				   }　　
+				
+				//单个商品总价
+				var one_price=$(q).parent().parent().find('span[class*=product-price]').text();  //找到该商品单价
+				var new_money=parseInt(one_price)*parseInt((good_num).val());　//获取单价*数量的总价的值
+				var total_price = $(q).parent().parent().find('span[class*=total-price]');　//找到该商品总价
+				$(total_price).text(new_money);　//该商品总价赋值
+				//总价
+				var a= $(".total-price");//找到所有商品的总价
+				var chs=document.getElementsByName("ch");
+				var m=0;      //遍历,获取,将字符串转化为数字,并相加
+				for(var i=0;i<a.length;i++){
+				    if(chs[i].checked==true)
+					m+=Number(a[i].textContent);
+				    }
+				$("#blc").text("￥"+m);    //赋值给总商品价格　　
+		   		
+		                }
+						
+			function deleted(q){
+				alert("删除成功！！")
+				$(q).parent().parent().remove();
+			}
 			
 		</script>
+		
 	</body>
+	<script src="jquery/jquery-3.4.1.min.js"></script>
+	
 </html>
