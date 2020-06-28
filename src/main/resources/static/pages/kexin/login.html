@@ -16,12 +16,20 @@
             text-align: left;
             display: block;
         }
+        ul li{
+            list-style: none;
+        }
+        *{
+            margin:0;
+            padding:0;
+        }
         #upper{
              position: absolute;
              left: 0px;
              top: 0px;
              width: 1100px;
              height: 31px;
+             background-color: #ECE9EC;
          }
         #center{
             position: absolute;
@@ -29,6 +37,7 @@
             top: 30px;
             width: 1100px;
             height: 877px;
+            background-color: #F5F5F5;
         }
         #animate{
             position: absolute;
@@ -40,7 +49,7 @@
         #brand{
             position: absolute;
             left:66px;
-            top: 50px;
+            top: 20px;
             width: 121px;
             height: 56px;
             font-family: Arial;
@@ -52,36 +61,13 @@
         .upperfont {
             position: absolute;
             top: 6px;
-            width: 39px;
+            /*width: 39px;*/
             height: 18px;
             font-family: "微软雅黑 Regular", 微软雅黑;
             font-weight: 400;
             font-style: normal;
             color: rgb(148, 148, 148);
-        }
-        #copyright {
-            position: absolute;
-            left: 201px;
-            top: 852px;
-            width: 558px;
-            height: 45px;
-            font-family: 'Arial Negreta', 'Arial';
-            font-weight: 700;
-            font-style: normal;
-            font-size: 14px;
-            color: #AEAEAE;
-        }
-        #friendly_link {
-            position: absolute;
-            left: 201px;
-            top: 852px;
-            width: 558px;
-            height: 45px;
-            font-family: 'Arial Negreta', 'Arial';
-            font-weight: 700;
-            font-style: normal;
-            font-size: 14px;
-            color: #AEAEAE;
+            float: left;
         }
         #loginpanel{
             position: absolute;
@@ -93,48 +79,183 @@
             box-sizing: border-box;
             border-width: 1px;
             border-style: solid;
+            border-radius: 3px;
             border-color: rgba(121,121,121,1);
         }
         #logintitle{
             position: absolute;
-            left: 671px;
-            top: 233px;
-            width: 343px;
+            left: 0px;
+            top: 0px;
+            width: 341px;
             height: 59px;
             font-size: 24px;
+            background-color:rgb(236,233,236);
             color: #C2001A;
+            text-align: center;
+        }
+        .username_rec {
+            position: absolute;
+            left: 693px;
+            top: 327px;
+            width: 300px;
+            height: 56px;
+            background: inherit;
+            background-color: rgba(255, 255, 255, 1);
+            box-sizing: border-box;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgba(121, 121, 121, 1);
+        }
+        #submitbutton {
+            position: absolute;
+            left: 90px;
+            top: 280px;
+            width: 140px;
+            height: 40px;
+            background-color: rgba(194, 0, 26, 1);
+            box-sizing: border-box;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgba(121, 121, 121, 1);
+            border-radius: 5px;
+            font-size: 18px;
+            color: #FFFFFF;
+            text-align: center;
+        }
+        .loginfont{
+            position: absolute;
+            top: 560px;
+            width: 79px;
+            height: 22px;
+            font-family: "微软雅黑 Regular", 微软雅黑;
+            font-weight: 400;
+            font-style: normal;
+            color: rgb(148,148,148);
+        }
+
+        #footer{
+            position: absolute;
+            top: 800px;
+            left: 200px;
+        }
+
+        .end_1{
+            margin-left:280px;
+            color: gray;
+        }
+        .end_2{
+            margin-left:200px;
+            color: gray;
+        }
+        .end_3{
+            margin-left:150px;
+            color: gray;
+        }
+
+        #banner {
+            width: 800px;
+            height: 400px;
+            margin: 40px auto;
+            position: relative;
+        }
+
+        #banner > ul > li {
+            position: absolute;
+            opacity: 0;
+            filter: alpha(opacity:0);
+        }
+
+        #banner > ul > li:nth-child(1) {
+            opacity: 1;
+            filter: alpha(opacity:100);
+        }
+
+        #banner > ul > li > img {
+            width: 800px;
+            height: 400px;
+        }
+
+        #direction {
+            position: relative;
+            display: none;
+        }
+
+        #direction > a {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            color: #fff;
+            text-decoration: none;
+            background: rgba(0, 0, 0, .5);
+            /*font-size: 40px;*/
+            top: 170px;
+            opacity: 0.5;
+            border-radius: 50%;
+        }
+
+        #direction > a > i {
+            font-size: 25px;
+        }
+
+        #direction > a:nth-child(2) {
+            right: 0;
+        }
+
+        #btn {
+            position: absolute;
+            bottom: 0;
+            left: 340px;
+        }
+
+        #btn > a {
+            float: left;
+            margin-left: 10px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #f40;
+        }
+
+        #btn > .active {
+            background: #fff;
         }
     </style>
 </head>
 <body>
 <div id="base">
 <div id="upper">
-  <div class="upperfont">
-      <div style="left: 18px">
-          <span>登录</span>
-      </div>
-      <div style="left: 60px">
-          <span>注册</span>
-      </div>
-      <div style="left: 830px">
-          <span>购物车</span>
-      </div>
-      <div style="left: 887px">
-          <span>我的订单</span>
-      </div>
-      <div style="left: 958px">
-          <span>收藏夹</span>
-      </div>
-      <div style="left: 1018px">
-          <span>我的AIBUY</span>
-      </div>
-
-  </div>
+  <table class="upperfont" >
+      <td style="min-width:40px;"><a href="">登录</a></td>
+          <td style="min-width:700px"><a href="">注册</a></td>
+          <td style="min-width:70px;"><a href="">购物车</a></td>
+          <td style="min-width:80px;"><a href="">我的订单</a></td>
+          <td style="min-width:70px;"><a href="">收藏夹</a></td>
+          <td style="min-width:70px;"><a href="">我的AIBUY</a></td>
+  </table>
 </div>
 <div id="center">
   <!--动图位置-->
   <div id="animate">
-
+      <div id="banner">
+          <ul>
+              <li><img src="images/1.jpg"></li>
+              <li><img src="images/2.jpg"></li>
+              <li><img src="images/3.jpg"></li>
+              <li><img src="images/4.jpg"></li>
+          </ul>
+          <div id="direction">
+              <a href="##"><i class="iconfont icon-xiangzuo"></i></a>
+              <a href="##"><i class="iconfont icon-xiangyou"></i></a>
+          </div>
+          <div id="btn">
+              <a href="##" class="active"></a>
+              <a href="##"></a>
+              <a href="##"></a>
+              <a href="##"></a>
+          </div>
+      </div>
   </div>
     <!--AIBUY位置-->
   <div id="brand">
@@ -148,24 +269,203 @@
             <span>用户登录</span>
         </p>
     </div>
+      <!--
+    <div class="username_rec">
+        <p>
+            <span>用户名</span>
+        </p>
+    </div>
+      <div class="username_rec">
+          <p>
+              <span>用户密码</span>
+          </p>
+      </div>
+      -->
+      <form class="form-horizontal" style="position: absolute;left: 100px;top: 100px">
+          <div class="form-group">
+              <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+              <div class="col-sm-10">
+                  <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+              <div class="col-sm-10">
+                  <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+              </div>
+          </div>
+          <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                  <div class="checkbox">
+                      <label>
+                          <input type="checkbox"> Remember me
+                      </label>
+                  </div>
+              </div>
+          </div>
+          <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-default">Sign in</button>
+              </div>
+          </div>
+      </form>
+      <div id="submitbutton">
+          <p>
+              <span style="position: center">登录</span>
+          </p>
+      </div>
+      <div class="loginfont" style="left: 865px">
+          <p>
+              <span>忘记密码</span>
+          </p>
+      </div>
+      <div class="loginfont" style="left: 942px">
+          <p>
+              <span>免费注册</span>
+          </p>
+      </div>
   </div>
 </div>
 <div id="footer">
-  <div id="friendly_link">
-      <p></p>
-      <span>友情链接：</span>
-      </p>
-      <p></p>
-      <span>支付宝  |  淘宝  |  网易考拉  |  老爸测评</span>
-      </p>
-  </div>
-  <div id="copyright">
-      <span>Copyright 2020 AIBUY.com All Rights Reserved</span>
-  </div>
+    <ul><li class="end_1">友情链接:</li>
+        <li class="end_2"><a href="https://www.alipay.com/">支付宝</a>|<a href="https://www.taobao.com/">淘宝</a>|<a href="https://www.kaola.com/">网易考拉</a>|<a href="https://daddylab.com/">老爸测评</a></li>
+        <li class="end_3">Copyright 2020 AIBUY.com All Rights Reserved</li>
+    </ul>
 </div>
 </div>
 
 </body>
 <script src="/jquery/jquery-3.4.1.min.js"></script>
 <script src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script>
+    var banner = document.getElementById("banner");
+    var direction = document.getElementById("direction");
+    var aLi = document.querySelectorAll("#banner>ul>li");
+    var dir = document.querySelectorAll("#direction>a");
+    var aBtn = document.querySelectorAll("#btn>a");
+    var iNow = 0, Next = 0;
+    var timer = null;
+
+    for (var i = 0; i < aBtn.length; i++) {
+        aBtn[i].index = i;
+        aBtn[i].onmouseover = function () {
+            for (var j = 0; j < aBtn.length; j++) {
+                aBtn[j].className = "";
+                move(aLi[j], {opacity: 0});
+            }
+            this.className = "active";
+            //移入的时候让当前这个li显示
+            move(aLi[this.index], {opacity: 100});
+            //因为next与this.index不是同一个东西 因此需要他们两个同步
+            Next = this.index;
+            iNow = Next;
+        }
+    }
+
+    //点击左边的按钮
+    dir[0].onclick = function () {
+        if (Next == 0) {
+            Next = aLi.length - 1;
+        } else {
+            Next--;
+        }
+
+        toImg();
+    };
+
+    //点击右边的按钮
+    dir[1].onclick = function () {
+        if (Next == aLi.length - 1) {
+            Next = 0;
+        } else {
+            Next++;
+        }
+        toImg()
+    };
+
+    //移入的时候变亮
+    dir[0].onmouseover = function () {
+        this.style.opacity = "1";
+    };
+    dir[1].onmouseover = function () {
+        this.style.opacity = "1";
+    };
+    //移出的时候变暗
+    dir[0].onmouseout = function () {
+        this.style.opacity = "0.5";
+    };
+    dir[1].onmouseout = function () {
+        this.style.opacity = "0.5";
+    };
+
+    //移入的时候轮播停止
+    banner.onmouseover = function () {
+        clearInterval(timer);
+        direction.style.display = "block";
+    };
+    //移出的时候轮播继续
+    banner.onmouseout = function () {
+        autoPlay();
+        direction.style.display = "none";
+    };
+
+    autoPlay();
+
+    //自动轮播
+    function autoPlay() {
+        timer = setInterval(function () {
+            if (Next == aLi.length - 1) {
+                Next = 0;
+            } else {
+                Next++;
+            }
+            toImg()
+        }, 2000)
+    }
+
+    //运动原理
+    function toImg() {
+        move(aLi[iNow], {opacity: 0});
+        move(aLi[Next], {opacity: 100});
+        iNow = Next;
+        for (var i = 0; i < aBtn.length; i++) {
+            aBtn[i].className = "";
+        }
+        aBtn[Next].className = "active";
+    }
+
+
+    function move(obj, json, fn) {
+    clearInterval(obj.timer);
+    obj.timer = setInterval(function () {
+        var bStop = true;
+        for (var attr in json) {
+            //先判断是否是透明度
+            var iCur;
+            if (attr == "opacity") {
+                iCur = parseInt(parseFloat(getStyle(obj, attr)) * 100);
+            } else {
+                iCur = parseInt(getStyle(obj, attr));
+            }
+            //算速度
+            var speed = (json[attr] - iCur) / 8;
+            speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+
+            if (json[attr] != iCur) {
+                bStop = false;
+            }
+            if (attr == "opacity") {
+                obj.style.opacity = (iCur + speed) / 100;
+                obj.style.filter = "alpha(opacity:" + (iCur + speed) + ")"
+            } else {
+                obj.style[attr] = iCur + speed + 'px';
+            }
+        }
+        if (bStop) {
+            clearInterval(obj.timer);
+            fn && fn();
+        }
+    }, 30)
+}
+</script>
 </html>
