@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			
+			li{
+				list-style:none;
+			}
+			
+			.title{
+				margin-top: 20px;
+				margin-left: 20px;
+				color: #666666;
+				font-size: 18px;
+			}
+			
+			.xian{
+				color: #666666;
+			}
+			
+			.search{
+				margin-top: 10px;
+				margin-left: 20px;
+			}
+			.searchtxt{
+				
+				width: 200px;
+				height: 40px;
+			}
+			
+			.searchbutton{
+				margin-left: 15px;
+				width: 60px;
+			    height: 40px;
+				background-color: transparent;
+				border: 1px solid #666666;
+				border-color: #666666;
+				color: #666666;
+				font-size: medium;
+				border-radius:5px;
+			}
+			
+			.mes{
+				margin-left: -20px;
+				margin-top: 40px;
+			}
+			
+			.butn{
+				margin-left: 15px;
+				margin-top: 20px;
+				width: 150px;
+				height: 40px;
+				background-color: transparent;
+				border: 1px solid #666666;
+				border-color: #666666;
+				font-size: medium;
+				border-radius:5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="title">用户管理</div>
+		<div class="xian">————————————————————————————————————————————————————</div>
+		<div class="search">
+			<input class="searchtxt" name="searchtxt" type="text" style="padding-left: 5px;" placeholder="用户名"/>
+			<button class="searchbutton" type="submit" value="查询" />查询</button>
+		</div>
+		<div class="message">
+			<ul>
+				<li class="mes">用户名：<span>yikx</span></li>
+			</ul>
+		</div>
+		<div>
+			<ul><button id="usermsg" class="butn">用户个人信息</button></ul>
+			<ul><button id="ordermsg" class="butn">用户订单查询</button></ul>
+			<ul><button id="frozen" class="butn">冻结用户</button></ul>
+		</div>
+	</body>
+</html>
