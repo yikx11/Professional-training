@@ -130,13 +130,25 @@
 			
 			.sure{
 				margin-top: 50px;
-				margin-left: -80px;
+				margin-left: -120px;
 				width: 60px;
 				height: 20px;
 				background-color: transparent;
 				border: 1px solid #666666;
 				border-radius:5px;
 			}
+			
+			.closed{
+				margin-top: 50px;
+				margin-left: -40px;
+				width: 60px;
+				height: 20px;
+				background-color: transparent;
+				border: 1px solid #666666;
+				border-radius:5px;
+			}
+			
+			
 			
 		</style>
 	</head>
@@ -186,16 +198,18 @@
 					<a href="###" class="edit" onclick="edit()">编辑</a>
 				</td>
 			</tr>
+			</table>
+			<table>
 			<tr class="trs" id="foot">
-				<td>3</td>
-				<td>
+				<td class="td1" id="no">3</td>
+				<td class="td2">
 					<span>无</span>
 					<button class="add_it" onclick="addnew()">添加商品</button>
 				</td>
-				<td> </td>
-				<td> </td>
-				<td>
-					 
+				<td class="td3">——</td>
+				<td class="td4">——</td>
+				<td class="td5">
+					 ——
 				</td>
 			</tr>
 		</table>
@@ -214,7 +228,8 @@
 				</select>
 				</li>
 			     <li><button class="sure" value="确定" onclick="sure()">确定</button></li>
-		</div>
+				 <li><button class="closed" value="取消" onclick="cl()">取消</button></li>
+		    </div>
 	
 	<script type="text/javascript">
 		var newone=document.getElementById("newitem");
@@ -284,7 +299,13 @@
 			td5.appendChild(text5_2);
 			tr.appendChild(td5);
 			
+			var no=document.getElementById("no").innerHTML
+			var newno=parseInt(no)+1;
+			document.getElementById("no").innerHTML=newno;
 			
+		}
+		function cl(){
+			newone.style.display="none";
 		}
 		function edit(){
 				
