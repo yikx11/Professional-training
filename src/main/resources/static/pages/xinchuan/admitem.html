@@ -65,7 +65,7 @@
 				margin-left: 30px;
 			}
 			
-			img{
+			.img{
 				width:100px;
 				height:100px;
 			}
@@ -75,6 +75,7 @@
 			}
 			
 			.trs{
+				border: 1px solid black;
 				height: 150px;
 			}
 			
@@ -110,6 +111,33 @@
 				color: #FFFFFF;
 			}
 			
+			.newitem{
+			    position: absolute;
+				float: left;
+				margin-left: 250px;
+			    left: 0px;
+			    top: 60px;
+				background-color: #FFFFFF;
+				border: 1px solid #C4E3F3;
+				width: 250px;
+				height: 300px;
+
+			}
+			
+			.newitem li{
+				float: left;
+			}
+			
+			.sure{
+				margin-top: 50px;
+				margin-left: -80px;
+				width: 60px;
+				height: 20px;
+				background-color: transparent;
+				border: 1px solid #666666;
+				border-radius:5px;
+			}
+			
 		</style>
 	</head>
 	<body>
@@ -121,7 +149,8 @@
 			<button class="search2" type="submit" value="查询" />查询</button>
 		</div>
 		
-		<table>
+		<table id="itemtable">
+			
 			<tr class="trtitle">
 				<td class="td1">id</td>
 				<td class="td2">信息</td>
@@ -133,35 +162,35 @@
 			<tr class="trs">
 				<td>1</td>
 				<td>
-					<img src="img/u358.jpg"/>
+					<img src="img/u358.jpg" class="img"/>
 					<a href="" class="xinxi">IPhone8 128G/256G 金色银色苹果手机</a>
 				</td>
 				<td><span>6999</span>元</td>
 				<td>在售</td>
 				<td>
 					<a href="" class="check">查看</a>
-					<a href="" class="edit">编辑</a>
+					<a href="###" class="edit" onclick="edit()">编辑</a>
 				</td>
 			</tr>
 			
 			<tr class="trs">
 				<td>2</td>
 				<td>
-					<img src="img/u358.jpg"/>
+					<img src="img/u358.jpg" class="img"/>
 					<a href="" class="xinxi">IPhone8 128G/256G 金色银色苹果手机</a>
 				</td>
 				<td><span>6999</span>元</td>
 				<td>在售</td>
 				<td>
 					<a href="" class="check">查看</a>
-					<a href="" class="edit">编辑</a>
+					<a href="###" class="edit" onclick="edit()">编辑</a>
 				</td>
 			</tr>
-			<tr class="trs">
+			<tr class="trs" id="foot">
 				<td>3</td>
 				<td>
 					<span>无</span>
-					<button class="add_it">添加商品</button>
+					<button class="add_it" onclick="addnew()">添加商品</button>
 				</td>
 				<td> </td>
 				<td> </td>
@@ -170,10 +199,100 @@
 				</td>
 			</tr>
 		</table>
-		
 		<div class="k">——</div>
 		
-
-		
+		<div class="newitem" id="newitem">
+		    <ul>
+				<li>商品id：<input type="text" class="new" id="itemid"/></li>
+				<li>商品名称：<input type="text" class="new" id="itemname"/></li>
+				<li>商品图片：<input type="file" id="itemimage"/></li>
+				<li>商品价格：<input type="text" class="new" id="itemprice"/></li>
+				<li>
+					商品状态：<select id="itemstatus">
+						<option value="在售">在售</option>
+						<option value="不可售">不可售</option>
+				</select>
+				</li>
+			     <li><button class="sure" value="确定" onclick="sure()">确定</button></li>
+		</div>
+	
+	<script type="text/javascript">
+		var newone=document.getElementById("newitem");
+		window.onload=function () {
+		    newone.style.display="none";
+		}
+		function addnew(){
+			newone.style.display="block";
+		}
+		function sure(){
+			newone.style.display="none";
+			//获取新增商品的值
+			var id=document.getElementById("itemid").value;
+			var name=document.getElementById("itemname").value;
+			var img=document.getElementById("itemimage").value;
+			var price=document.getElementById("itemprice").value;
+			var status=document.getElementById("itemstatus").value;
+			
+			//新增表格
+			var table=document.getElementById("itemtable");
+			var fot=document.getElementById("foot");
+			var tr=document.createElement("tr");   
+			tr.setAttribute("class","trs");
+			table.appendChild(tr);
+			
+			
+			//创建第一个单元格
+			var td1 = document.createElement("td");
+			td1.setAttribute("class","td1");
+			var text1=document.createTextNode(id);
+			td1.appendChild(text1);
+			tr.appendChild(td1);
+			//创建第二个单元格
+			var td2= document.createElement("td");
+			td2.setAttribute("class","td2");
+			var img2=document.createElement("img");
+			img2.src=img;
+			img2.setAttribute("class","img");
+			var text2=document.createElement("a");
+			text2.innerHTML=name;
+			text2.setAttribute("class","xinxi");
+			td2.appendChild(img2);
+			td2.appendChild(text2);
+			tr.appendChild(td2);
+			//创建第三个单元格
+			var td3 = document.createElement("td");
+			td3.setAttribute("class","td3");
+			var text3=document.createTextNode(price);
+			td3.appendChild(text3);
+			tr.appendChild(td3);
+			//创建第四个单元格
+			var td4 = document.createElement("td");
+			td4.setAttribute("class","td4");
+			var text4=document.createTextNode(status);
+			td4.appendChild(text4);
+			tr.appendChild(td4);
+			//创建第五个单元格
+			var td5= document.createElement("td");
+			td5.setAttribute("class","td5");
+			var text5_1=document.createElement("a");
+			text5_1.setAttribute("class","check");
+			text5_1.innerHTML="查看"
+			var text5_2=document.createElement("a");
+			text5_2.innerHTML="编辑";
+			text5_2.setAttribute("class","edit");
+			td5.appendChild(text5_1);
+			td5.appendChild(text5_2);
+			tr.appendChild(td5);
+			
+			
+		}
+		function edit(){
+				
+		}
+	</script>	
 	</body>
+	
+	<script src="/jquery/jquery-3.4.1.min.js"></script>
+	<script src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	
 </html>
