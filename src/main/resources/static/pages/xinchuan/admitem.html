@@ -80,21 +80,26 @@
 			}
 			
 			.td1{width: 50px;}
-			.td2{width: 500px;}
-			.td3{width: 80px;}
+			.td2{width: 400px;}
+			.td3{width:80px;}
 			.td4{width: 80px;}
-			.td5{width: 180px;}
+			.td5{width: 80px;}
+			.td6{width: 180px;}
 			
 			.check{
 				margin-left: -10px;
 			}
 			
 			.edit{
-				margin-left: 40px;
+				margin-left: 20px;
+			}
+			
+			.del{
+				margin-left: 20px;
 			}
 			
 			.xinxi{
-				margin-left: 50px;
+				margin-left: 20px;
 			}
 			
 			.add_it{
@@ -156,9 +161,11 @@
 		<div class="title">商品管理</div>
 		<div class="xian">————————————————————————————————————————————————————————————————</div>
 		<div class="search">
-			<button class="search1" type="submit" value="按商品id查询">按商品id查询</button>
-			<input class="searchtxt" name="searchtxt" type="text" style="padding-left: 5px;" placeholder="关键字"/>
+			<input class="searchtxt" type="text" style="padding-left: 5px;" placeholder="关键字"/>
 			<button class="search2" type="submit" value="查询" />查询</button>
+			<input class="searchtxt" name="searchtxt"  id="searchtxt" type="text" style="padding-left: 5px;" placeholder="商品id"/>
+			<button class="search1" type="submit" value="按商品id查询" onclick="searchbyID()">按商品id查询</button>
+		
 		</div>
 		
 		<table id="itemtable">
@@ -166,61 +173,79 @@
 			<tr class="trtitle">
 				<td class="td1">id</td>
 				<td class="td2">信息</td>
-				<td class="td3">价格</td>
-				<td class="td4">状态</td>
-				<td class="td5">操作</td>
+				<td class="td3">类别</td>
+				<td class="td4">价格</td>
+				<td class="td5">状态</td>
+				<td class="td6">操作</td>
 			</tr>
 			
 			<tr class="trs">
-				<td>1</td>
+				<td class="id" name="id">1</td>
 				<td>
 					<img src="img/u358.jpg" class="img"/>
 					<a href="" class="xinxi">IPhone8 128G/256G 金色银色苹果手机</a>
 				</td>
+				<td>家电/数码</td>
 				<td><span>6999</span>元</td>
 				<td>在售</td>
 				<td>
 					<a href="" class="check">查看</a>
-					<a href="###" class="edit" onclick="edit()">编辑</a>
+					<a href="###" class="edit" onclick="edit(this)">编辑</a>
+					<a href="###" class="del" onclick="del(this)">删除</a>
 				</td>
 			</tr>
 			
 			<tr class="trs">
-				<td>2</td>
+				<td class="id" name="id">2</td>
 				<td>
 					<img src="img/u358.jpg" class="img"/>
 					<a href="" class="xinxi">IPhone8 128G/256G 金色银色苹果手机</a>
 				</td>
+				<td>家电/数码</td>
 				<td><span>6999</span>元</td>
 				<td>在售</td>
 				<td>
 					<a href="" class="check">查看</a>
-					<a href="###" class="edit" onclick="edit()">编辑</a>
+					<a href="###" class="edit" onclick="edit(this)">编辑</a>
+					<a href="###" class="del" onclick="del(this)">删除</a>
 				</td>
 			</tr>
 			</table>
 			<table>
 			<tr class="trs" id="foot">
-				<td class="td1" id="no">3</td>
+				<td class="td1" id="no" name="id">3</td>
 				<td class="td2">
 					<span>无</span>
 					<button class="add_it" onclick="addnew()">添加商品</button>
 				</td>
 				<td class="td3">——</td>
 				<td class="td4">——</td>
-				<td class="td5">
+				<td class="td5">——</td>
+				<td class="td6">
 					 ——
 				</td>
 			</tr>
 		</table>
 		<div class="k">——</div>
 		
+		<!--新建窗口-->
 		<div class="newitem" id="newitem">
 		    <ul>
 				<li>商品id：<input type="text" class="new" id="itemid"/></li>
 				<li>商品名称：<input type="text" class="new" id="itemname"/></li>
 				<li>商品图片：<input type="file" id="itemimage"/></li>
-				<li>商品价格：<input type="text" class="new" id="itemprice"/></li>
+				<li>商品类别：<select id="itemkind">
+						<option value="女装/男装">女装/男装</option>
+						<option value="鞋靴/箱包">鞋靴/箱包</option>
+						<option value="童装/玩具">童装/玩具</option>
+						<option value="家电/数码">家电/数码</option>
+						<option value="运动/户外">运动/户外</option>
+						<option value="美食/生鲜">美食/生鲜</option>
+						<option value="鲜花/宠物">鲜花/宠物</option>
+						<option value="家具/家纺">家具/家纺</option>
+						<option value="汽车/二手车">汽车/二手车</option>
+						</li>
+				<li><input type="text" class="new" id="itemprice" placeholder="商品价格"/>元</li>
 				<li>
 					商品状态：<select id="itemstatus">
 						<option value="在售">在售</option>
@@ -230,11 +255,40 @@
 			     <li><button class="sure" value="确定" onclick="sure()">确定</button></li>
 				 <li><button class="closed" value="取消" onclick="cl()">取消</button></li>
 		    </div>
+			
+			<!--编辑窗口-->
+			<div class="newitem" id="editit">
+			    <ul>
+					<li>商品id：<input type="text" class="new" id="itid"/></li>
+					<li>商品名称：<input type="text" class="new" id="itname"/></li>
+					<li>商品图片：<input type="file" id="itimage"/></li>
+					<li>商品类别：<select id="itkind">
+							<option value="女装/男装">女装/男装</option>
+							<option value="鞋靴/箱包">鞋靴/箱包</option>
+							<option value="童装/玩具">童装/玩具</option>
+							<option value="家电/数码">家电/数码</option>
+							<option value="运动/户外">运动/户外</option>
+							<option value="美食/生鲜">美食/生鲜</option>
+							<option value="鲜花/宠物">鲜花/宠物</option>
+							<option value="家具/家纺">家具/家纺</option>
+							<option value="汽车/二手车">汽车/二手车</option>
+					</li>
+					<li><input type="text" class="new" id="itprice" placeholder="商品价格"/>元</li>
+					<li>
+						商品状态：<select id="itstatus">
+							<option value="在售">在售</option>
+							<option value="不可售">不可售</option>
+					</select>
+					</li>
+				    <li><button class="sure" value="确定" onclick="itsure()">确定</button></li>
+			    </div>
 	
 	<script type="text/javascript">
 		var newone=document.getElementById("newitem");
+		var editit=document.getElementById("editit");
 		window.onload=function () {
 		    newone.style.display="none";
+			editit.style.display="none";
 		}
 		function addnew(){
 			newone.style.display="block";
@@ -247,6 +301,7 @@
 			var img=document.getElementById("itemimage").value;
 			var price=document.getElementById("itemprice").value;
 			var status=document.getElementById("itemstatus").value;
+			var kind=document.getElementById("itemkind").value;
 			
 			//新增表格
 			var table=document.getElementById("itemtable");
@@ -258,6 +313,7 @@
 			
 			//创建第一个单元格
 			var td1 = document.createElement("td");
+			td1.setAttribute("name","id");
 			td1.setAttribute("class","td1");
 			var text1=document.createTextNode(id);
 			td1.appendChild(text1);
@@ -274,41 +330,186 @@
 			td2.appendChild(img2);
 			td2.appendChild(text2);
 			tr.appendChild(td2);
-			//创建第三个单元格
+			//创建第三单元格
 			var td3 = document.createElement("td");
 			td3.setAttribute("class","td3");
-			var text3=document.createTextNode(price);
+			var text3=document.createTextNode(kind);
 			td3.appendChild(text3);
 			tr.appendChild(td3);
-			//创建第四个单元格
+			//创建第四单元格
 			var td4 = document.createElement("td");
 			td4.setAttribute("class","td4");
-			var text4=document.createTextNode(status);
+			var text4=document.createTextNode(price);
 			td4.appendChild(text4);
 			tr.appendChild(td4);
 			//创建第五个单元格
-			var td5= document.createElement("td");
+			var td5 = document.createElement("td");
 			td5.setAttribute("class","td5");
-			var text5_1=document.createElement("a");
-			text5_1.setAttribute("class","check");
-			text5_1.innerHTML="查看"
-			var text5_2=document.createElement("a");
-			text5_2.innerHTML="编辑";
-			text5_2.setAttribute("class","edit");
-			td5.appendChild(text5_1);
-			td5.appendChild(text5_2);
+			var text5=document.createTextNode(status);
+			td5.appendChild(text5);
 			tr.appendChild(td5);
+			//创建第六个单元格
+			var td6= document.createElement("td");
+			td6.setAttribute("class","td6");
+			var text6_1=document.createElement("a");
+			text6_1.setAttribute("class","check");
+			text6_1.innerHTML="查看"
+			var text6_2=document.createElement("a");
+			text6_2.innerHTML="编辑";
+			text6_2.setAttribute("class","edit");
+			text6_2.setAttribute("onclick","edit(this)");
+			var text6_3=document.createElement("a");
+			text6_3.innerHTML="删除";
+			text6_3.setAttribute("class","del");
+			text6_3.setAttribute("onclick","del(this)");
+			td6.appendChild(text6_1);
+			td6.appendChild(text6_2);
+			td6.appendChild(text6_3);
+			tr.appendChild(td6);
 			
 			var no=document.getElementById("no").innerHTML
 			var newno=parseInt(no)+1;
 			document.getElementById("no").innerHTML=newno;
 			
 		}
+		
 		function cl(){
 			newone.style.display="none";
 		}
-		function edit(){
+		
+		var count=0;
+		
+		
+		function edit(p){
+		    p.innerHTML="完成";
+		    if(count==0){
+		    editit.style.display="block";
+		    }
+		    if(count==1){
+		    	p.innerHTML="编辑";
+				count=0;
+				//定位
+				var id=p.parentNode.parentNode.firstElementChild.innerHTML;
+				var name=p.parentNode.parentNode.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.innerHTML;
+				var kind=p.parentNode.parentNode.firstElementChild.nextElementSibling.nextElementSibling.innerHTML;
+				var price=p.parentNode.parentNode.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.innerHTML;
+				var status=p.parentNode.parentNode.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML;
+				//获取编辑值
+				var eid=document.getElementById("itid").value;
+				var ename=document.getElementById("itname").value;
+				var eimg=document.getElementById("itimage").value;
+				var eprice=document.getElementById("itprice").value;
+				var estatus=document.getElementById("itstatus").value;
+				var ekind=document.getElementById("itkind").value;
 				
+				
+				//改变id
+				p.parentNode.parentNode.firstElementChild.innerHTML=eid;
+				//改变名字
+				p.parentNode.parentNode.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.innerHTML=ename;
+				//改变种类
+				p.parentNode.parentNode.firstElementChild.nextElementSibling.nextElementSibling.innerHTML=ekind;
+				//改变价格
+				p.parentNode.parentNode.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.innerHTML=eprice;
+				//改变状态
+				p.parentNode.parentNode.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML=estatus;
+				
+				
+			}
+		}
+		
+		function itsure(){
+			editit.style.display="none";
+			count=1;
+		}
+		
+		function del(p){
+			p.parentNode.parentNode.remove();
+			var no=document.getElementById("no").innerHTML
+			var newno=parseInt(no)-1;
+			document.getElementById("no").innerHTML=newno;
+		}
+		
+		function searchbyID(){
+			var s_id=document.getElementById("searchtxt").value;
+			var ids=document.getElementsByName("id");
+			for(var i=0;i<ids.length;i++){
+				var m=ids[i].innerHTML;
+				if(m!=s_id){
+				ids[i].parentNode.remove();
+				i--;
+				}
+				
+			}
+			/**清空表格重建，不需要了
+			//清空表格
+			var alltrs=document.getElementsByClassName("trs");
+			for(var i=0;i<alltrs.length;i++){
+				alltrs[i].remove();
+				i--;
+			}
+			
+		    //新增表格
+			var table=document.getElementById("itemtable");
+			var fot=document.getElementById("foot");
+			var tr=document.createElement("tr");   
+			tr.setAttribute("class","trs");
+			table.appendChild(tr);
+			//创建第一个单元格
+			var td1 = document.createElement("td");
+			td1.setAttribute("class","td1");
+			var text1=document.createTextNode("1");
+			td1.appendChild(text1);
+			tr.appendChild(td1);
+			//创建第二个单元格
+			var td2= document.createElement("td");
+			td2.setAttribute("class","td2");
+			var img2=document.createElement("img");
+			img2.src="img/u358.jpg";
+			img2.setAttribute("class","img");
+			var text2=document.createElement("a");
+			text2.innerHTML="XXXXXXXXXXXXXXXXX";
+			text2.setAttribute("class","xinxi");
+			td2.appendChild(img2);
+			td2.appendChild(text2);
+			tr.appendChild(td2);
+			//创建第三单元格
+			var td3 = document.createElement("td");
+			td3.setAttribute("class","td3");
+			var text3=document.createTextNode("种类");
+			td3.appendChild(text3);
+			tr.appendChild(td3);
+			//创建第四单元格
+			var td4 = document.createElement("td");
+			td4.setAttribute("class","td4");
+			var text4=document.createTextNode("价格");
+			td4.appendChild(text4);
+			tr.appendChild(td4);
+			//创建第五个单元格
+			var td5 = document.createElement("td");
+			td5.setAttribute("class","td5");
+			var text5=document.createTextNode("状态");
+			td5.appendChild(text5);
+			tr.appendChild(td5);
+			//创建第六个单元格
+			var td6= document.createElement("td");
+			td6.setAttribute("class","td6");
+			var text6_1=document.createElement("a");
+			text6_1.setAttribute("class","check");
+			text6_1.innerHTML="查看"
+			var text6_2=document.createElement("a");
+			text6_2.innerHTML="编辑";
+			text6_2.setAttribute("class","edit");
+			text6_2.setAttribute("onclick","edit(this)");
+			var text6_3=document.createElement("a");
+			text6_3.innerHTML="删除";
+			text6_3.setAttribute("class","del");
+			text6_3.setAttribute("onclick","del(this)");
+			td6.appendChild(text6_1);
+			td6.appendChild(text6_2);
+			td6.appendChild(text6_3);
+			tr.appendChild(td6);
+			**/
 		}
 	</script>	
 	</body>
