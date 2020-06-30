@@ -254,39 +254,33 @@
             -->
             <form class="form-horizontal" style="position: absolute;left: 40px;top: 60px">
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-10 control-label" style="text-align: left">输入用户名</label>
+                    <label class="col-sm-10 control-label" style="text-align: left">输入用户名</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputEmail3" placeholder="Name">
+                        <input type="text" class="form-control" name="username" id="username" placeholder="Name">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-10 control-label" style="text-align: left">输入密码</label>
+                    <label class="col-sm-10 control-label" style="text-align: left">输入密码</label>
                     <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Password">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputPassword4" class="col-sm-10 control-label" style="text-align: left">再次输入密码</label>
+                    <label class="col-sm-10 control-label" style="text-align: left">再次输入密码</label>
                     <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                        <input type="password" class="form-control" name="passwordagain" id="passwordagain" placeholder="Password">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputPhonenumber" class="col-sm-10 control-label" style="text-align: left">输入电话</label>
+                    <label class="col-sm-10 control-label" style="text-align: left">输入密码提示问题</label>
                     <div class="col-sm-10">
-                        <input type="tel" class="form-control" id="inputPhonenumber" placeholder="Phonenumber">
+                        <input type="text" class="form-control" name="safe_q" id="safe_q" placeholder="Question">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputQuestion" class="col-sm-10 control-label" style="text-align: left">输入密码提示问题</label>
+                    <label class="col-sm-10 control-label" style="text-align: left">输入密码提示问题答案</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputQuestion" placeholder="Question">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputAnswer" class="col-sm-10 control-label" style="text-align: left">输入密码提示问题答案</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputAnswer" placeholder="Answer">
+                        <input type="text" class="form-control" name="safe_a" id="safe_a" placeholder="Answer">
                     </div>
                 </div>
                 <!--
@@ -297,9 +291,9 @@
                 </div>
                 -->
             </form>
-            <div id="submitbutton">
+            <div>
                 <p>
-                    <span style="position: center">立即注册</span>
+                    <button type="submit" id="submitbutton" style="position: center">立即注册</button>
                 </p>
             </div>
             <div class="loginfont" style="left: 200px">
@@ -308,6 +302,22 @@
                 </p>
             </div>
         </div>
+        <div id="myModal" class="modal fade">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="gridSystemModalLabel">提示信息</h4>
+                    </div>
+                    <div class="modal-body">
+                        <span id="reg_msg"></span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" id="closeDilog">确定</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
     </div>
     <div id="footer">
         <ul><li class="end_1">友情链接:</li>
@@ -321,6 +331,31 @@
 <script src="/jquery/jquery-3.4.1.min.js"></script>
 <script src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 <script>
+
+    jQuery(function(){
+        jQuery("#submitbutton").click(function(){
+            var username=jQuery("#username").val();
+            var user_id=jQuery("#user_id").val();
+            var password=jQuery("#password").val();
+            var safe_q=jQuery("#safe_q").val();
+            var safe_a=jQuery("#safe_a").val();
+            jQuery.post("/insert",{"username":username,"user_id":user_id,"password":password,"safe_q":safe_q,"safe_a":safe_a},function(rst){
+                jQuery("#reg_msg").html(rst);
+                jQuery('#myModal').modal("show");
+
+            });
+        });
+        jQuery("#closeDilog").click(function(){
+            jQuery('#myModal').modal("hide");
+            var rst=jQuery("#reg_msg").html();
+            if(rst=='注册成功！')
+            {
+                //跳转页面
+                window.location.href="login.html";
+            }
+        });
+    });
+
     var bolck1=document.getElementsByClassName('div1')[0];
     var bolck2=document.getElementsByClassName('div2')[0];
     var point=document.getElementsByClassName('point')[0];
