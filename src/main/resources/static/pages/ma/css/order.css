@@ -22,6 +22,7 @@ html, body {
 .ma13:hover{
             background: rgba(0,0,0,0);
 }
+
 .zindex1
 {
     z-index: 999999;
@@ -1955,7 +1956,7 @@ body {
 }
 #u285_text {
     position:absolute;
-    left: -10px;
+    left: 20px;
     top: -10px;
     border-width:0px;
     word-wrap:break-word;

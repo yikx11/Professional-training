@@ -14,7 +14,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="settype1()"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">添加收货人信息</h4>
             </div>
             <div class="modal-body">
@@ -95,7 +95,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="judge()">保存</button>
             </div>
         </div>
     </div>
@@ -353,6 +353,20 @@
     <!-- Unnamed (矩形) -->
     <div id="u270" class="ax_default box_1">
         <img id="u270_img" class="img " src="/pages/ma/images/market/u220.svg" alt=""/>
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle ma13" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                更多商品
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+
+            </ul>
+        </div>
         <div id="u270_text" class="text " style="display:none; visibility: hidden">
             <p></p>
         </div>
@@ -384,7 +398,7 @@
     <!---->
     <div id="u274" class="ax_default">
 
-        <img id="u274_img" class="img " src="/pages/ma/images/detail/u181.jpg" alt=""/>
+        <img id="u274_img" class="img " src="/pages/ma/images/detail/u181.jpg" alt="" onclick="init_userid()"/>
         <div id="u274_text" class="text " style="display:none; visibility: hidden">
             <p></p>
         </div>
@@ -479,27 +493,65 @@
         <div id="u285_div" class=""></div>
         <div id="u285_text" class="text ">
 <!--            <p><span style="text-decoration:none;">编辑</span></p>-->
-            <button type="button" class="btn ma13" data-toggle="modal" data-target="#myModal">
+            <button type="button" class="btn ma13" data-toggle="modal" data-target="#myModal" onclick="settype2()">
                 编辑
             </button>
         </div>
     </div>
 
     <!-- Unnamed (矩形) -->
-    <div id="u286" class="ax_default label">
+    <!--删除按钮，暂时没做-->
+    <!--<div id="u286" class="ax_default label">
         <div id="u286_div" class=""></div>
         <div id="u286_text" class="text ">
             <button type="button" class="btn ma13">
                 删除
             </button>
         </div>
-    </div>
+    </div>-->
 </div>
 </body>
 <script src="/jquery/jquery-3.4.1.min.js"></script>
 <script src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 <script src="/pages/ma/js/order.js"></script>
 <script>
+    //需要从cookie中读取user_id！！！！！！！！
+    var user_id=1;//这个user_id应该从cookie中读取,默认是1
+    function write_userid() {
+        var user_id=2;//从cookie中获取，默认是2
+        var d=new Date();
+        d.setTime(d.getTime()+2*24*60*60);
+        document.cookie="user_id="+user_id+"; expires="+d.toGMTString();
+    }
+    function init_userid()
+    {
+        //从cookie中获取用户id
+        //write_userid();
+        var cookies=document.cookie.split(";");
+        for(var i=0;i<cookies.length;i++)
+        {
+            var cookie=cookies[i].trim();
+            if(cookie.indexOf("user_id")==0)
+            {
+                user_id=cookie.substring("user_id".length+1);
+
+                break;
+            }
+
+        }
+        //alert(user_id);
+    }
+    init_userid();
+
+    function init_add()
+    {
+        //初始化，由cookie中的use_id查询对应满足的地址信息，并判断框1，框2是显示信息还是显示添加地址
+        jQuery.post("/addressfind",{"user_id":user_id},function (rst) {
+            //alert(rst.length);
+            //rst.length//代表了地址信息的个数
+        })
+    }
+
     function pay() {
         var msg="test";
         var d=new Date();
@@ -508,5 +560,58 @@
         window.location.href='/pages/ma/pages/pay.html';
 
     }
+    var addresstype=1;
+    function settype1() {
+        addresstype=1;
+    }
+    function settype2() {
+        addresstype=2;
+    }
+    function judge() {
+        if(addresstype == 2)
+        {
+            change_address();
+        }
+        else
+        {
+            add_address();
+        }
+
+    }
+    //增加地址信息
+    function add_address()
+    {
+
+
+        var province=jQuery("#pro").val();
+        var city=jQuery("#city").val();
+        var detail=jQuery("#detail").val();
+        var receiver=jQuery("#receiver").val();
+        var phonenumber=jQuery("#phonenumber").val();
+        jQuery.post("/addressinsert",{"user_id":user_id,"province":province,"city":city,"detail":detail,"receiver":receiver,"phonenumber":phonenumber},function (rst) {
+
+        })
+    }
+    function change_address()
+    {
+        var address_id=1;//这里是简写，应该是由用户Id查表得到的
+        var user_id=1;
+        var province=jQuery("#pro").val();
+        var city=jQuery("#city").val();
+        var detail=jQuery("#detail").val();
+        var receiver=jQuery("#receiver").val();
+        var phonenumber=jQuery("#phonenumber").val();
+        jQuery.post("/addresschange",{"address_id":address_id,"user_id":user_id,"province":province,"city":city,"detail":detail,"receiver":receiver,"phonenumber":phonenumber},function (rst) {
+
+        })
+    }
+
+
+    function refreshbox1()
+    {
+        //刷新第一个框的内容
+
+    }
+
 </script>
 </html>
