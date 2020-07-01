@@ -461,7 +461,7 @@
 
         </div>
         <div id="u283_text" class="text ">
-            <button type="submit" class="btn ma13" onclick="window.location.href='/pages/ma/pages/pay.html'">提交订单</button>
+            <button type="button" class="btn ma13" onclick="pay()">提交订单</button>
 <!--            <p><span style="text-decoration:none;">提交订单</span></p>-->
         </div>
     </div>
@@ -499,4 +499,14 @@
 <script src="/jquery/jquery-3.4.1.min.js"></script>
 <script src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 <script src="/pages/ma/js/order.js"></script>
+<script>
+    function pay() {
+        var msg="test";
+        var d=new Date();
+        d.setTime(d.getTime()+2*24*60*60);
+        document.cookie="ordernumber="+msg+"; expires="+d.toGMTString();
+        window.location.href='/pages/ma/pages/pay.html';
+
+    }
+</script>
 </html>

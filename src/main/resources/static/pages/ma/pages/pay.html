@@ -141,7 +141,9 @@
     <div id="u327" class="ax_default label">
         <div id="u327_div" class=""></div>
         <div id="u327_text" class="text ">
-            <p><span style="text-decoration:none;">订单已经提交，请尽快支付！&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; 订单号&nbsp;&nbsp; 202006189381234</span></p>
+            <!--<p><span style="text-decoration:none;">
+                订单已经提交，请尽快支付！&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;订单号&nbsp;&nbsp; :<div id="u327_number"></div>
+            </span></p>-->
         </div>
     </div>
 
@@ -172,4 +174,23 @@
 </body>
 <script src="/jquery/jquery-3.4.1.min.js"></script>
 <script src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script>
+
+    function getCookie()
+    {
+        var cookies=document.cookie.split(";");
+        for(var i=0;i<cookies.length;i++)
+        {
+            var cookie=cookies[i].trim();
+            if(cookie.indexOf("ordernumber")==0)
+            {
+                var m="订单已经提交，请尽快支付！&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;订单号&nbsp;&nbsp; :"+cookie.substring("ordernumber".length+1);
+                jQuery("#u327_text").html(m);
+                break;
+            }
+        }
+    }
+
+    getCookie();
+</script>
 </html>
