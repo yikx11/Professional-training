@@ -53,17 +53,6 @@
 				font-size: medium;
 				border-radius:5px;
 			}
-
-			.save{
-				margin-left: 100px;
-				width: 80px;
-				height: 40px;
-				background-color: transparent;
-				border: 0.5px solid;
-				border-color:#46B8DA;
-				color: #000000;
-
-			}
 			
 			table, th, td
 			{
@@ -136,7 +125,7 @@
 				background-color: #FFFFFF;
 				border: 1px solid #C4E3F3;
 				width: 250px;
-				height: 300px;
+				height: 370px;
 
 			}
 			
@@ -145,7 +134,7 @@
 			}
 			
 			.sure{
-				margin-top: 50px;
+				margin-top: 40px;
 				margin-left: -120px;
 				width: 60px;
 				height: 20px;
@@ -155,7 +144,7 @@
 			}
 			
 			.closed{
-				margin-top: 50px;
+				margin-top: 40px;
 				margin-left: -40px;
 				width: 60px;
 				height: 20px;
@@ -176,7 +165,6 @@
 			<button class="search2" type="submit" value="查询" />查询</button>
 			<input class="searchtxt" name="searchtxt"  id="searchtxt" type="text" style="padding-left: 5px;" placeholder="商品id"/>
 			<button class="search1" type="submit" value="按商品id查询" onclick="searchbyID()">按商品id查询</button>
-			<button class="save" type="submit" value="保存更改" />保存更改</button>
 		
 		</div>
 		
@@ -246,18 +234,26 @@
 				<li>商品id：<input type="text" class="new" id="itemid"/></li>
 				<li>商品名称：<input type="text" class="new" id="itemname"/></li>
 				<li>商品图片：<input type="file" id="itemimage"/></li>
-				<li>商品类别：<select id="itemkind">
-						<option value="女装/男装">女装/男装</option>
-						<option value="鞋靴/箱包">鞋靴/箱包</option>
-						<option value="童装/玩具">童装/玩具</option>
-						<option value="家电/数码">家电/数码</option>
-						<option value="运动/户外">运动/户外</option>
-						<option value="美食/生鲜">美食/生鲜</option>
-						<option value="鲜花/宠物">鲜花/宠物</option>
-						<option value="家具/家纺">家具/家纺</option>
-						<option value="汽车/二手车">汽车/二手车</option>
+				<li>商品类别：
+						<input type="checkbox" name="itemkind" value="女装/男装"/>女装/男装
+						|
+						<input type="checkbox" name="itemkind" value="鞋靴/箱包"/>鞋靴/箱包
+						|
+						<input type="checkbox" name="itemkind" value="童装/玩具"/>童装/玩具
+						|
+						<input type="checkbox" name="itemkind" value="家电/数码"/>家电/数码
+						|
+						<input type="checkbox" name="itemkind" value="运动/户外"/>运动/户外
+						|
+						<input type="checkbox" name="itemkind" value="美食/生鲜"/>美食/生鲜
+						|
+						<input type="checkbox" name="itemkind" value="鲜花/宠物"/>鲜花/宠物
+						|
+						<input type="checkbox" name="itemkind" value="家具/家纺"/>家具/家纺
+						|
+						<input type="checkbox" name="itemkind" value="汽车/二手车"/>汽车/二手车
 						</li>
-				<li><input type="text" class="new" id="itemprice" placeholder="商品价格"/>元</li>
+				<li>商品价格：<input type="text" class="new" id="itemprice" /></li>
 				<li>
 					商品状态：<select id="itemstatus">
 						<option value="在售">在售</option>
@@ -274,7 +270,26 @@
 					<li>商品id：<input type="text" class="new" id="itid"/></li>
 					<li>商品名称：<input type="text" class="new" id="itname"/></li>
 					<li>商品图片：<input type="file" id="itimage"/></li>
-					<li>商品类别：<select id="itkind">
+					<li>商品类别：
+					<input type="checkbox" name="itkind" value="女装/男装"/>女装/男装
+					|
+					<input type="checkbox" name="itkind" value="鞋靴/箱包"/>鞋靴/箱包
+					|
+					<input type="checkbox" name="itkind" value="童装/玩具"/>童装/玩具
+					|
+					<input type="checkbox" name="itkind" value="家电/数码"/>家电/数码
+					|
+					<input type="checkbox" name="itkind" value="运动/户外"/>运动/户外
+					|
+					<input type="checkbox" name="itkind" value="美食/生鲜"/>美食/生鲜
+					|
+					<input type="checkbox" name="itkind" value="鲜花/宠物"/>鲜花/宠物
+					|
+					<input type="checkbox" name="itkind" value="家具/家纺"/>家具/家纺
+					|
+					<input type="checkbox" name="itkind" value="汽车/二手车"/>汽车/二手车
+					<!--
+					        <select id="itkind">
 							<option value="女装/男装">女装/男装</option>
 							<option value="鞋靴/箱包">鞋靴/箱包</option>
 							<option value="童装/玩具">童装/玩具</option>
@@ -284,8 +299,9 @@
 							<option value="鲜花/宠物">鲜花/宠物</option>
 							<option value="家具/家纺">家具/家纺</option>
 							<option value="汽车/二手车">汽车/二手车</option>
+							-->
 					</li>
-					<li><input type="text" class="new" id="itprice" placeholder="商品价格"/>元</li>
+					<li>商品价格：<input type="text" class="new" id="itprice" />元</li>
 					<li>
 						商品状态：<select id="itstatus">
 							<option value="在售">在售</option>
@@ -305,15 +321,22 @@
 		function addnew(){
 			newone.style.display="block";
 		}
+			
 		function sure(){
 			newone.style.display="none";
+			
 			//获取新增商品的值
 			var id=document.getElementById("itemid").value;
 			var name=document.getElementById("itemname").value;
 			var img=document.getElementById("itemimage").value;
 			var price=document.getElementById("itemprice").value;
 			var status=document.getElementById("itemstatus").value;
-			var kind=document.getElementById("itemkind").value;
+			var kinds=document.getElementsByName("itemkind");
+			var kind="";
+			for(i=0;i<kinds.length;i++)
+			{   if(kinds[i].checked==true)
+				kind=kind+kinds[i].value+";";
+			}
 			
 			//新增表格
 			var table=document.getElementById("itemtable");
@@ -334,7 +357,7 @@
 			var td2= document.createElement("td");
 			td2.setAttribute("class","td2");
 			var img2=document.createElement("img");
-			img2.src=img;
+			img2.setAttribute("src","img");
 			img2.setAttribute("class","img");
 			var text2=document.createElement("a");
 			text2.innerHTML=name;
@@ -412,7 +435,12 @@
 				var eimg=document.getElementById("itimage").value;
 				var eprice=document.getElementById("itprice").value;
 				var estatus=document.getElementById("itstatus").value;
-				var ekind=document.getElementById("itkind").value;
+				var ekind=document.getElementsByName("itkind");
+				var itekind="";
+				for(i=0;i<ekind.length;i++)
+				{   if(ekind[i].checked==true)
+					itekind=itekind+ekind[i].value+";";
+				}
 				
 				
 				//改变id
@@ -420,7 +448,7 @@
 				//改变名字
 				p.parentNode.parentNode.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.innerHTML=ename;
 				//改变种类
-				p.parentNode.parentNode.firstElementChild.nextElementSibling.nextElementSibling.innerHTML=ekind;
+				p.parentNode.parentNode.firstElementChild.nextElementSibling.nextElementSibling.innerHTML=itekind;
 				//改变价格
 				p.parentNode.parentNode.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.innerHTML=eprice;
 				//改变状态
@@ -528,5 +556,7 @@
 	
 	<script src="/jquery/jquery-3.4.1.min.js"></script>
 	<script src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-	
+	<script type="text/html">
+		
+	</script>
 </html>
