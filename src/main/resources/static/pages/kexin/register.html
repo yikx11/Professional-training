@@ -24,13 +24,13 @@
             padding:0;
         }
         #upper{
-             position: absolute;
-             left: 0px;
-             top: 0px;
-             width: 1100px;
-             height: 31px;
-             background-color: #ECE9EC;
-         }
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 1100px;
+            height: 31px;
+            background-color: #ECE9EC;
+        }
         #center{
             position: absolute;
             left: 0px;
@@ -71,10 +71,10 @@
         }
         #loginpanel{
             position: absolute;
-            left: 671px;
-            top: 233px;
+            left: 672px;
+            top: 120px;
             width: 343px;
-            height: 357px;
+            height: 585px;
             background-color: rgba(242,242,242,1);
             box-sizing: border-box;
             border-width: 1px;
@@ -109,7 +109,7 @@
         #submitbutton {
             position: absolute;
             left: 90px;
-            top: 280px;
+            top: 515px;
             width: 140px;
             height: 40px;
             background-color: rgba(194, 0, 26, 1);
@@ -124,8 +124,8 @@
         }
         .loginfont{
             position: absolute;
-            top: 330px;
-            width: 79px;
+            top: 560px;
+            width: 200px;
             height: 22px;
             font-family: "微软雅黑 Regular", 微软雅黑;
             font-weight: 400;
@@ -150,13 +150,6 @@
         .end_3{
             margin-left:150px;
             color: gray;
-        }
-
-        #banner {
-            width: 800px;
-            height: 400px;
-            margin: 40px auto;
-            position: relative;
         }
         .div1 {
             position: relative;
@@ -208,116 +201,161 @@
 </head>
 <body>
 <div id="base">
-<div id="upper">
-  <table class="upperfont" >
-      <td style="min-width:40px;"><a href="">登录</a></td>
-          <td style="min-width:700px"><a href="">注册</a></td>
-          <td style="min-width:70px;"><a href="">购物车</a></td>
-          <td style="min-width:80px;"><a href="">我的订单</a></td>
-          <td style="min-width:70px;"><a href="">收藏夹</a></td>
-          <td style="min-width:70px;"><a href="">我的AIBUY</a></td>
-  </table>
-</div>
-<div id="center">
-  <!--动图位置-->
-    <div class="div2">
-        <div class="div1">
-            <img src="images/1.jpg" alt="" class="newop">
-            <img src="images/2.jpg" alt="" class="oldop">
-            <img src="images/3.jpg" alt="" class="oldop">
-            <img src="images/4.jpg" alt="" class="oldop">
-        </div>
+    <div id="upper">
+        <table class="upperfont" >
+            <td style="min-width:40px;"><a href="">登录</a></td>
+            <td style="min-width:700px"><a href="">注册</a></td>
+            <td style="min-width:70px;"><a href="">购物车</a></td>
+            <td style="min-width:80px;"><a href="">我的订单</a></td>
+            <td style="min-width:70px;"><a href="">收藏夹</a></td>
+            <td style="min-width:70px;"><a href="">我的AIBUY</a></td>
+        </table>
+    </div>
+    <div id="center">
+        <!--动图位置-->
+        <div class="div2">
+            <div class="div1">
+                <img src="images/1.jpg" alt="" class="newop">
+                <img src="images/2.jpg" alt="" class="oldop">
+                <img src="images/3.jpg" alt="" class="oldop">
+                <img src="images/4.jpg" alt="" class="oldop">
+            </div>
 
-        <div class="point">
-            <div class="new_color"></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div class="point">
+                <div class="new_color"></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
+        <!--AIBUY位置-->
+        <div id="brand">
+            <p>
+                <span>AIBUY</span>
+            </p>
+        </div>
+        <div id="loginpanel" style="z-index: 999">
+            <div id="logintitle">
+                <p>
+                    <span>新用户注册</span>
+                </p>
+            </div>
+            <!--
+          <div class="username_rec">
+              <p>
+                  <span>用户名</span>
+              </p>
+          </div>
+            <div class="username_rec">
+                <p>
+                    <span>用户密码</span>
+                </p>
+            </div>
+            -->
+            <form class="form-horizontal" style="position: absolute;left: 40px;top: 60px">
+                <div class="form-group">
+                    <label class="col-sm-10 control-label" style="text-align: left">输入用户名</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="username" id="username" placeholder="Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-10 control-label" style="text-align: left">输入密码</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-10 control-label" style="text-align: left">再次输入密码</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" name="passwordagain" id="passwordagain" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-10 control-label" style="text-align: left">输入密码提示问题</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="safe_q" id="safe_q" placeholder="Question">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-10 control-label" style="text-align: left">输入密码提示问题答案</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="safe_a" id="safe_a" placeholder="Answer">
+                    </div>
+                </div>
+                <!--
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">Sign in</button>
+                    </div>
+                </div>
+                -->
+            </form>
+            <div>
+                <p>
+                    <button type="submit" id="submitbutton" style="position: center">立即注册</button>
+                </p>
+            </div>
+            <div class="loginfont" style="left: 200px">
+                <p>
+                    <span>已有账户，去登陆>></span>
+                </p>
+            </div>
+        </div>
+        <div id="myModal" class="modal fade">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="gridSystemModalLabel">提示信息</h4>
+                    </div>
+                    <div class="modal-body">
+                        <span id="reg_msg"></span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" id="closeDilog">确定</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
     </div>
-    <!--AIBUY位置-->
-  <div id="brand">
-    <p>
-      <span>AIBUY</span>
-    </p>
-  </div>
-  <div id="loginpanel" style="z-index: 999">
-    <div id="logintitle">
-        <p>
-            <span>用户登录</span>
-        </p>
+    <div id="footer">
+        <ul><li class="end_1">友情链接:</li>
+            <li class="end_2"><a href="https://www.alipay.com/">支付宝</a>|<a href="https://www.taobao.com/">淘宝</a>|<a href="https://www.kaola.com/">网易考拉</a>|<a href="https://daddylab.com/">老爸测评</a></li>
+            <li class="end_3">Copyright 2020 AIBUY.com All Rights Reserved</li>
+        </ul>
     </div>
-      <!--
-    <div class="username_rec">
-        <p>
-            <span>用户名</span>
-        </p>
-    </div>
-      <div class="username_rec">
-          <p>
-              <span>用户密码</span>
-          </p>
-      </div>
-      -->
-      <form class="form-horizontal" style="position: absolute;left: 40px;top: 80px">
-          <div class="form-group">
-              <label for="inputEmail3" class="col-sm-3 control-label">用户名</label>
-              <div class="col-sm-10">
-                  <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-              </div>
-          </div>
-          <div class="form-group">
-              <label for="inputPassword3" class="col-sm-3 control-label">密码</label>
-              <div class="col-sm-10">
-                  <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-              </div>
-          </div>
-          <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-10">
-                  <div class="checkbox">
-                      <label>
-                          <input type="checkbox"> Remember me
-                      </label>
-                  </div>
-              </div>
-          </div>
-          <!--
-          <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-10">
-                  <button type="submit" class="btn btn-default">Sign in</button>
-              </div>
-          </div>
-          -->
-      </form>
-      <div id="submitbutton">
-          <p>
-              <span style="position: center">登录</span>
-          </p>
-      </div>
-      <div class="loginfont" style="left: 200px">
-          <p>
-              <span>忘记密码</span>
-          </p>
-      </div>
-      <div class="loginfont" style="left: 270px">
-          <p>
-              <span>免费注册</span>
-          </p>
-      </div>
-  </div>
-</div>
-<div id="footer">
-    <ul><li class="end_1">友情链接:</li>
-        <li class="end_2"><a href="https://www.alipay.com/">支付宝</a>|<a href="https://www.taobao.com/">淘宝</a>|<a href="https://www.kaola.com/">网易考拉</a>|<a href="https://daddylab.com/">老爸测评</a></li>
-        <li class="end_3">Copyright 2020 AIBUY.com All Rights Reserved</li>
-    </ul>
-</div>
 </div>
 
 </body>
 <script src="/jquery/jquery-3.4.1.min.js"></script>
 <script src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 <script>
+
+    jQuery(function(){
+        jQuery("#submitbutton").click(function(){
+            var username=jQuery("#username").val();
+            var user_id=jQuery("#user_id").val();
+            var password=jQuery("#password").val();
+            var safe_q=jQuery("#safe_q").val();
+            var safe_a=jQuery("#safe_a").val();
+            jQuery.post("/insert",{"username":username,"user_id":user_id,"password":password,"safe_q":safe_q,"safe_a":safe_a},function(rst){
+                jQuery("#reg_msg").html(rst);
+                jQuery('#myModal').modal("show");
+
+            });
+        });
+        jQuery("#closeDilog").click(function(){
+            jQuery('#myModal').modal("hide");
+            var rst=jQuery("#reg_msg").html();
+            if(rst=='注册成功！')
+            {
+                //跳转页面
+                window.location.href="login.html";
+            }
+        });
+    });
+
     var bolck1=document.getElementsByClassName('div1')[0];
     var bolck2=document.getElementsByClassName('div2')[0];
     var point=document.getElementsByClassName('point')[0];

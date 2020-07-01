@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <style>
+        body{
+            margin: 0px;
+            background-image: none;
+            position: static;
+            left: auto;
+            width: 1100px;
+            margin-left: 0;
+            margin-right: 0;
+            text-align: left;
+            display: block;
+        }
+        #base{
+           position: relative;
+        }
+        #becenter{
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+        ul li{
+            list-style: none;
+        }
+        .listyle{
+            line-height: 80px;
+            font-size: 18px;
+        }
+        .listyle2{
+            line-height: 50px;
+            font-size: 18px;
+        }
+        *{
+            margin:0;
+            padding:0;
+        }
+        #upper{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 1100px;
+            height: 31px;
+            background-color: #ECE9EC;
+        }
+        #center{
+            position: absolute;
+            left: 0px;
+            top: 30px;
+            width: 1100px;
+            height: 877px;
+            background-color: #F5F5F5;
+        }
+        #brand{
+            position: absolute;
+            left:66px;
+            top: 20px;
+            width: 121px;
+            height: 56px;
+            font-family: Arial;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 36px;
+            color: #C2001A;
+        }
+        .upperfont {
+            position: absolute;
+            top: 6px;
+            /*width: 39px;*/
+            height: 18px;
+            font-family: "微软雅黑 Regular", 微软雅黑;
+            font-weight: 400;
+            font-style: normal;
+            color: rgb(148, 148, 148);
+            float: left;
+        }
+        #menu{
+            position: absolute;
+            left: 50px;
+            top: 165px;
+            width: 143px;
+            height: 17px;
+            text-decoration: underline;
+            color: #999999;
+        }
+        #redline{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 50px;
+            height: 20%;
+            border-right: solid #C2001A 1px;
+        }
+
+        .tips{
+            width: 837px;
+            height: 41px;
+            background-image: url(images/line.png);
+        }
+        .tips li{
+            float: left;
+            line-height: 38px;
+            font-size: 14px;
+            color: black;
+
+        }
+        .line{
+            color: #666666;
+            position: absolute;
+            top: 35px;
+        }
+        .tips li:nth-child(1){margin-left: 30px;}
+        .tips li:nth-child(2){margin-left: 430px;}
+        .tips li:nth-child(3){margin-left: 100px;}
+        .tips li:nth-child(4){margin-left: 100px;}
+
+        .item{
+            list-style-type:none;
+            margin-left: 5px;
+            width: 967px;
+            height: 211px;
+            margin-top: 20px;
+
+        }
+
+        .info li{
+            float:  left;
+            margin-top: 20px;
+        }
+        .info a{
+            font-size: 12px;
+            color: #333333;
+        }
+        .info_1{
+            margin-left: 10px;
+            border: 1px  solid firebrick;
+        }
+        .info_1 img{
+            width:150px;
+            height:150px;
+        }
+        .info_2{
+            margin-left: 50px;
+            line-height:150px;
+            width: 220px;
+            height: 20px;
+        }
+
+        .info_3{
+            margin-left: 95px;
+            line-height:150px;
+        }
+        .info_4{
+            margin-left: 90px;
+            line-height:150px;
+        }
+
+        .info_5{
+
+            margin-left: 90px;
+            line-height:150px;
+        }
+
+        .balance{
+            background-image: url(images/line.png);
+            width: 837px;
+            height: 41px;
+        }
+
+        .balance ul{
+            margin-top: -1px;
+            float: right;
+            width: 300px;
+        }
+
+        .blc{
+            font-size: 25px;
+            color: #C91623 ;
+            font-weight: bold;
+        }
+        #userpanel{
+            position: absolute;
+            left: 169px;
+            top: 165px;
+            width: 837px;
+            height: 577px;
+            background-color: #ffffff;
+            box-sizing: border-box;
+            border-width: 0px;
+        }
+        #submitbutton {
+            position: absolute;
+            left: 30px;
+            top: 500px;
+            width: 140px;
+            height: 40px;
+            background-color: rgba(194, 0, 26, 1);
+            box-sizing: border-box;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgba(121, 121, 121, 1);
+            border-radius: 5px;
+            font-size: 18px;
+            color: #FFFFFF;
+            text-align: center;
+        }
+        #editbutton {
+            position: absolute;
+            left: 30px;
+            top: 500px;
+            width: 140px;
+            height: 40px;
+            background-color: rgba(194, 0, 26, 1);
+            box-sizing: border-box;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgba(121, 121, 121, 1);
+            border-radius: 5px;
+            font-size: 18px;
+            color: #FFFFFF;
+            text-align: center;
+        }
+        #footer{
+            position: absolute;
+            top: 800px;
+            left: 200px;
+        }
+
+        .end_1{
+            margin-left:280px;
+            color: gray;
+        }
+        .end_2{
+            margin-left:200px;
+            color: gray;
+        }
+        .end_3{
+            margin-left:150px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+<!--
+<div id="base">
+    <div id="becenter">
+        -->
+        <table style="width: 100%">
+            <tr>
+                <td>
+
+
+    <div id="upper">
+        <table class="upperfont" >
+            <td style="min-width:40px;"><a href="">登录</a></td>
+            <td style="min-width:700px"><a href="">注册</a></td>
+            <td style="min-width:70px;"><a href="">购物车</a></td>
+            <td style="min-width:80px;"><a href="">我的订单</a></td>
+            <td style="min-width:70px;"><a href="">收藏夹</a></td>
+            <td style="min-width:70px;"><a href="">我的AIBUY</a></td>
+        </table>
+    </div>
+    <div id="center">
+
+        <!--AIBUY位置-->
+        <div id="brand">
+            <p>
+                <span>AIBUY</span>
+            </p>
+        </div>
+        <div class="upperfont" style="position: absolute;left: 50px;top: 110px;width: 143px;height: 17px;">
+            AIBUY > 个人中心
+        </div>
+        <div id="menu">
+            <div id="realine"></div>
+            <p><a href="javascript:btn1()">个人信息</a></p>
+            <p><a href="javascript:btn2()">我的订单</a></p>
+            <p><a href="javascript:btn3()">修改密码</a></p>
+        </div>
+        <div id="userpanel">
+            <div id="state1">
+                <p style="position: absolute;left: 15px;top: 10px;font-size: 26px;">个人信息</p>
+                <div class="line">————————————————————————————————————————————————————</div>
+                <ul style="padding-left: 20px;padding-top: 50px">
+                <li class="listyle">用户名：yikx</li>
+                <li class="listyle">电话：13312341234</li>
+                <li class="listyle">邮箱：1019590642@qq.com</li>
+                <li class="listyle">密保问题：你养过的宠物是什么？</li>
+                <li class="listyle">密保问题答案：金鱼</li>
+                </ul>
+                <div>
+                    <button type="button" id="editbutton" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="修改个人信息">编辑个人信息</button>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+                                </div>
+                                <div>
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="username" class="col-sm-10 control-label" style="text-align: left">输入用户名</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="username" placeholder="Name">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPhonenumber" class="col-sm-10 control-label" style="text-align: left">输入电话</label>
+                                            <div class="col-sm-10">
+                                                <input type="tel" class="form-control" id="inputPhonenumber" placeholder="Phonenumber">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputEmail" class="col-sm-10 control-label" style="text-align: left">输入邮箱</label>
+                                            <div class="col-sm-10">
+                                                <input type="tel" class="form-control" id="inputEmail" placeholder="Email">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputQuestion" class="col-sm-10 control-label" style="text-align: left">输入密码提示问题</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="inputQuestion" placeholder="Question">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputAnswer" class="col-sm-10 control-label" style="text-align: left">输入密码提示问题答案</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="inputAnswer" placeholder="Answer">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" onclick="mysend()">确认修改</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="state2">
+                <p style="position: absolute;left: 15px;top: 10px;font-size: 26px;">订单信息</p>
+                <div class="line">————————————————————————————————————————————————————</div>
+                <ul style="padding-left: 20px;padding-top: 50px">
+                    <li class="listyle2">订单号：202006189381234            创建时间：2020-06-18 9:38:12</li>
+                    <li class="listyle2">收件人：yikx  湖北 武汉 华中科技大学</li>
+                    <li class="listyle2">订单状态：已付款</li>
+                    <li class="listyle2">支付方式：支付宝</li>
+                </ul>
+                <div class="tips">
+                    <ul>
+                        <li>商品信息</li>
+                        <li>单价</li>
+                        <li>数量</li>
+                        <li>合计</li>
+                    </ul>
+                </div>
+                <div class="info">
+                    <ul class="item" id="item_1" name="item">
+                        <li class="info_1"><img src="images/u358.jpg"/></li>
+                        <li class="info_2"><a href="">IPhone8 128G/256G 金色银色苹果手机</a></li>
+                        <li class="info_3">￥<span class="product-price">6999</span></li>
+                        <li class="info_4">*<span class="amount">1</span></li>
+                        <li class="info_5">￥<span class="total-price">6999</span></li>
+                    </ul>
+                </div>
+                <div class="balance">
+                    <ul>总价 <span class="blc">￥6999</span></ul>
+                </div>
+            </div>
+            <div id="state3">
+                <div class="form-group">
+                    <label for="inputPassword1" class="col-sm-10 control-label" style="text-align: left">原始密码</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword2" class="col-sm-10 control-label" style="text-align: left">新密码</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-10 control-label" style="text-align: left">确认密码</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                    </div>
+                </div>
+                <div>
+                    <button type="button" id="submitbutton" onclick="myupdate()">提交修改</button>
+                </div>
+            </div>
+            <!--
+            <div>
+                <button type="button" id="submitbutton" onclick="myclick()">下一步</button>
+            </div>
+            -->
+        </div>
+    </div>
+    <div id="footer">
+        <ul><li class="end_1">友情链接:</li>
+            <li class="end_2"><a href="https://www.alipay.com/">支付宝</a>|<a href="https://www.taobao.com/">淘宝</a>|<a href="https://www.kaola.com/">网易考拉</a>|<a href="https://daddylab.com/">老爸测评</a></li>
+            <li class="end_3">Copyright 2020 AIBUY.com All Rights Reserved</li>
+        </ul>
+    </div>
+                </td>
+            </tr>
+        </table>
+        <!--
+</div>
+</div>
+-->
+</body>
+<script src="/jquery/jquery-3.4.1.min.js"></script>
+<script src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script>
+    var one=document.getElementById("state1");
+    var two=document.getElementById("state2");
+    var three=document.getElementById("state3");
+    var btn=document.getElementById("submitbutton");
+    var count=0;
+    window.onload=function () {
+        one.style.display="block";
+        two.style.display="none";
+        three.style.display="none";
+    }
+    function btn1() {
+        one.style.display="block";
+        two.style.display="none";
+        three.style.display="none";
+    }
+    function btn2() {
+        two.style.display="block";
+        one.style.display="none";
+        three.style.display="none";
+    }
+    function btn3() {
+        three.style.display="block";
+        two.style.display="none";
+        one.style.display="none";
+    }
+    function myedit() {
+
+    }
+    function myupdate() {
+
+    }
+
+    $('#exampleModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);// Button that triggered the modal
+        var recipient = button.data('whatever');// Extract info from data-* attributes
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+
+        var modal = $(this);
+        modal.find('.modal-title').text(recipient);
+        //modal.find('.modal-body input').val(recipient);
+    })
+    function mysend() {
+        var name = $('input[id="username"]').val();
+        var Phonenumber = $('input[id="inputPhonenumber"]').val();
+        var Email = $('input[id="inputEmail"]').val();
+        var Question = $('input[id="inputQuestion"]').val();
+        var Answer = $('input[id="inputAnswer"]').val();
+        alert(name);
+        alert(Phonenumber);
+        alert(Email);
+        alert(Question);
+        alert(Answer);
+    }
+</script>
+</html>
