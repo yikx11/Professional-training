@@ -193,14 +193,4 @@
 
     getCookie();
 </script>
-<script>
-    function pay() {
-        var msg="test";
-        var d=new Date();
-        d.setTime(d.getTime()+2*24*60*60);
-        document.cookie="ordernumber="+msg+"; expires="+d.toGMTString();
-        window.location.href='/pages/ma/pages/pay.html';
-
-    }
-</script>
 </html>

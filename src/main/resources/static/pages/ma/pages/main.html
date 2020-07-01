@@ -458,13 +458,13 @@
 <script>
     /*采用的是关键字搜索*/
     function state1() {
-        //location.href='/pages/tanzhao/html/index.html';
+        location.href='/pages/tanzhao/html/index.html';
         var mainword=jQuery("#u_name").val();
         var d=new Date();
         d.setTime(d.getTime()+2*24*60*60);
         var searchtype="1";
-        document.cookie="searchtype="+searchtype+"; expires="+d.toGMTString();
-        document.cookie="mainword="+mainword+"; expires="+d.toGMTString();
+        document.cookie="searchtype="+searchtype+"; path=/; expires="+d.toGMTString();
+        document.cookie="mainword="+mainword+"; path=/; expires="+d.toGMTString();
     }
     function type1() {
         //location.href='/pages/tanzhao/html/index.html';
