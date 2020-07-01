@@ -1,0 +1,219 @@
+body {
+            font-size: 12px;
+            font-family: Arial;
+        }
+
+        /*公共样式*/
+
+        div.homepageCetegolyProducts {
+
+margin:0 auto;
+            max-width: 1013px;
+            background-color: #F5F5F5;
+            margin-top:34px;
+
+           // padding:50px 10px 50px 10px;
+
+        }
+        div.eachHomepageCetegolyProducts{
+            position:relative; text-align:center; margin:0 auto;;
+        }
+
+        div.productItem {
+            width: 189px;
+            height: 285px;
+            background-color: white;
+            border: solid 1px white;
+            margin:8px 3px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        span.productItemDisc {
+            display: block;
+            padding:16px;
+            color: #666666;
+        }
+
+        span.productPrice {
+            font-size: 16px;
+            color: #FF003A;
+            padding-left: 16px;
+            display: block;
+            margin-top: -10px;
+        }
+
+        a.productItemDiscLink:hover {
+            text-decoration: none;
+        }
+
+        div.productItem img {
+            width: 187px;
+            height:190px;
+        }
+
+        div.productItem img:hover {
+            opacity: 0.7;
+        }
+
+        div.eachHomepageCetegolyProducts {
+            margin:0 0 40px 0;
+        }
+
+        span.cetegolyTitle {
+            font-size: 16px;
+            margin-left: 20px;
+            color:#646464;
+            font-weight: bold;
+        }
+
+        div.leftmark {
+            width:5px;
+            height:20px;
+            background-color: #19C8A9;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        img.endding {
+            display: block;
+            width: 82px;
+            margin:0 auto;
+        }
+
+    body {
+            font-size: 12px;
+            font-family: Arial;
+        }
+
+        /*公共样式*/
+
+        div.categoryWithCarousel {
+            width:100%;
+            position: relative;
+        }
+
+        div.hearbar {
+            background-color: #DD2727;
+            height:36px;
+        }
+
+        div.head {
+            width: 190px;
+            height:36px;
+            margin-left: 20px;
+            background-color: #C60A0A;
+            padding-left: 10px;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            line-height: 36px;
+        }
+
+        div.rightMenu {
+            display: inline-block;
+        }
+
+        div.rightMenu span {
+            margin:0 20px 0 20px;
+        }
+
+        div.rightMenu img {
+            height:30px;
+        }
+
+        div.rightMenu a {
+            color: white;
+            font-size: 15px;
+            text-decoration: none;
+            line-height: 36px;
+        }
+
+        div.carousel-of-product {
+            width:1024px;
+            height:510px;
+            margin:0 auto;
+        }
+
+        img.carouselImage {
+            height:510px !important;
+        }
+
+        div.carouselBackgroundDiv {
+            height:510px;
+            width: 100%;
+            background-color: #E8E8E8;
+            z-index: -1;
+        }
+
+        /*轮播图*/
+
+        div.cetegoryBar {
+            width: 1020px;
+            height: 510px;
+            position: absolute;
+        }
+
+        div.categoryMenu {
+            width:200px;
+            background-color: #E2E2E3;
+            margin-left: 20px;
+            float: left;
+        }
+
+        div.eachCategory {
+            line-height: 30px;
+            padding-left: 10px;
+            font-size: 14px;
+        }
+
+        div.eachCategory:hover {
+            background-color: white;
+        }
+
+        div.eachCategory span{
+            margin-right: 10px;
+        }
+
+        div.categoryMenu a {
+            color: #000;
+        }
+
+        div.categoryMenu a:hover {
+            color: rgb(135, 206, 250);
+            text-decoration: none;
+        }
+
+        div.productsAsideCategorys {
+            width:800px;
+            height:510px;
+            background-color: #FFF;
+            float: left;
+        }
+
+        div.separator {
+            margin-top: 20px;
+            border-bottom:dashed 1px #E7E7E7;
+        }
+
+        div.productsAsideCategorys div.row {
+            margin:20px 80px 0px 80px;
+        }
+
+        div.productsAsideCategorys div.row a {
+            color:black;
+            font-size: 14px;
+            margin: 8px;
+        }
+
+        div.productsAsideCategorys div.row a:hover {
+            color: #C40000;
+            text-decoration: none;
+        }
+      div.col-md-6{
+        weight:600px;
+      }
+div.footer_top{
+   position:relative; text-align:center; margin:0 auto;;
+}
