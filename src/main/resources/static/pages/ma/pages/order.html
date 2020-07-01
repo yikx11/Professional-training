@@ -15,7 +15,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="settype1()"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">添加收货人信息</h4>
+                <h4 class="modal-title" id="myModalLabel" onclick="settype1()">添加收货人信息</h4>
             </div>
             <div class="modal-body">
                 <form action="" method="get">
@@ -277,7 +277,8 @@
     <div id="u261" class="ax_default label">
         <div id="u261_div" class=""></div>
         <div id="u261_text" class="text ">
-            <p><span style="text-decoration:none;">湖北 &gt; 武汉</span></p>
+            <!--<tbody id="cityone"></tbody>-->
+            <p><span style="text-decoration:none;" id="cityone">湖北 > 武汉</span></p>
         </div>
     </div>
 
@@ -285,7 +286,7 @@
     <div id="u262" class="ax_default label">
         <div id="u262_div" class=""></div>
         <div id="u262_text" class="text ">
-            <p><span style="text-decoration:none;">yikx收</span></p>
+            <p><span style="text-decoration:none;" id="receiverone">yikx收</span></p>
         </div>
     </div>
 
@@ -293,7 +294,7 @@
     <div id="u263" class="ax_default label">
         <div id="u263_div" class=""></div>
         <div id="u263_text" class="text ">
-            <p><span style="text-decoration:none;">华中科技大学</span></p>
+            <p><span style="text-decoration:none;" id="detailone">华中科技大学</span></p>
         </div>
     </div>
 
@@ -301,10 +302,30 @@
     <div id="u264" class="ax_default label">
         <div id="u264_div" class=""></div>
         <div id="u264_text" class="text ">
-            <p><span style="text-decoration:none;">13312341234</span></p>
+            <p><span style="text-decoration:none;" id="phoneone">13312341234</span></p>
+        </div>
+    </div>
+    <!--在第一个框处，是添加地址信息-->
+    <div id="u2652" class="ax_default flow_shape">
+        <img id="u2652_img" class="img " src="/pages/ma/images/order/u265.svg" alt=""/>
+        <div id="u2652_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
         </div>
     </div>
 
+    <div id="u2662" class="ax_default label">
+
+        <div id="u2662_div" class=""></div>
+        <div id="u2662_text" class="text ">
+
+            <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#myModal" onclick="settype1()">
+                添加收货人信息
+            </button>
+
+        </div>
+    </div>
+
+    <!--第二个框-->
     <!-- Unnamed (矩形) -->
     <div id="u265" class="ax_default flow_shape">
         <img id="u265_img" class="img " src="/pages/ma/images/order/u265.svg" alt=""/>
@@ -318,12 +339,169 @@
         <div id="u266_div" class=""></div>
         <div id="u266_text" class="text ">
 
+            <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#myModal" onclick="settype1()">
+                添加收货人信息
+            </button>
+
+        </div>
+    </div>
+
+    <!--第二个框、存放已经填写的地址信息-->
+    <!-- Unnamed (矩形) -->
+    <div id="u2592" class="ax_default flow_shape">
+        <img id="u2592_img" class="img " src="/pages/ma/images/order/u259.svg" alt=""/>
+        <div id="u2592_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (线) -->
+    <div id="u2602" class="ax_default line">
+        <img id="u2602_img" class="img " src="/pages/ma/images/order/u260.svg" alt=""/>
+        <div id="u2602_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u2612" class="ax_default label">
+        <div id="u2612_div" class=""></div>
+        <div id="u2612_text" class="text ">
+            <p><span style="text-decoration:none;" id="citytwo">湖北 &gt; 武汉</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u2622" class="ax_default label">
+        <div id="u2622_div" class=""></div>
+        <div id="u2622_text" class="text ">
+            <p><span style="text-decoration:none;" id="receivertwo">yikx收</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u2632" class="ax_default label">
+        <div id="u2632_div" class=""></div>
+        <div id="u2632_text" class="text ">
+            <p><span style="text-decoration:none;" id="detailtwo">华中科技大学</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u2642" class="ax_default label">
+        <div id="u2642_div" class=""></div>
+        <div id="u2642_text" class="text ">
+            <p><span style="text-decoration:none;" id="phonetwo">13312341234</span></p>
+        </div>
+    </div>
+    <div id="u2852" class="ax_default label">
+        <div id="u2852_div" class=""></div>
+        <div id="u2852_text" class="text ">
+            <!--            <p><span style="text-decoration:none;">编辑</span></p>-->
+            <button type="button" class="btn ma13" data-toggle="modal" data-target="#myModal" onclick="settype2()">
+                编辑
+            </button>
+        </div>
+    </div>
+    <div id="u2862" class="ax_default label">
+        <div id="u2862_div" class=""></div>
+        <div id="u2862_text" class="text ">
+            <button type="button" class="btn ma13">
+                删除
+            </button>
+        </div>
+    </div>
+    <!--第二个框结束-->
+
+    <!--第三个框-->
+    <!--第三个框-添加地址信息-->
+    <!-- Unnamed (矩形) -->
+    <div id="u2653" class="ax_default flow_shape">
+        <img id="u2653_img" class="img " src="/pages/ma/images/order/u265.svg" alt=""/>
+        <div id="u2653_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+        </div>
+    </div>
+
+    <div id="u2663" class="ax_default label">
+
+        <div id="u2663_div" class=""></div>
+        <div id="u2663_text" class="text ">
+
             <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#myModal">
                 添加收货人信息
             </button>
 
         </div>
     </div>
+
+    <!--第三个框、存放已经填写的地址信息-->
+    <!-- Unnamed (矩形) -->
+    <div id="u2593" class="ax_default flow_shape">
+        <img id="u2593_img" class="img " src="/pages/ma/images/order/u259.svg" alt=""/>
+        <div id="u2593_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (线) -->
+    <div id="u2603" class="ax_default line">
+        <img id="u2603_img" class="img " src="/pages/ma/images/order/u260.svg" alt=""/>
+        <div id="u2603_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u2613" class="ax_default label">
+        <div id="u2613_div" class=""></div>
+        <div id="u2613_text" class="text ">
+            <p><span style="text-decoration:none;"id="citythree">湖北 &gt; 武汉</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u2623" class="ax_default label">
+        <div id="u2623_div" class=""></div>
+        <div id="u2623_text" class="text ">
+            <p><span style="text-decoration:none;" id="receiverthree">yikx收</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u2633" class="ax_default label">
+        <div id="u2633_div" class=""></div>
+        <div id="u2633_text" class="text ">
+            <p><span style="text-decoration:none;" id="detailthree">华中科技大学</span></p>
+        </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u2643" class="ax_default label">
+        <div id="u2643_div" class=""></div>
+        <div id="u2643_text" class="text ">
+            <p><span style="text-decoration:none;" id="phonethree">13312341234</span></p>
+        </div>
+    </div>
+    <div id="u2853" class="ax_default label">
+        <div id="u2853_div" class=""></div>
+        <div id="u2853_text" class="text ">
+            <!--            <p><span style="text-decoration:none;">编辑</span></p>-->
+            <button type="button" class="btn ma13" data-toggle="modal" data-target="#myModal" onclick="settype2()">
+                编辑
+            </button>
+        </div>
+    </div>
+    <div id="u2863" class="ax_default label">
+        <div id="u2863_div" class=""></div>
+        <div id="u2863_text" class="text ">
+            <button type="button" class="btn ma13">
+                删除
+            </button>
+        </div>
+    </div>
+    <!--第三个框结束-->
+
 
     <!-- Unnamed (矩形) -->
     <div id="u267" class="ax_default label">
@@ -500,15 +678,14 @@
     </div>
 
     <!-- Unnamed (矩形) -->
-    <!--删除按钮，暂时没做-->
-    <!--<div id="u286" class="ax_default label">
+    <div id="u286" class="ax_default label">
         <div id="u286_div" class=""></div>
         <div id="u286_text" class="text ">
             <button type="button" class="btn ma13">
                 删除
             </button>
         </div>
-    </div>-->
+    </div>
 </div>
 </body>
 <script src="/jquery/jquery-3.4.1.min.js"></script>
@@ -517,8 +694,22 @@
 <script>
     //需要从cookie中读取user_id！！！！！！！！
     var user_id=1;//这个user_id应该从cookie中读取,默认是1
+    var addresslist;
+    var boxnum=1;//表示第几块发出的按钮请求
+    function setboxnum1()
+    {
+        boxnum=1;
+    }
+    function setboxnum2()
+    {
+        boxnum=2;
+    }
+    function setboxnum3()
+    {
+        boxnum=3;
+    }
     function write_userid() {
-        var user_id=2;//从cookie中获取，默认是2
+        var user_id=4;//从cookie中获取，默认是2
         var d=new Date();
         d.setTime(d.getTime()+2*24*60*60);
         document.cookie="user_id="+user_id+"; expires="+d.toGMTString();
@@ -526,7 +717,7 @@
     function init_userid()
     {
         //从cookie中获取用户id
-        //write_userid();
+        write_userid();
         var cookies=document.cookie.split(";");
         for(var i=0;i<cookies.length;i++)
         {
@@ -549,8 +740,289 @@
         jQuery.post("/addressfind",{"user_id":user_id},function (rst) {
             //alert(rst.length);
             //rst.length//代表了地址信息的个数
+            if(rst.length==0)
+            {
+                addresslist=rst;
+                //alert("进入长度为0的");
+                //没有信息
+                //第一个框添加地址信息，其他全隐藏
+                document.getElementById("u259").style.display="none";
+                document.getElementById("u260").style.display="none";
+                document.getElementById("u261").style.display="none";
+                document.getElementById("u262").style.display="none";
+                document.getElementById("u263").style.display="none";
+                document.getElementById("u264").style.display="none";
+                document.getElementById("u285").style.display="none";
+                document.getElementById("u2652").style.display="block";
+                document.getElementById("u2662").style.display="block";
+                document.getElementById("u265").style.display="none";
+                document.getElementById("u266").style.display="none";
+                document.getElementById("u2592").style.display="none";
+                document.getElementById("u2602").style.display="none";
+                document.getElementById("u2612").style.display="none";
+                document.getElementById("u2622").style.display="none";
+                document.getElementById("u2632").style.display="none";
+                document.getElementById("u2642").style.display="none";
+                document.getElementById("u2852").style.display="none";
+                document.getElementById("u2653").style.display="none";
+                document.getElementById("u2663").style.display="none";
+                document.getElementById("u2593").style.display="none";
+                document.getElementById("u2603").style.display="none";
+                document.getElementById("u2613").style.display="none";
+                document.getElementById("u2623").style.display="none";
+                document.getElementById("u2633").style.display="none";
+                document.getElementById("u2643").style.display="none";
+                document.getElementById("u2853").style.display="none";
+                document.getElementById("u286").style.display="none";
+                document.getElementById("u2862").style.display="none";
+                document.getElementById("u2863").style.display="none";
+
+
+            }
+            else if(rst.length==1)
+            {
+                //alert("进入长度为1的");
+                //只有一个信息
+                //第一个框显示地址信息、第二个框添加地址信息，其他全隐藏
+                document.getElementById("u259").style.display="block";
+                document.getElementById("u260").style.display="block";
+                document.getElementById("u261").style.display="block";
+                document.getElementById("u262").style.display="block";
+                document.getElementById("u263").style.display="block";
+                document.getElementById("u264").style.display="block";
+                document.getElementById("u285").style.display="block";
+                document.getElementById("u2652").style.display="none";
+                document.getElementById("u2662").style.display="none";
+                document.getElementById("u265").style.display="block";
+                document.getElementById("u266").style.display="block";
+                document.getElementById("u2592").style.display="none";
+                document.getElementById("u2602").style.display="none";
+                document.getElementById("u2612").style.display="none";
+                document.getElementById("u2622").style.display="none";
+                document.getElementById("u2632").style.display="none";
+                document.getElementById("u2642").style.display="none";
+                document.getElementById("u2852").style.display="none";
+                document.getElementById("u2653").style.display="none";
+                document.getElementById("u2663").style.display="none";
+                document.getElementById("u2593").style.display="none";
+                document.getElementById("u2603").style.display="none";
+                document.getElementById("u2613").style.display="none";
+                document.getElementById("u2623").style.display="none";
+                document.getElementById("u2633").style.display="none";
+                document.getElementById("u2643").style.display="none";
+                document.getElementById("u2853").style.display="none";
+                document.getElementById("u286").style.display="block";
+                document.getElementById("u2862").style.display="none";
+                document.getElementById("u2863").style.display="none";
+
+                //修改显示信息
+                //第一个框城市
+                var cityone="";
+                var json=rst[0];
+                cityone=json.province+">"+json.city;
+                jQuery("#cityone").html(cityone);
+
+                //第一个框收件人
+                var receiverone="";
+                receiverone=json.receiver+"收";
+                jQuery("#receiverone").html(receiverone);
+
+                //第一个框详细信息
+                var detailone="";
+                detailone=json.detail;
+                jQuery("#detailone").html(detailone);
+
+                //第一个框电话
+                var phoneone=0;
+                phoneone=json.phonenumber;
+                jQuery("#phoneone").html(phoneone);
+
+            }
+            else if(rst.length==2)
+            {
+                //alert("进入长度为2的");
+                //有二个信息
+                //第一个框显示地址信息、第二个框显示地址信息，第三个框添加地址信息
+                document.getElementById("u259").style.display="block";
+                document.getElementById("u260").style.display="block";
+                document.getElementById("u261").style.display="block";
+                document.getElementById("u262").style.display="block";
+                document.getElementById("u263").style.display="block";
+                document.getElementById("u264").style.display="block";
+                document.getElementById("u285").style.display="block";
+                document.getElementById("u2652").style.display="none";
+                document.getElementById("u2662").style.display="none";
+                document.getElementById("u265").style.display="none";
+                document.getElementById("u266").style.display="none";
+                document.getElementById("u2592").style.display="block";
+                document.getElementById("u2602").style.display="block";
+                document.getElementById("u2612").style.display="block";
+                document.getElementById("u2622").style.display="block";
+                document.getElementById("u2632").style.display="block";
+                document.getElementById("u2642").style.display="block";
+                document.getElementById("u2852").style.display="block";
+                document.getElementById("u2653").style.display="block";
+                document.getElementById("u2663").style.display="block";
+                document.getElementById("u2593").style.display="none";
+                document.getElementById("u2603").style.display="none";
+                document.getElementById("u2613").style.display="none";
+                document.getElementById("u2623").style.display="none";
+                document.getElementById("u2633").style.display="none";
+                document.getElementById("u2643").style.display="none";
+                document.getElementById("u2853").style.display="none";
+                document.getElementById("u286").style.display="block";
+                document.getElementById("u2862").style.display="block";
+                document.getElementById("u2863").style.display="none";
+
+                //修改显示信息
+                //第一个框城市
+                var cityone="";
+                var json=rst[0];
+                cityone=json.province+">"+json.city;
+                jQuery("#cityone").html(cityone);
+
+                //第一个框收件人
+                var receiverone="";
+                receiverone=json.receiver+"收";
+                jQuery("#receiverone").html(receiverone);
+
+                //第一个框详细信息
+                var detailone="";
+                detailone=json.detail;
+                jQuery("#detailone").html(detailone);
+
+                //第一个框电话
+                var phoneone=0;
+                phoneone=json.phonenumber;
+                jQuery("#phoneone").html(phoneone);
+
+                //第二个框城市
+                json=rst[1];
+                var citytwo="";
+
+                citytwo=json.province+">"+json.city;
+                jQuery("#citytwo").html(citytwo);
+
+                //第2个框收件人
+                var receivertwo="";
+                receivertwo=json.receiver+"收";
+                jQuery("#receivertwo").html(receivertwo);
+
+                //第2个框详细信息
+                var detailtwo="";
+                detailtwo=json.detail;
+                jQuery("#detailtwo").html(detailtwo);
+
+                //第2个框电话
+                var phonetwo=0;
+                phonetwo=json.phonenumber;
+                jQuery("#phonetwoe").html(phonetwo);
+            }
+            else
+            {
+                //alert("进入长度为3的");
+                //有三个信息
+                //全部都是显示地址信息
+                document.getElementById("u259").style.display="block";
+                document.getElementById("u260").style.display="block";
+                document.getElementById("u261").style.display="block";
+                document.getElementById("u262").style.display="block";
+                document.getElementById("u263").style.display="block";
+                document.getElementById("u264").style.display="block";
+                document.getElementById("u285").style.display="block";
+                document.getElementById("u2652").style.display="none";
+                document.getElementById("u2662").style.display="none";
+                document.getElementById("u265").style.display="none";
+                document.getElementById("u266").style.display="none";
+                document.getElementById("u2592").style.display="block";
+                document.getElementById("u2602").style.display="block";
+                document.getElementById("u2612").style.display="block";
+                document.getElementById("u2622").style.display="block";
+                document.getElementById("u2632").style.display="block";
+                document.getElementById("u2642").style.display="block";
+                document.getElementById("u2852").style.display="block";
+                document.getElementById("u2653").style.display="none";
+                document.getElementById("u2663").style.display="none";
+                document.getElementById("u2593").style.display="block";
+                document.getElementById("u2603").style.display="block";
+                document.getElementById("u2613").style.display="block";
+                document.getElementById("u2623").style.display="block";
+                document.getElementById("u2633").style.display="block";
+                document.getElementById("u2643").style.display="block";
+                document.getElementById("u2853").style.display="block";
+                document.getElementById("u286").style.display="block";
+                document.getElementById("u2862").style.display="block";
+                document.getElementById("u2863").style.display="block";
+
+                //修改显示信息
+                //第一个框城市
+                var cityone="";
+                var json=rst[0];
+                cityone=json.province+">"+json.city;
+                jQuery("#cityone").html(cityone);
+
+                //第一个框收件人
+                var receiverone="";
+                receiverone=json.receiver+"收";
+                jQuery("#receiverone").html(receiverone);
+
+                //第一个框详细信息
+                var detailone="";
+                detailone=json.detail;
+                jQuery("#detailone").html(detailone);
+
+                //第一个框电话
+                var phoneone=0;
+                phoneone=json.phonenumber;
+                jQuery("#phoneone").html(phoneone);
+
+                //第二个框城市
+                json=rst[1];
+                var citytwo="";
+
+                citytwo=json.province+">"+json.city;
+                jQuery("#citytwo").html(citytwo);
+
+                //第2个框收件人
+                var receivertwo="";
+                receivertwo=json.receiver+"收";
+                jQuery("#receivertwo").html(receivertwo);
+
+                //第2个框详细信息
+                var detailtwo="";
+                detailtwo=json.detail;
+                jQuery("#detailtwo").html(detailtwo);
+
+                //第2个框电话
+                var phonetwo=0;
+                phonetwo=json.phonenumber;
+                jQuery("#phonetwo").html(phonetwo);
+
+                //第3个框城市
+                json=rst[2];
+                var citythree="";
+
+                citythree=json.province+">"+json.city;
+                jQuery("#citythree").html(citythree);
+
+                //第3个框收件人
+                var receiverthree="";
+                receiverthree=json.receiver+"收";
+                jQuery("#receiverthree").html(receiverthree);
+
+                //第3个框详细信息
+                var detailthree="";
+                detailthree=json.detail;
+                jQuery("#detailthree").html(detailthree);
+
+                //第3个框电话
+                var phonethree=0;
+                phonethree=json.phonenumber;
+                jQuery("#phonethree").html(phonethree);
+            }
         })
     }
+    init_add();
 
     function pay() {
         var msg="test";
@@ -563,9 +1035,12 @@
     var addresstype=1;
     function settype1() {
         addresstype=1;
+
     }
     function settype2() {
         addresstype=2;
+
+
     }
     function judge() {
         if(addresstype == 2)
@@ -591,6 +1066,9 @@
         jQuery.post("/addressinsert",{"user_id":user_id,"province":province,"city":city,"detail":detail,"receiver":receiver,"phonenumber":phonenumber},function (rst) {
 
         })
+        init_add();
+        location.href='';
+
     }
     function change_address()
     {
