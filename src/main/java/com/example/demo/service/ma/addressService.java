@@ -33,7 +33,7 @@ public class addressService {
     public boolean doDelete(Map<String,String> map){
         boolean flag=false;
         try {
-            int id=Integer.parseInt(map.get("id"));
+            int id=Integer.parseInt(map.get("address_id"));
             int r=addressMapper.delete(id);
             if(r>0){
                 flag=true;

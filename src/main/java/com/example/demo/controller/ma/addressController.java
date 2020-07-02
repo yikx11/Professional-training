@@ -43,6 +43,16 @@ public class addressController {
         return msg;
     }
 
+    @RequestMapping("/addressdelete")
+    public String delete(@RequestParam Map<String,String> map) {
+        String msg="删除地址失败！";
+        boolean flag=addressService.doDelete(map);
+        if(flag){
+            msg="删除成功";
+        }
+        return msg;
+    }
+
     @RequestMapping("/addressfind")
     public List<Map<String,Object>> findByUser_id(@RequestParam Map<String,String> map) {
         int user_id=Integer.valueOf(map.get("user_id"));

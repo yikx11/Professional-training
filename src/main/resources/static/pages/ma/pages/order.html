@@ -398,7 +398,7 @@
         <div id="u2852_div" class=""></div>
         <div id="u2852_text" class="text ">
             <!--            <p><span style="text-decoration:none;">编辑</span></p>-->
-            <button type="button" class="btn ma13" data-toggle="modal" data-target="#myModal" onclick="settype2()">
+            <button type="button" class="btn ma13" data-toggle="modal" data-target="#myModal" onclick="setboxnum2()">
                 编辑
             </button>
         </div>
@@ -406,7 +406,7 @@
     <div id="u2862" class="ax_default label">
         <div id="u2862_div" class=""></div>
         <div id="u2862_text" class="text ">
-            <button type="button" class="btn ma13">
+            <button type="button" class="btn ma13" onclick="delete2()">
                 删除
             </button>
         </div>
@@ -487,7 +487,7 @@
         <div id="u2853_div" class=""></div>
         <div id="u2853_text" class="text ">
             <!--            <p><span style="text-decoration:none;">编辑</span></p>-->
-            <button type="button" class="btn ma13" data-toggle="modal" data-target="#myModal" onclick="settype2()">
+            <button type="button" class="btn ma13" data-toggle="modal" data-target="#myModal" onclick="setboxnum3()">
                 编辑
             </button>
         </div>
@@ -495,7 +495,7 @@
     <div id="u2863" class="ax_default label">
         <div id="u2863_div" class=""></div>
         <div id="u2863_text" class="text ">
-            <button type="button" class="btn ma13">
+            <button type="button" class="btn ma13" onclick="delete3()">
                 删除
             </button>
         </div>
@@ -671,7 +671,7 @@
         <div id="u285_div" class=""></div>
         <div id="u285_text" class="text ">
 <!--            <p><span style="text-decoration:none;">编辑</span></p>-->
-            <button type="button" class="btn ma13" data-toggle="modal" data-target="#myModal" onclick="settype2()">
+            <button type="button" class="btn ma13" data-toggle="modal" data-target="#myModal" onclick="setboxnum1()">
                 编辑
             </button>
         </div>
@@ -681,7 +681,7 @@
     <div id="u286" class="ax_default label">
         <div id="u286_div" class=""></div>
         <div id="u286_text" class="text ">
-            <button type="button" class="btn ma13">
+            <button type="button" class="btn ma13" onclick="delete1()">
                 删除
             </button>
         </div>
@@ -695,18 +695,76 @@
     //需要从cookie中读取user_id！！！！！！！！
     var user_id=1;//这个user_id应该从cookie中读取,默认是1
     var addresslist;
-    var boxnum=1;//表示第几块发出的按钮请求
+    var boxnum=1;//表示第几块发出的编辑请求
     function setboxnum1()
     {
         boxnum=1;
+        settype2();
     }
     function setboxnum2()
     {
         boxnum=2;
+        settype2();
     }
     function setboxnum3()
     {
         boxnum=3;
+        settype2();
+    }
+    function delete1()
+    {
+        //删除一号框的商品信息
+        jQuery.post("/addressfind",{"user_id":user_id},function (rst) {
+            var address_id=rst[0].address_id;
+            //alert(address_id);
+            jQuery.post("/addressdelete",{"address_id":address_id},function(rst2){
+                //(rst2);
+                //如果删除成功，重新加载数据
+                if(rst2=='删除成功')
+                {
+                    //重新加载本页面
+                    init_add();
+                    location.reload();
+                }
+            });
+        });
+
+    }
+    function delete2()
+    {
+        //删除二号框的商品信息
+        jQuery.post("/addressfind",{"user_id":user_id},function (rst) {
+            var address_id=rst[1].address_id;
+            //alert(address_id);
+            jQuery.post("/addressdelete",{"address_id":address_id},function(rst2){
+                //alert(rst2);
+                //如果删除成功，重新加载数据
+                if(rst2=='删除成功')
+                {
+                    //重新加载本页面
+                    init_add();
+                    location.reload();
+                }
+            });
+        });
+    }
+    function delete3()
+    {
+        //删除3号框的商品信息
+        jQuery.post("/addressfind",{"user_id":user_id},function (rst) {
+            var address_id=rst[2].address_id;
+            //alert(address_id);
+            jQuery.post("/addressdelete",{"address_id":address_id},function(rst2){
+                //alert(rst2);
+                //如果删除成功，重新加载数据
+                if(rst2=='删除成功')
+                {
+                    //重新加载本页面
+                    init_add();
+                    location.reload();
+                }
+            });
+        });
     }
     function write_userid() {
         var user_id=4;//从cookie中获取，默认是2
@@ -916,7 +974,7 @@
                 //第2个框电话
                 var phonetwo=0;
                 phonetwo=json.phonenumber;
-                jQuery("#phonetwoe").html(phonetwo);
+                jQuery("#phonetwo").html(phonetwo);
             }
             else
             {
@@ -1073,15 +1131,25 @@
     function change_address()
     {
         var address_id=1;//这里是简写，应该是由用户Id查表得到的
-        var user_id=1;
+
         var province=jQuery("#pro").val();
         var city=jQuery("#city").val();
         var detail=jQuery("#detail").val();
         var receiver=jQuery("#receiver").val();
         var phonenumber=jQuery("#phonenumber").val();
-        jQuery.post("/addresschange",{"address_id":address_id,"user_id":user_id,"province":province,"city":city,"detail":detail,"receiver":receiver,"phonenumber":phonenumber},function (rst) {
+        jQuery.post("/addressfind",{"user_id":user_id},function (rst) {
+            switch (boxnum) {
+                case 1:address_id=rst[0].address_id;break;
+                case 2:address_id=rst[1].address_id;break;
+                case 3:address_id=rst[2].address_id;break;
 
-        })
+            }
+            jQuery.post("/addresschange",{"address_id":address_id,"user_id":user_id,"province":province,"city":city,"detail":detail,"receiver":receiver,"phonenumber":phonenumber},function (rst2) {
+                init_add();
+                location.reload();
+            })
+        });
+
     }
 
 
