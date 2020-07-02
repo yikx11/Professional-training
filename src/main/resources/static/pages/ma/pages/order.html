@@ -775,6 +775,19 @@
     var user_id=1;//这个user_id应该从cookie中读取,默认是1
     var addresslist;
     var boxnum=1;//表示第几块发出的编辑请求
+    var address_id=1;//通过点击来更改
+    function setaddressid1()
+    {
+
+    }
+    function setaddressid2()
+    {
+
+    }
+    function setaddressid3()
+    {
+
+    }
     function setboxnum1()
     {
         boxnum=1;
@@ -1162,10 +1175,15 @@
     init_add();
 
     function pay() {
-        var msg="test";
+        var ordernumber=20200702000000+Math.ceil(Math.random()*10000) ;
+        alert(ordernumber);
         var d=new Date();
+        var e=new Date();
         d.setTime(d.getTime()+2*24*60*60);
-        document.cookie="ordernumber="+msg+"; expires="+d.toGMTString();
+        document.cookie="ordernumber="+ordernumber+"; expires="+d.toGMTString();
+        jQuery.post("/orderinsert",{"address_id":address_id,"cart_id":market_id,"order_number":ordernumber,"time":e,"state":1,"type":ordertype,"goods_id":goods_id,"user_id":user_id,"amount":goods_num},function (rst) {
+
+        })
         window.location.href='/pages/ma/pages/pay.html';
 
     }

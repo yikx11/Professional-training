@@ -41,17 +41,6 @@ public class orderService {
         return flag;
     }
 
-    public boolean doUpdate(Map<String,String> map){
-        boolean flag=false;
-        try {
-            int r=orderMapper.update(map);
-            if(r>0){
-                flag=true;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return flag;
-    }
+
 
 }

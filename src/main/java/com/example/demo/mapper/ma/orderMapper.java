@@ -30,20 +30,11 @@ public interface orderMapper {
             "value(#{order.order_id},#{order.address_id},#{order.cart_id},#{order.order_number},#{order.time},#{order.state},#{order.type},#{order.goods_id},#{order.user_id},#{order.amount})")
     public int insert(@Param("order") Map<String, String> order);//@Param("tea") 表示参数的别名，在sql语句中使用
 
-    /**
-     * 根据订单号来改数量
-     *
-     * 只要传递多个参数的都可以使用map集合进行封装，可以减少方法的参数个数
-     */
-    //修改密码
-    @Update("update order_info" +
-            " set amount=#{o.amount}" +
-            " where order_number=#{o.order_number}")
-    public int update(@Param("o") Map<String, String> map);
+
 
 
     //如果想通过传入表名来找到表中信息，可用${table}来赋值给table
-    //通过id删除用户
+    //通过id删除订单
     @Delete("delete from order_info where order_id=#{id}")
     public int delete(int id);
 }
