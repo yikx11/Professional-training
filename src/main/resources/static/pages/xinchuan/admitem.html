@@ -270,6 +270,7 @@
 					<li>商品id：<input type="text" class="new" id="itid"/></li>
 					<li>商品名称：<input type="text" class="new" id="itname"/></li>
 					<li>商品图片：<input type="file" id="itimage"/></li>
+					<!--这里要和上传配合-->
 					<li>商品类别：
 					<input type="checkbox" name="itkind" value="女装/男装"/>女装/男装
 					|
@@ -405,7 +406,9 @@
 			var no=document.getElementById("no").innerHTML
 			var newno=parseInt(no)+1;
 			document.getElementById("no").innerHTML=newno;
-			
+
+		//	上传操作
+			uploadimg();
 		}
 		
 		function cl(){
@@ -553,6 +556,25 @@
 			tr.appendChild(td6);
 			**/
 		}
+		<!--上传操作-->
+		function uploadimg() {
+			var f=jQuery("#itemimage")[0].files[0];
+			var formData=new FormData();
+			formData.append("file",f);
+			jQuery.ajax({
+				type:"post",
+				url:"/uploadimg",
+				data:formData,
+				processData:false,
+				contentType:false,//jquery不需要设置content-type的类型
+				success:function (rst) {
+
+				},
+				fail:function (rst) {
+
+				}
+			})
+		}
 	</script>	
 	</body>
 	
@@ -561,4 +583,10 @@
 	<script type="text/html">
 		
 	</script>
+<script src="/jquery/ajaxfileupload.js"></script>
+<script>
+
+	
+
+</script>
 </html>
