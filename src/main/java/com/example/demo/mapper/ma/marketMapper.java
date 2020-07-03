@@ -18,4 +18,16 @@ public interface marketMapper {
     //  获取商品信息
     @Select("select * from goods_info where goods_id=#{n}")
     public Map<String,Object> findByGoodId(int id);
+
+    @Delete("delete from goods_info where goods_id=#{id}")
+    public int deleteGoods(int id);
+
+    @Insert("insert into goods_info(price,state,name,amount,type1,type2,type3,type4,type5,type6,type7,type8,type9,imgurl)" +
+            "value(#{good.price},#{good.state},#{good.name},#{good.amount},#{good.type1},#{good.type2},#{good.type3},#{good.type4},#{good.type5},#{good.type6},#{good.type7},#{good.type8},#{good.type9},#{good.imgurl})")
+    public int insertGoods(@Param("good") Map<String, String> goods);//@Param("tea") 表示参数的别名，在sql语句中使用
+
+    @Update("update goods_info" +
+            " set price=#{a.price},state=#{a.state},name=#{a.name},amount=#{a.amount},type1=#{a.type1},type2=#{a.type2},type3=#{a.type3},type4=#{a.type4},type5=#{a.type5},type6=#{a.type6},type7=#{a.type7},type8=#{a.type8},type9=#{a.type9},imgurl=#{a.imgurl}" +
+            " where goods_id=#{a.goods_id}")
+    public int update(@Param("a") Map<String, String> map);
 }

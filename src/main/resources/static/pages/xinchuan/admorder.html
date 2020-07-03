@@ -136,15 +136,15 @@
 		<div class="title">订单管理</div>
 		<div class="xian">————————————————————————————————————————————————————</div>
 		<div class="search">
-			<input class="searchtxt" name="searchtxt" type="text" style="padding-left: 5px;" placeholder="关键字"/>
-			<button class="searchbutton" type="submit" value="查询" />查询</button>
+			<input class="searchtxt" name="searchtxt" type="text" style="padding-left: 5px;" placeholder="请输入订单id" id="orderid"/>
+			<button class="searchbutton" type="button" value="查询" onclick="searchOrder()"/>查询</button>
 		</div>
 		<div class="message">
 			<ul>
-				<li class="mes">订单号：<span>202006189381234</span></li>
-				<li class="mes">创建时间：<span>2020/6/22 12：34：56</span></li>
-				<li class="mes">收件人：<span>湖北 武汉 华中科技大学 13312341234 yikx</span></li>
-				<li class="mes">订单状态：<span>已付款</span></li>
+				<li class="mes">订单号：<span id="ordernum">202006189381234</span></li>
+				<li class="mes">创建时间：<span id="time">2020/6/22 12：34：56</span></li>
+				<li class="mes">收件人：<span id="detail">湖北 武汉 华中科技大学 13312341234 yikx</span></li>
+				<li class="mes">订单状态：<span id="state">已付款</span></li>
 			</ul>
 
 		</div>
@@ -160,16 +160,834 @@
 		
 		<div class="info">
 			<ul class="item" id="item_1" name="item">
-				<li class="info_1"><img src="img/u358.jpg"/></li>
-				<li class="info_2"><a href="">IPhone8 128G/256G 金色银色苹果手机</a></li>
-				<li class="info_3">￥<span class="product-price">6999</span></li>
-				<li class="info_4">*<span class="amount">1</span></li>
-				<li class="info_5">￥<span class="total-price">6999</span></li>
-			</ul>	
+				<li class="info_1"><img src="img/u358.jpg" id="goods1_img"/></li>
+				<li class="info_2"><a href="" id="goods1_name">IPhone8 128G/256G 金色银色苹果手机</a></li>
+				<li class="info_3">￥<span class="product-price" id="price_1">6999</span></li>
+				<li class="info_4">*<span class="amount" id="amount1">1</span></li>
+				<li class="info_5">￥<span class="total-price" id="total_1">6999</span></li>
+			</ul>
+			<ul class="item" id="item_2" name="item">
+				<li class="info_1"><img src="img/u358.jpg" id="goods2_img"/></li>
+				<li class="info_2"><a href="" id="goods2_name">IPhone8 128G/256G 金色银色苹果手机</a></li>
+				<li class="info_3">￥<span class="product-price" id="price_2">6999</span></li>
+				<li class="info_4">*<span class="amount" id="amount2">1</span></li>
+				<li class="info_5">￥<span class="total-price" id="total_2">6999</span></li>
+			</ul>
+			<ul class="item" id="item_3" name="item">
+				<li class="info_1"><img src="img/u358.jpg" id="goods3_img"/></li>
+				<li class="info_2"><a href="" id="goods3_name">IPhone8 128G/256G 金色银色苹果手机</a></li>
+				<li class="info_3">￥<span class="product-price" id="price_3">6999</span></li>
+				<li class="info_4">*<span class="amount" id="amount3">1</span></li>
+				<li class="info_5">￥<span class="total-price" id="total_3">6999</span></li>
+			</ul>
+			<ul class="item" id="item_4" name="item">
+				<li class="info_1"><img src="img/u358.jpg" id="goods4_img"/></li>
+				<li class="info_2"><a href="" id="goods4_name">IPhone8 128G/256G 金色银色苹果手机</a></li>
+				<li class="info_3">￥<span class="product-price" id="price_4">6999</span></li>
+				<li class="info_4">*<span class="amount" id="amount4">1</span></li>
+				<li class="info_5">￥<span class="total-price" id="total_4">6999</span></li>
+			</ul>
+			<ul class="item" id="item_5" name="item">
+				<li class="info_1"><img src="img/u358.jpg" id="goods5_img"/></li>
+				<li class="info_2"><a href="" id="goods5_name">IPhone8 128G/256G 金色银色苹果手机</a></li>
+				<li class="info_3">￥<span class="product-price" id="price_5">6999</span></li>
+				<li class="info_4">*<span class="amount" id="amount5">1</span></li>
+				<li class="info_5">￥<span class="total-price" id="total_5">6999</span></li>
+			</ul>
 		</div>
 		
 		<div class="balance">
-				<ul>总价 <span class="blc">￥6999</span></ul>
+				<ul>总价 <span class="blc" id="totalsum">计算中......</span></ul>
 			</div>
 	</body>
+	<script src="jquery/jquery-3.4.1.min.js"></script>
+	<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script>
+
+	function searchOrder()
+	{
+		var order_id=1;
+		order_id=parseInt(jQuery("#orderid").val());
+		//alert(ordernumber);
+		//orderNumFind
+		jQuery.post("/orderIdFind",{"order_id":order_id},function (json) {
+
+			//rst是订单的一行
+			//alert(rst.order_number);
+			jQuery("#ordernum").html(json.order_number);
+			jQuery("#time").html(json.time);
+			//jQuery("#detail").html(rst.p);
+			//detail
+			var address_id=parseInt(json.address_id);
+
+			jQuery.post("/addressfind2",{"address_id":address_id},function (rst2) {
+				jQuery("#detail").html(rst2.province+" "+rst2.city+" "+rst2.detail+" "+rst2.phonenumber);
+			});
+			var orderState=parseInt(json.state);
+			if(orderState==1)
+			{
+				jQuery("#state").html("已付款");
+			}
+			else
+			{
+				jQuery("#state").html("未付款");
+			}
+
+			//处理下面的信息（商品信息）
+			var totalsum=0;
+			var ordertype=parseInt(json.type);
+			if(ordertype==1)
+			{
+				//是从商品进入的订单，这时候只有一个商品，获取商品的id
+				var goods_id=parseInt(json.goods_id);
+				var goods_num=parseInt(json.amount);
+				jQuery.post("/goodsdetailfind",{"goods_id":goods_id},function (rst2) {
+					var goods1_name=rst2.name;
+					//alert("商品名字是："+goods1_name);
+
+					var goods1img=document.getElementById("goods1_img");
+					goods1img.src=rst2.imgurl;
+					//location.reload();
+					//alert(rst2.imgurl);
+					jQuery("#goods1_name").html(rst2.name);
+					jQuery("#price_1").html(rst2.price);
+					jQuery("#amount1").html(goods_num);
+					var totalprice=parseInt(rst2.price)*goods_num;
+					totalsum+=totalprice;
+					jQuery("#total_1").html(totalprice);
+					//document.getElementById("dropdownMenu1").style.display="none";
+					document.getElementById("item_2").style.display="none";
+					document.getElementById("item_3").style.display="none";
+					document.getElementById("item_4").style.display="none";
+					document.getElementById("item_5").style.display="none";
+					//jQuery("#item_2").style.display="none";//
+					//jQuery("#item_3").style.display="none";//
+					//jQuery("#item_4").style.display="none";//
+					//jQuery("#item_5").style.display="none";//
+				});
+
+
+
+
+			}
+			else {
+				//是从购物车进入的订单，这时候是一个购物车的商品，获取购物车的id和购物车中的商品信息
+				var market_id=parseInt(json.cart_id);
+
+				jQuery.post("/goodsfind",{"cart_id":market_id},function (rst) {
+					var goodcount=parseInt(rst.totalcount);
+					//alert("购物车id："+market_id+"中共有"+goodcount+"件商品");
+					if(goodcount==1)
+					{
+						document.getElementById("item_2").style.display="none";
+						document.getElementById("item_3").style.display="none";
+						document.getElementById("item_4").style.display="none";
+						document.getElementById("item_5").style.display="none";
+						//购物车里仅有一件商品
+						//判断放在了第几个栏位
+						var goods_id1=1;
+						var count1=0;
+						if(rst.goods_id1!=null)
+						{
+
+							goods_id1=parseInt(rst.goods_id1);
+							count1=parseInt(rst.count1);
+						}
+						else if(rst.goods_id2!=null)
+						{
+
+							goods_id1=parseInt(rst.goods_id2);
+							count1=parseInt(rst.count2);
+
+						}
+						else if(rst.goods_id3!=null)
+						{
+
+							goods_id1=parseInt(rst.goods_id3);
+							count1=parseInt(rst.count3);
+						}
+						else if(rst.goods_id4!=null)
+						{
+
+							goods_id1=parseInt(rst.goods_id4);
+							count1=parseInt(rst.count4);
+						}
+						else if(rst.goods_id5!=null)
+						{
+
+							goods_id1=parseInt(rst.goods_id5);
+							count1=parseInt(rst.count5);
+						}
+						//alert(goods_id1);
+						//从商品表中取对应行的数据
+						jQuery.post("/goodsdetailfind",{"goods_id":goods_id1},function (rst2) {
+							var goods1_name=rst2.name;
+							//alert("购物车id："+market_id+"中第一件商品名字是："+goods1_name);
+
+							var goods1img=document.getElementById("goods1_img");
+							goods1img.src=rst2.imgurl;
+							//location.reload();
+							//alert(rst2.imgurl);
+							jQuery("#goods1_name").html(rst2.name);
+							jQuery("#price_1").html(rst2.price);
+							jQuery("#amount1").html(count1);
+							var totalprice=parseInt(rst2.price)*count1;
+							totalsum+=totalprice;
+							jQuery("#total_1").html(totalprice);
+							/*jQuery("#item_2").remove();
+							jQuery("#item_3").remove();
+							jQuery("#item_4").remove();
+							jQuery("#item_5").remove();*/
+						});
+
+					}
+					else if(goodcount==2)
+					{
+						document.getElementById("item_2").style.display="block";
+						document.getElementById("item_3").style.display="none";
+						document.getElementById("item_4").style.display="none";
+						document.getElementById("item_5").style.display="none";
+						//有两个数据
+						var num=1;//代表现在找到的是第几个
+						var goods_id1=1;
+						var goods_id2=1;
+						var count1=0;
+						var count2=0;
+						var temp;
+						if(rst.goods_id1!=null)
+						{
+
+							temp=parseInt(rst.goods_id1);
+							if(num==1)
+							{
+								goods_id1=temp;
+								count1=parseInt(rst.count1);
+							}
+							else
+							{
+								goods_id2=temp;
+								count2=parseInt(rst.count1);
+							}
+							num++;
+						}
+						if(rst.goods_id2!=null)
+						{
+
+							temp=parseInt(rst.goods_id2);
+							if(num==1)
+							{
+								goods_id1=temp;
+								count1=parseInt(rst.count2);
+							}
+							else
+							{
+								goods_id2=temp;
+								count2=parseInt(rst.count2);
+							}
+							num++;
+						}
+						if(rst.goods_id3!=null)
+						{
+
+							temp=parseInt(rst.goods_id3);
+							if(num==1)
+							{
+								goods_id1=temp;
+								count1=parseInt(rst.count3);
+							}
+							else
+							{
+								goods_id2=temp;
+								count2=parseInt(rst.count3);
+							}
+							num++;
+						}
+						if(rst.goods_id4!=null)
+						{
+
+							temp=parseInt(rst.goods_id4);
+							if(num==1)
+							{
+								goods_id1=temp;
+								count1=parseInt(rst.count4);
+							}
+							else
+							{
+								goods_id2=temp;
+								count2=parseInt(rst.count4);
+							}
+							num++;
+						}
+						if(rst.goods_id5!=null)
+						{
+
+							temp=parseInt(rst.goods_id5);
+							if(num==1)
+							{
+								goods_id1=temp;
+								count1=parseInt(rst.count5);
+							}
+							else
+							{
+								goods_id2=temp;
+								count2=parseInt(rst.count5);
+							}
+							num++;
+						}
+
+						//从商品表中取对应行的数据
+						jQuery.post("/goodsdetailfind",{"goods_id":goods_id1},function (rst2) {
+							var goods1_name=rst2.name;
+							//alert("购物车id："+market_id+"中第一件商品名字是："+goods1_name);
+
+							var goods1img=document.getElementById("goods1_img");
+							goods1img.src=rst2.imgurl;
+							//location.reload();
+							//alert(rst2.imgurl);
+							jQuery("#goods1_name").html(rst2.name);
+							jQuery("#price_1").html(rst2.price);
+							jQuery("#amount1").html(count1);
+							var totalprice=parseInt(rst2.price)*count1;
+							totalsum+=totalprice;
+							jQuery("#total_1").html(totalprice);
+							//jQuery("#item_2").remove();
+							/*jQuery("#item_3").remove();
+							jQuery("#item_4").remove();
+							jQuery("#item_5").remove();*/
+						});
+						jQuery.post("/goodsdetailfind",{"goods_id":goods_id2},function (rst2) {
+							var goods2_name=rst2.name;
+							//alert("购物车id："+market_id+"中第一件商品名字是："+goods1_name);
+
+							var goods2img=document.getElementById("goods2_img");
+							goods2img.src=rst2.imgurl;
+							//location.reload();
+							//alert(rst2.imgurl);
+							jQuery("#goods2_name").html(rst2.name);
+							jQuery("#price_2").html(rst2.price);
+							jQuery("#amount2").html(count2);
+							var totalprice=parseInt(rst2.price)*count2;
+							totalsum+=totalprice;
+							jQuery("#total_2").html(totalprice);
+
+						});
+					}
+					else if(goodcount==3)
+					{
+						document.getElementById("item_2").style.display="block";
+						document.getElementById("item_3").style.display="block";
+						document.getElementById("item_4").style.display="none";
+						document.getElementById("item_5").style.display="none";
+						//有两个数据
+						var num=1;//代表现在找到的是第几个
+						var goods_id1=1;
+						var goods_id2=1;
+						var goods_id3=1;
+						var count1=0;
+						var count2=0;
+						var count3=0;
+						var temp;
+						if(rst.goods_id1!=null)
+						{
+
+							temp=parseInt(rst.goods_id1);
+							if(num==1)
+							{
+								goods_id1=temp;
+								count1=parseInt(rst.count1);
+							}
+							else if(num==2)
+							{
+								goods_id2=temp;
+								count2=parseInt(rst.count1);
+							}
+							else
+							{
+								goods_id3=temp;
+								count3=parseInt(rst.count1);
+							}
+							num++;
+						}
+						if(rst.goods_id2!=null)
+						{
+
+							temp=parseInt(rst.goods_id2);
+							if(num==1)
+							{
+								goods_id1=temp;
+								count1=parseInt(rst.count2);
+							}
+							else if(num==2)
+							{
+								goods_id2=temp;
+								count2=parseInt(rst.count2);
+							}
+							else
+							{
+								goods_id3=temp;
+								count3=parseInt(rst.count2);
+							}
+							num++;
+						}
+						if(rst.goods_id3!=null)
+						{
+
+							temp=parseInt(rst.goods_id3);
+							if(num==1)
+							{
+								goods_id1=temp;
+								count1=parseInt(rst.count3);
+							}
+							else if(num==2)
+							{
+								goods_id2=temp;
+								count2=parseInt(rst.count3);
+							}
+							else
+							{
+								goods_id3=temp;
+								count3=parseInt(rst.count3);
+							}
+							num++;
+						}
+						if(rst.goods_id4!=null)
+						{
+
+							temp=parseInt(rst.goods_id4);
+							if(num==1)
+							{
+								goods_id1=temp;
+								count1=parseInt(rst.count4);
+							}
+							else if(num==2)
+							{
+								goods_id2=temp;
+								count2=parseInt(rst.count4);
+							}
+							else
+							{
+								goods_id3=temp;
+								count3=parseInt(rst.count4);
+							}
+							num++;
+						}
+						if(rst.goods_id5!=null)
+						{
+
+							temp=parseInt(rst.goods_id5);
+							if(num==1)
+							{
+								goods_id1=temp;
+								count1=parseInt(rst.count5);
+							}
+							else if(num==2)
+							{
+								goods_id2=temp;
+								count2=parseInt(rst.count5);
+							}
+							else
+							{
+								goods_id3=temp;
+								count3=parseInt(rst.count5);
+							}
+							num++;
+						}
+
+						//从商品表中取对应行的数据
+						jQuery.post("/goodsdetailfind",{"goods_id":goods_id1},function (rst2) {
+							var goods1_name=rst2.name;
+							//alert("购物车id："+market_id+"中第一件商品名字是："+goods1_name);
+
+							var goods1img=document.getElementById("goods1_img");
+							goods1img.src=rst2.imgurl;
+							//location.reload();
+							//alert(rst2.imgurl);
+							jQuery("#goods1_name").html(rst2.name);
+							jQuery("#price_1").html(rst2.price);
+							jQuery("#amount1").html(count1);
+							var totalprice=parseInt(rst2.price)*count1;
+							totalsum+=totalprice;
+							jQuery("#total_1").html(totalprice);
+							//jQuery("#item_2").remove();
+							//jQuery("#item_3").remove();
+							/*jQuery("#item_4").remove();
+							jQuery("#item_5").remove();*/
+						});
+						jQuery.post("/goodsdetailfind",{"goods_id":goods_id2},function (rst2) {
+							var goods2_name=rst2.name;
+							//alert("购物车id："+market_id+"中第一件商品名字是："+goods1_name);
+
+							var goods2img=document.getElementById("goods2_img");
+							goods2img.src=rst2.imgurl;
+							//location.reload();
+							//alert(rst2.imgurl);
+							jQuery("#goods2_name").html(rst2.name);
+							jQuery("#price_2").html(rst2.price);
+							jQuery("#amount2").html(count2);
+							var totalprice=parseInt(rst2.price)*count2;
+							totalsum+=totalprice;
+							jQuery("#total_2").html(totalprice);
+
+						});
+						jQuery.post("/goodsdetailfind",{"goods_id":goods_id3},function (rst2) {
+							var goods3_name=rst2.name;
+							//alert("购物车id："+market_id+"中第一件商品名字是："+goods1_name);
+
+							var goods3img=document.getElementById("goods3_img");
+							goods3img.src=rst2.imgurl;
+							//location.reload();
+							//alert(rst2.imgurl);
+							jQuery("#goods3_name").html(rst2.name);
+							jQuery("#price_3").html(rst2.price);
+							jQuery("#amount3").html(count3);
+							var totalprice=parseInt(rst2.price)*count3;
+							totalsum+=totalprice;
+							jQuery("#total_3").html(totalprice);
+
+						});
+					}
+					else if(goodcount==4)
+					{
+						document.getElementById("item_2").style.display="block";
+						document.getElementById("item_3").style.display="block";
+						document.getElementById("item_4").style.display="block";
+						document.getElementById("item_5").style.display="none";
+						//有两个数据
+						var num=1;//代表现在找到的是第几个
+						var goods_id1=1;
+						var goods_id2=1;
+						var goods_id3=1;
+						var goods_id4=1;
+						var count1=0;
+						var count2=0;
+						var count3=0;
+						var count4=0;
+						var temp;
+						if(rst.goods_id1!=null)
+						{
+
+							temp=parseInt(rst.goods_id1);
+							if(num==1)
+							{
+								goods_id1=temp;
+								count1=parseInt(rst.count1);
+							}
+							else if(num==2)
+							{
+								goods_id2=temp;
+								count2=parseInt(rst.count1);
+							}
+							else if(num==3)
+							{
+								goods_id3=temp;
+								count3=parseInt(rst.count1);
+							}
+							else
+							{
+								goods_id4=temp;
+								count4=parseInt(rst.count1);
+							}
+							num++;
+						}
+						if(rst.goods_id2!=null)
+						{
+
+							temp=parseInt(rst.goods_id2);
+							if(num==1)
+							{
+								goods_id1=temp;
+								count1=parseInt(rst.count2);
+							}
+							else if(num==2)
+							{
+								goods_id2=temp;
+								count2=parseInt(rst.count2);
+							}
+							else if(num==3)
+							{
+								goods_id3=temp;
+								count3=parseInt(rst.count2);
+							}
+							else
+							{
+								goods_id4=temp;
+								count4=parseInt(rst.count2);
+							}
+							num++;
+						}
+						if(rst.goods_id3!=null)
+						{
+
+							temp=parseInt(rst.goods_id3);
+							if(num==1)
+							{
+								goods_id1=temp;
+								count1=parseInt(rst.count3);
+							}
+							else if(num==2)
+							{
+								goods_id2=temp;
+								count2=parseInt(rst.count3);
+							}
+							else if(num==3)
+							{
+								goods_id3=temp;
+								count3=parseInt(rst.count3);
+							}
+							else
+							{
+								goods_id4=temp;
+								count4=parseInt(rst.count3);
+							}
+							num++;
+						}
+						if(rst.goods_id4!=null)
+						{
+
+							temp=parseInt(rst.goods_id4);
+							if(num==1)
+							{
+								goods_id1=temp;
+								count1=parseInt(rst.count4);
+							}
+							else if(num==2)
+							{
+								goods_id2=temp;
+								count2=parseInt(rst.count4);
+							}
+							else if(num==3)
+							{
+								goods_id3=temp;
+								count3=parseInt(rst.count4);
+							}
+							else
+							{
+								goods_id4=temp;
+								count4=parseInt(rst.count4);
+							}
+							num++;
+						}
+						if(rst.goods_id5!=null)
+						{
+
+							temp=parseInt(rst.goods_id5);
+							if(num==1)
+							{
+								goods_id1=temp;
+								count1=parseInt(rst.count5);
+							}
+							else if(num==2)
+							{
+								goods_id2=temp;
+								count2=parseInt(rst.count5);
+							}
+							else if(num==3)
+							{
+								goods_id3=temp;
+								count3=parseInt(rst.count5);
+							}
+							else
+							{
+								goods_id4=temp;
+								count4=parseInt(rst.count5);
+							}
+							num++;
+						}
+
+						//从商品表中取对应行的数据
+						jQuery.post("/goodsdetailfind",{"goods_id":goods_id1},function (rst2) {
+							var goods1_name=rst2.name;
+							//alert("购物车id："+market_id+"中第一件商品名字是："+goods1_name);
+
+							var goods1img=document.getElementById("goods1_img");
+							goods1img.src=rst2.imgurl;
+							//location.reload();
+							//alert(rst2.imgurl);
+							jQuery("#goods1_name").html(rst2.name);
+							jQuery("#price_1").html(rst2.price);
+							jQuery("#amount1").html(count1);
+							var totalprice=parseInt(rst2.price)*count1;
+							totalsum+=totalprice;
+							jQuery("#total_1").html(totalprice);
+							//jQuery("#item_2").remove();
+							//jQuery("#item_3").remove();
+							//jQuery("#item_4").remove();
+							/*jQuery("#item_5").remove();*/
+						});
+						jQuery.post("/goodsdetailfind",{"goods_id":goods_id2},function (rst2) {
+							var goods2_name=rst2.name;
+							//alert("购物车id："+market_id+"中第一件商品名字是："+goods1_name);
+
+							var goods2img=document.getElementById("goods2_img");
+							goods2img.src=rst2.imgurl;
+							//location.reload();
+							//alert(rst2.imgurl);
+							jQuery("#goods2_name").html(rst2.name);
+							jQuery("#price_2").html(rst2.price);
+							jQuery("#amount2").html(count2);
+							var totalprice=parseInt(rst2.price)*count2;
+							totalsum+=totalprice;
+							jQuery("#total_2").html(totalprice);
+
+						});
+						jQuery.post("/goodsdetailfind",{"goods_id":goods_id3},function (rst2) {
+							var goods3_name=rst2.name;
+							//alert("购物车id："+market_id+"中第一件商品名字是："+goods1_name);
+
+							var goods3img=document.getElementById("goods3_img");
+							goods3img.src=rst2.imgurl;
+							//location.reload();
+							//alert(rst2.imgurl);
+							jQuery("#goods3_name").html(rst2.name);
+							jQuery("#price_3").html(rst2.price);
+							jQuery("#amount3").html(count3);
+							var totalprice=parseInt(rst2.price)*count3;
+							totalsum+=totalprice;
+							jQuery("#total_3").html(totalprice);
+
+						});
+						jQuery.post("/goodsdetailfind",{"goods_id":goods_id4},function (rst2) {
+							var goods4_name=rst2.name;
+							//alert("购物车id："+market_id+"中第一件商品名字是："+goods1_name);
+
+							var goods4img=document.getElementById("goods4_img");
+							goods4img.src=rst2.imgurl;
+							//alert(rst2.imgurl);
+							//location.reload();
+							//alert(rst2.imgurl);
+							jQuery("#goods4_name").html(rst2.name);
+							jQuery("#price_4").html(rst2.price);
+							jQuery("#amount4").html(count4);
+							var totalprice=parseInt(rst2.price)*count4;
+							totalsum+=totalprice;
+							jQuery("#total_4").html(totalprice);
+
+						});
+					}
+					else
+					{
+						document.getElementById("item_2").style.display="block";
+						document.getElementById("item_3").style.display="block";
+						document.getElementById("item_4").style.display="block";
+						document.getElementById("item_5").style.display="block";
+						var goods_id1=1;
+						var goods_id2=1;
+						var goods_id3=1;
+						var goods_id4=1;
+						var goods_id5=1;
+						var count1=0;
+						var count2=0;
+						var count3=0;
+						var count4=0;
+						var count5=0;
+						goods_id1=parseInt(rst.goods_id1);
+						goods_id2=parseInt(rst.goods_id2);
+						goods_id3=parseInt(rst.goods_id3);
+						goods_id4=parseInt(rst.goods_id4);
+						goods_id5=parseInt(rst.goods_id5);
+						count1=parseInt(rst.count1);
+						count2=parseInt(rst.count2);
+						count3=parseInt(rst.count3);
+						count4=parseInt(rst.count4);
+						count5=parseInt(rst.count5);
+						//从商品表中取对应行的数据
+						jQuery.post("/goodsdetailfind",{"goods_id":goods_id1},function (rst2) {
+							var goods1_name=rst2.name;
+							//alert("购物车id："+market_id+"中第一件商品名字是："+goods1_name);
+
+							var goods1img=document.getElementById("goods1_img");
+							goods1img.src=rst2.imgurl;
+							//location.reload();
+							//alert(rst2.imgurl);
+							jQuery("#goods1_name").html(rst2.name);
+							jQuery("#price_1").html(rst2.price);
+							jQuery("#amount1").html(count1);
+							var totalprice=parseInt(rst2.price)*count1;
+							totalsum+=totalprice;
+							//alert(totalsum);
+							jQuery("#total_1").html(totalprice);
+							//jQuery("#item_2").remove();
+							//jQuery("#item_3").remove();
+							//jQuery("#item_4").remove();
+							//jQuery("#item_5").remove();
+						});
+						jQuery.post("/goodsdetailfind",{"goods_id":goods_id2},function (rst2) {
+							var goods2_name=rst2.name;
+							//alert("购物车id："+market_id+"中第一件商品名字是："+goods1_name);
+
+							var goods2img=document.getElementById("goods2_img");
+							goods2img.src=rst2.imgurl;
+							//location.reload();
+							//alert(rst2.imgurl);
+							jQuery("#goods2_name").html(rst2.name);
+							jQuery("#price_2").html(rst2.price);
+							jQuery("#amount2").html(count2);
+							var totalprice=parseInt(rst2.price)*count2;
+							totalsum+=totalprice;
+							//alert(totalsum);
+							jQuery("#total_2").html(totalprice);
+
+						});
+						jQuery.post("/goodsdetailfind",{"goods_id":goods_id3},function (rst2) {
+							var goods3_name=rst2.name;
+							//alert("购物车id："+market_id+"中第一件商品名字是："+goods1_name);
+
+							var goods3img=document.getElementById("goods3_img");
+							goods3img.src=rst2.imgurl;
+							//location.reload();
+							//alert(rst2.imgurl);
+							jQuery("#goods3_name").html(rst2.name);
+							jQuery("#price_3").html(rst2.price);
+							jQuery("#amount3").html(count3);
+							var totalprice=parseInt(rst2.price)*count3;
+							totalsum+=totalprice;
+							//alert(totalsum);
+							jQuery("#total_3").html(totalprice);
+
+						});
+						jQuery.post("/goodsdetailfind",{"goods_id":goods_id4},function (rst2) {
+							var goods4_name=rst2.name;
+							//alert("购物车id："+market_id+"中第一件商品名字是："+goods1_name);
+
+							var goods4img=document.getElementById("goods4_img");
+							goods4img.src=rst2.imgurl;
+							//location.reload();
+							//alert(rst2.imgurl);
+							jQuery("#goods4_name").html(rst2.name);
+							jQuery("#price_4").html(rst2.price);
+							jQuery("#amount4").html(count4);
+							var totalprice=parseInt(rst2.price)*count4;
+							totalsum+=totalprice;
+							//alert(totalsum);
+							//alert("测试4"+totalprice);
+							jQuery("#total_4").html(totalprice);
+
+						});
+						jQuery.post("/goodsdetailfind",{"goods_id":goods_id5},function (rst2) {
+							var goods5_name=rst2.name;
+							//alert("购物车id："+market_id+"中第一件商品名字是："+goods1_name);
+
+							var goods5img=document.getElementById("goods5_img");
+							goods5img.src=rst2.imgurl;
+							//location.reload();
+							//alert(rst2.imgurl);
+							jQuery("#goods5_name").html(rst2.name);
+							jQuery("#price_5").html(rst2.price);
+							jQuery("#amount5").html(count5);
+							var totalprice=parseInt(rst2.price)*count5;
+							totalsum+=totalprice;
+							//alert("测试5"+totalprice);
+							jQuery("#total_5").html(totalprice);
+
+						});
+					}
+
+
+				});
+			}
+			setTimeout(function(){jQuery("#totalsum").html(totalsum);}, 800);
+
+		});
+	}
+</script>
 </html>

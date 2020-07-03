@@ -23,6 +23,8 @@ public interface orderMapper {
     @Select("select * from order_info where order_id=#{n}")
     public Map<String,Object> findById(int id);
 
+
+
     //插入数据 有什么内容就要插什么
     //从上面的变成下面的,传递一个map,map里用string是因为从页面传过来的数据都是string类型的
     //public void insert(String name,String sex,int id)
