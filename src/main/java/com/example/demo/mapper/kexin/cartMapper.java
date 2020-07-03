@@ -33,15 +33,9 @@ public interface cartMapper {
     @Select("select price,name from goods_info where goods_id=#{t.goods_id}")
     public Map<String,Object> getgoodsdetail1(@Param("t") Map<String,String> map);
 
+    @Select("select user_id from user_info where username=#{t.username}")
+    public int finduserID(@Param("t") Map<String,String> map);
 
-    //马写的要删
-    @Select("select * from shoppingcart where cart_id=#{n}")
-    public Map<String,Object> findById2(int id);
-
-    //马写的要删
-    //  获取商品信息
-    @Select("select * from goods_info where goods_id=#{n}")
-    public Map<String,Object> findByGoodId2(int id);
 
 
 
@@ -88,4 +82,15 @@ public interface cartMapper {
     //修改totalcount
     @Update("update shoppingcart set totalcount=#{t.totalcount} where cart_id=#{t.cart_id}")
     public int totalcount(@Param("t") Map<String,String> tea);
+
+
+
+    //马写的要删
+    @Select("select * from shoppingcart where cart_id=#{n}")
+    public Map<String,Object> findById2(int id);
+
+    //马写的要删
+    //  获取商品信息
+    @Select("select * from goods_info where goods_id=#{n}")
+    public Map<String,Object> findByGoodId2(int id);
 }

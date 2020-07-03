@@ -375,7 +375,7 @@
 			td6.setAttribute("class","td6");
 			var text6_1=document.createElement("a");
 			text6_1.setAttribute("class","check");
-			text6_1.innerHTML="查看"
+			text6_1.innerHTML="查看";
 			var text6_2=document.createElement("a");
 			text6_2.innerHTML="编辑";
 			text6_2.setAttribute("class","edit");
@@ -389,7 +389,7 @@
 			td6.appendChild(text6_3);
 			tr.appendChild(td6);
 			
-			var no=document.getElementById("no").innerHTML
+			var no=document.getElementById("no").innerHTML;
 			var newno=parseInt(no)+1;
 			document.getElementById("no").innerHTML=newno;
 
@@ -456,7 +456,7 @@
 		
 		function del(p){
 			p.parentNode.parentNode.remove();
-			var no=document.getElementById("no").innerHTML
+			var no=document.getElementById("no").innerHTML;
 			var newno=parseInt(no)-1;
 			document.getElementById("no").innerHTML=newno;
 

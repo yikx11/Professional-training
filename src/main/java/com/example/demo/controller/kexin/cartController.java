@@ -19,6 +19,12 @@ public class cartController {
         return info;
     }
 
+    @RequestMapping("/finduserID")
+    public int finduserID(@RequestParam Map<String,String> map){
+        int info=cartService.finduserID(map);
+        return info;
+    }
+
 //    @RequestMapping("/getgoods")
 //    public Map<String,Object> getgoods(@RequestParam Map<String,String> map){
 //        Map<String,Object> info=cartService.getgoods(map);

@@ -39,6 +39,17 @@ public class cartService {
         return info;
     }
 
+    public int finduserID(Map<String,String> map){
+        int info=0;
+        try{
+            info=cartMapper.finduserID(map);
+        }catch (Exception ex){
+
+        }
+
+        return info;
+    }
+
     public Map<String,Object> getgoodsdetail1(Map<String,String> map){
         Map<String,Object> tea=null;
         tea=cartMapper.getgoodsdetail1(map);
