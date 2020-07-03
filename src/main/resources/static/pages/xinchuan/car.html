@@ -224,7 +224,7 @@
 				margin-left: 130px;
 			}
 			.balance span{
-				font-size: 25px; 
+				font-size: 18px;
 			    color: #C91623 ;
 				font-weight: bold;
 			}
@@ -295,9 +295,9 @@
 				<li class="info_3" id="getname1"><a href=""></a></li>
 				<li class="info_4">￥<span id="price_1" class="product-price"></span></li>
 				<li class="info_5">
-				<button onclick="minus(this)">-</button>
+				<button onclick="minus(this,'1')">-</button>
 			    <input type="text" class="text_box" name="amount" id="amount1" value="1" />
-				<button class="bot" onclick="plus(this)">+</button>
+				<button class="bot" onclick="plus(this,1)">+</button>
 				</li>
 				<li class="info_6">￥<span id="total_1" class="total-price"></span></li>
 				<li class="info_7"><a href="###" onclick="delete1(this)">删除</a></li>
@@ -310,9 +310,9 @@
 				<li class="info_3" id="getname2"><a href="">IPhone8 128G/256G 金色银色苹果手机</a></li>
 				<li class="info_4">￥<span id="price_2" class="product-price"></span></li>
 				<li class="info_5">
-				<button onclick="minus(this)">-</button>
+				<button onclick="minus(this,2)">-</button>
 			    <input type="text" class="text_box" name="amount" id="amount2" value="1" />
-				<button class="bot" onclick="plus(this)">+</button>
+				<button class="bot" onclick="plus(this,2)">+</button>
 				</li>
 				<li class="info_6">￥<span id="total_2" class="total-price"></span></li>
 				<li class="info_7"><a href="###" onclick="delete2(this)">删除</a></li>
@@ -324,9 +324,9 @@
 				<li class="info_3" id="getname3"><a href="">IPhone8 128G/256G 金色银色苹果手机</a></li>
 				<li class="info_4">￥<span id="price_3" class="product-price"></span></li>
 				<li class="info_5">
-					<button onclick="minus(this)">-</button>
+					<button onclick="minus(this,3)">-</button>
 					<input type="text" class="text_box" name="amount" id="amount3" value="1" />
-					<button class="bot" onclick="plus(this)">+</button>
+					<button class="bot" onclick="plus(this,3)">+</button>
 				</li>
 				<li class="info_6">￥<span id="total_3" class="total-price"></span></li>
 				<li class="info_7"><a href="###" onclick="delete3(this)">删除</a></li>
@@ -338,9 +338,9 @@
 				<li class="info_3" id="getname4"><a href="">IPhone8 128G/256G 金色银色苹果手机</a></li>
 				<li class="info_4">￥<span id="price_4" class="product-price"></span></li>
 				<li class="info_5">
-					<button onclick="minus(this)">-</button>
+					<button onclick="minus(this,4)">-</button>
 					<input type="text" class="text_box" name="amount" id="amount4" value="1" />
-					<button class="bot" onclick="plus(this)">+</button>
+					<button class="bot" onclick="plus(this,4)">+</button>
 				</li>
 				<li class="info_6">￥<span id="total_4" class="total-price"></span></li>
 				<li class="info_7"><a href="###" onclick="delete4(this)">删除</a></li>
@@ -352,9 +352,9 @@
 				<li class="info_3" id="getname5"><a href="">IPhone8 128G/256G 金色银色苹果手机</a></li>
 				<li class="info_4">￥<span id="price_5" class="product-price"></span></li>
 				<li class="info_5">
-					<button onclick="minus(this)">-</button>
+					<button onclick="minus(this,5)">-</button>
 					<input type="text" class="text_box" name="amount" id="amount5" value="1" />
-					<button class="bot" onclick="plus(this)">+</button>
+					<button class="bot" onclick="plus(this,5)">+</button>
 				</li>
 				<li class="info_6">￥<span id="total_5" class="total-price"></span></li>
 				<li class="info_7"><a href="###" onclick="delete5(this)">删除</a></li>
@@ -364,7 +364,7 @@
 		<div class="balance">
 			<ul>
 				<li>总价 <span id="blc">￥0</span></li>
-				<li class="butt"><button type="submit" id="balance" name="balance" >去结算</button></li>
+				<li class="butt"><button type="submit" id="balance" name="balance" onclick="pay()">去结算</button></li>
 			</ul>
 		</div>
 		
@@ -409,6 +409,15 @@
 			var price5;
 			var name5;
 			var amount5;
+
+			//购物车价格设为全局变量
+			var count1;
+			var count2;
+			var count3;
+			var count4;
+			var count5;
+			var totalcount=0;
+
 			jQuery(function(){
 				//第一步先得到username对应的cart_id，购物车和user是多对一的关系
 				//第二步用得到的cart_id去得到所有购物车里的商品和商品的所有内容，得到商品内容可用多张表内连接的方法
@@ -441,6 +450,7 @@
 							jQuery("#getname1").html(name1);
 							jQuery("#price_1").html(price1);
 							jQuery("#total_1").html(price1);
+							totalcount++;
 						});
 					}
 					else{
@@ -458,7 +468,7 @@
 							jQuery("#total_2").html(price2);
 							//var goods1_name = rst2.name;
 							//alert("购物车id：" + goods_id1 + "中第一件商品名字是：" + goods1_name);
-
+							totalcount++;
 						});
 					}
 					else{
@@ -476,7 +486,7 @@
 							jQuery("#total_3").html(price3);
 							//var goods1_name = rst2.name;
 							///alert("购物车id：" + goods_id1 + "中第一件商品名字是：" + goods1_name);
-
+							totalcount++;
 						});
 					}
 					else{
@@ -494,7 +504,7 @@
 							jQuery("#total_4").html(price4);
 							//var goods1_name = rst2.name;
 							//alert("购物车id：" + goods_id1 + "中第一件商品名字是：" + goods1_name);
-
+							totalcount++;
 						});
 					}
 					else{
@@ -512,7 +522,7 @@
 							jQuery("#total_5").html(price5);
 							//var goods1_name = rst2.name;
 							//alert("购物车id：" + goods_id1 + "中第一件商品名字是：" + goods1_name);
-
+							totalcount++;
 						});
 					}
 					else{
@@ -521,6 +531,7 @@
 					//jQuery("#getname1").html(rst);
 				});
 				});
+
 			});
 
 
@@ -529,6 +540,7 @@
 				jQuery.post("/delete1",{"cart_id":cartID},function(rst){
 					alert("删除成功！！")
 					$(q).parent().parent().remove();
+					totalcount--;
 				});
 
 			}
@@ -538,6 +550,7 @@
 				jQuery.post("/delete2",{"cart_id":cartID},function(rst){
 					alert("删除成功！！")
 					$(q).parent().parent().remove();
+					totalcount--;
 				});
 
 			}
@@ -546,6 +559,7 @@
 				jQuery.post("/delete3",{"cart_id":cartID},function(rst){
 					alert("删除成功！！")
 					$(q).parent().parent().remove();
+					totalcount--;
 				});
 
 			}
@@ -554,6 +568,7 @@
 				jQuery.post("/delete4",{"cart_id":cartID},function(rst){
 					alert("删除成功！！")
 					$(q).parent().parent().remove();
+					totalcount--;
 				});
 
 			}
@@ -562,108 +577,79 @@
 				jQuery.post("/delete5",{"cart_id":cartID},function(rst){
 					alert("删除成功！！")
 					$(q).parent().parent().remove();
+					totalcount--;
 				});
 
 			}
 
 
 			function check() {
-
 				var a = $(".total-price");//找到所有商品的总价
-
+				var good_num = $(".text_box");//找到商品数量
 				var chs = document.getElementsByName("ch");
 				var m = 0;      //遍历,获取,将字符串转化为数字,并相加
 				for (var i = 0; i < a.length; i++) {
 					if (chs[i].checked == true) {
+						if(i==0){
+							count1=Number(good_num[i].textContent);
+						}
+						if(i==1){
+							count2=Number(good_num[i].textContent);
+						}
+						if(i==2){
+							count3=Number(good_num[i].textContent);
+						}
+						if(i==3){
+							count4=Number(good_num[i].textContent);
+						}
+						if(i==4){
+							count5=Number(good_num[i].textContent);
+						}
 						m += Number(a[i].textContent);
 					}
 					$("#blc").text("￥" + m);    //赋值给总商品价格
 				}
+				//alert($("#blc").html().substring(1));
 			}
 
 			function checkAll(f){
 				//获取name为ch所有控件,是一个数组
 				var chs=document.getElementsByName("ch");
 				var total_prices=$(".total-price");
+				var good_num = $(".text_box");//找到商品数量
 				var blc=0;
 				for(var i=0;i<total_prices.length;i++){
-					var ch=chs[i];
-					ch.checked=f;
 					if(f==true)     //选中全选按钮改变合计
-					blc=blc+Number(total_prices[i].textContent);
+					{
+						var ch=chs[i];
+						ch.checked=true;
+						if(i==0){
+							count1=Number(good_num[i].textContent);
+						}
+						if(i==1){
+							count2=Number(good_num[i].textContent);
+						}
+						if(i==2){
+							count3=Number(good_num[i].textContent);
+						}
+						if(i==3){
+							count4=Number(good_num[i].textContent);
+						}
+						if(i==4){
+							count5=Number(good_num[i].textContent);
+						}
+						blc = blc + Number(total_prices[i].textContent);
+					}
+					else {
+						var ch=chs[i];
+						ch.checked=false;
+					}
 				}
 				$("#blc").text("￥" + blc);
-/*
-				var a = $(".total-price");//找到所有商品的总价
+			}
 
-				var chs = document.getElementsByName("ch");
-				var m = 0;      //遍历,获取,将字符串转化为数字,并相加
-				for (var i = 0; i < a.length; i++) {
-					if (chs[i].checked == true) {
-						m += Number(a[i].textContent);
-					}
-					$("#blc").text("￥" + m);    //赋值给总商品价格
-
-
-				}*/
-			}
 			
-			/**
-			function minus(index){
-				var amounts=document.getElementsByName("amount");
-				if(amounts[index-1].value==0) alert("不能再减了！")
-				else{
-				amounts[index-1].value--;	}
-				var amount=amounts[index-1].value;
-				//单个商品总计
-				var price=document.getElementById("price_"+index).innerHTML;
-				var total=parseInt(amount)*parseInt(price);
-				document.getElementById("total_"+index).innerHTML=total;
-				//总计,实现复选框选中时统计总计
-				var blc=0;
-				var chs=document.getElementsByName("ch");
-				for(var i=1;i<=chs.length;i++){
-					if(chs[i-1].checked==true){
-						blc=blc+parseInt(document.getElementById("total_"+i).innerHTML);
-					}
-				}
-				document.getElementById("blc").innerHTML="￥"+blc;
-				
-			}
-			
-			
-			function plus(index){
-				var amounts=document.getElementsByName("amount");
-				amounts[index-1].value++;
-				var amount=amounts[index-1].value;
-				//单个商品总计
-				var price=document.getElementById("price_"+index).innerHTML;
-				var total=parseInt(amount)*parseInt(price);
-				document.getElementById("total_"+index).innerHTML=total;
-				//总计
-				var blc=0;
-				var chs=document.getElementsByName("ch");
-				
-				for(var i=1;i<=chs.length;i++){
-					if(chs[i-1].checked==true){
-						blc=blc+parseInt(document.getElementById("total_"+i).innerHTML);
-					}
-				}
-				document.getElementById("blc").innerHTML="￥"+blc;
-			}
-			
-			
-			
-			function del(index){
-				var allitems=document.getElementsByName("item");
-				var ul=document.getElementById("item_"+index);
-				ul.remove();
-				alert("删除成功！！");
-				
-			}
-			**/
-			
-			function plus(q) {
+			function plus(q,num) {
 				//加法操作
 				var good_num = $(q).parent().find('input[class*=text_box]');  //找到商品数量
 				var old_num = $(good_num).val();　//获取商品数量的值
@@ -674,7 +660,23 @@
 				var new_money = parseFloat(one_price) * parseInt((good_num).val());　//获取单价*数量的总价的值
 				var total_price = $(q).parent().parent().find('span[class*=total-price]');　//找到该商品总价
 				//alert(new_money);
+				if(num==1){
+					count1=new_num;
+				}
+				if(num==2){
+					count2=new_num;
+				}
+				if(num==3){
+					count3=new_num;
+				}
+				if(num==4){
+					count4=new_num;
+				}
+				if(num==5){
+					count5=new_num;
+				}
 				$(total_price).text(new_money);　//该商品总价赋值
+
 				//总价
 				var a = $(".total-price");//找到所有商品的总价
 
@@ -688,7 +690,7 @@
 				}
 			}
 						 
-		   function minus(q) {
+		   function minus(q,num) {
 			   //减法操作
 			   var good_num = $(q).parent().find('input[class*=text_box]');　//找到商品数量
 			   var old_num = $(good_num).val();　 //获取商品数量的值
@@ -704,6 +706,21 @@
 			   var new_money = parseFloat(one_price) * parseInt((good_num).val());　//获取单价*数量的总价的值
 			   var total_price = $(q).parent().parent().find('span[class*=total-price]');　//找到该商品总价
 			   $(total_price).text(new_money);　//该商品总价赋值
+			   if(num==1){
+				   count1=new_num;
+			   }
+			   if(num==2){
+				   count2=new_num;
+			   }
+			   if(num==3){
+				   count3=new_num;
+			   }
+			   if(num==4){
+				   count4=new_num;
+			   }
+			   if(num==5){
+				   count5=new_num;
+			   }
 			   //总价
 			   var a = $(".total-price");//找到所有商品的总价
 
@@ -717,7 +734,43 @@
 			   }
 		   }
 						
+			function pay() {
+				if(parseFloat($("#blc").html().substring(1))>0) {
+					var a = $(".total-price");
+					var chs = document.getElementsByName("ch");
+					for (var i = 0; i < a.length; i++) {
+						//alert(parseFloat($("#blc").html().substring(1)));
+						if (chs[i].checked == true) {
+							if(i==0) {
+								jQuery.post("/count1", {"count1": count1,"cart_id":cartID}, function (rst) {
+								});
+							}
+							if(i==1) {
+								jQuery.post("/count2", {"count2": count2,"cart_id":cartID}, function (rst) {
+								});
+							}
+							if(i==2) {
+								jQuery.post("/count3", {"count3": count3,"cart_id":cartID}, function (rst) {
+								});
+							}
+							if(i==3) {
+								jQuery.post("/count4", {"count4": count4,"cart_id":cartID}, function (rst) {
+								});
+							}
+							if(i==4) {
+								jQuery.post("/count5", {"count5": count5,"cart_id":cartID}, function (rst) {
+								});
+							}
+						}
+					}
 
+					jQuery.post("/totalcount", {"totalcount": totalcount,"cart_id":cartID}, function (rst) {
+					});
+
+					//跳转订单页面
+				}
+				//为0说明什么都没选，不能跳转页面
+			}
 			
 			
 			

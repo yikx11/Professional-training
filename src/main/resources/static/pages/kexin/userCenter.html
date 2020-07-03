@@ -29,7 +29,7 @@
             list-style: none;
         }
         .listyle{
-            line-height: 80px;
+            line-height: 120px;
             font-size: 18px;
         }
         .listyle2{
@@ -293,11 +293,9 @@
                         <p style="position: absolute;left: 15px;top: 10px;font-size: 26px;">个人信息</p>
                         <div class="line">————————————————————————————————————————————————————</div>
                         <ul style="padding-left: 20px;padding-top: 50px">
-                            <li class="listyle">用户名：yikx</li>
-                            <li class="listyle">电话：13312341234</li>
-                            <li class="listyle">邮箱：1019590642@qq.com</li>
-                            <li class="listyle">密保问题：你养过的宠物是什么？</li>
-                            <li class="listyle">密保问题答案：金鱼</li>
+                            <li class="listyle">用户名：<span id="myname">yikx</span></li>
+                            <li class="listyle">密保问题：<span id="myquestion">你养过的宠物是什么？</span></li>
+                            <li class="listyle">密保问题答案：<span id="myanswer">金鱼</span></li>
                         </ul>
                         <div>
                             <button type="button" id="editbutton" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="修改个人信息">编辑个人信息</button>
@@ -314,18 +312,6 @@
                                                     <label for="username" class="col-sm-10 control-label" style="text-align: left">输入用户名</label>
                                                     <div class="col-sm-10">
                                                         <input type="text" class="form-control" id="username" placeholder="Name">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="inputPhonenumber" class="col-sm-10 control-label" style="text-align: left">输入电话</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="tel" class="form-control" id="inputPhonenumber" placeholder="Phonenumber">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="inputEmail" class="col-sm-10 control-label" style="text-align: left">输入邮箱</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="tel" class="form-control" id="inputEmail" placeholder="Email">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -5221,10 +5207,25 @@
         one.style.display="none";
         footer2.style.display="block";
     }
-    function myedit() {
 
-    }
+
     function myupdate() {
+
+        user_id=1;
+        var beforepwd = $('input[id="inputPassword1"]').val();
+        var nowpwd = $('input[id="inputPassword2"]').val();
+        var confirmpwd = $('input[id="inputPassword3"]').val();
+        jQuery.post("/findbeforepwd",{"user_id":user_id},function(rst){
+            if(rst==beforepwd){
+                if(nowpwd==confirmpwd){
+                    jQuery.post("/updatepwd",{"user_id":user_id,"password":nowpwd},function(rst){
+                    });
+                alert("修改成功!");
+                }
+                else alert("确认密码和修改密码不一致！")
+            }
+            else alert("原始密码输入错误！");
+        });
 
     }
 
@@ -5239,16 +5240,20 @@
         //modal.find('.modal-body input').val(recipient);
     })
     function mysend() {
+        user_id=1;
         var name = $('input[id="username"]').val();
-        var Phonenumber = $('input[id="inputPhonenumber"]').val();
-        var Email = $('input[id="inputEmail"]').val();
         var Question = $('input[id="inputQuestion"]').val();
         var Answer = $('input[id="inputAnswer"]').val();
-        alert(name);
-        alert(Phonenumber);
-        alert(Email);
-        alert(Question);
-        alert(Answer);
+        jQuery.post("/updatename",{"username":name,"user_id":user_id},function(rst){
+        });
+        jQuery.post("/updatesafe_q",{"safe_q":Question,"user_id":user_id},function(rst){
+        });
+        jQuery.post("/updatesafe_a",{"safe_a":Answer,"user_id":user_id},function(rst){
+        });
+        alert("修改成功");
+        $("#myname").html(name);
+        $("#myquestion").html(Question);
+        $("#myanswer").html(Answer);
     }
 </script>
 </html>
