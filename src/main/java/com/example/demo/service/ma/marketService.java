@@ -46,4 +46,46 @@ public class marketService {
         }
         return list;
     }
+
+    public boolean doDelete(Map<String,String> map){
+        boolean flag=false;
+        try {
+            int id=Integer.parseInt(map.get("goods_id"));
+            int r=marketMapper.deleteGoods(id);
+            if(r>0){
+                flag=true;
+            }
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+
+    public boolean doInsert(Map<String,String> map) {
+        boolean flag = false;
+        //选择要添加监控的代码
+        //ctrl+alt+t 打开 surround with窗口 选择 try catch
+        try {
+            int r=marketMapper.insertGoods(map);
+            if(r>0){
+                flag=true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+
+    public boolean doUpdateGoods(Map<String,String> map){
+        boolean flag=false;
+        try {
+            int r=marketMapper.update(map);
+            if(r>0){
+                flag=true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
 }

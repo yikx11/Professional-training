@@ -38,4 +38,11 @@ public class orderController {
         List<Map<String,Object>> list=orderService.doFindByUser(user_id);
         return list;
     }
+
+    @RequestMapping("/orderIdFind")
+    public Map<String,Object> findByOrderNum(@RequestParam Map<String,String> map) {
+        int order_id=Integer.valueOf(map.get("order_id"));
+        Map<String,Object> map2=orderService.doFindByOrderId(order_id);
+        return map2;
+    }
 }

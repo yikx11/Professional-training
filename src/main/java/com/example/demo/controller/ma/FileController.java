@@ -19,9 +19,17 @@ public class FileController {
             return "请选择上传的文件";
         }
         String fileName=file.getOriginalFilename();
+
+
+        /*int begin=fileName.lastIndexOf( str: ".");
+        String ext=fileName.substring(begin);
+        long time=System.currentTimeMillis();
+        String newFileName=time+ext;*/
+
         String u_name=user.get("u_name");
         System.out.println(u_name);
-        String path= System.getProperty("user.dir")+"\\upfile";
+//        String path= System.getProperty("user.dir")+"\\upfile";
+        String path= System.getProperty("user.dir")+"\\src\\main\\resources\\static\\imgs";
         File f=new File(path+"\\"+fileName);
         if(!f.getParentFile().exists()){
             f.getParentFile().mkdir();
@@ -32,6 +40,6 @@ public class FileController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return msg;
+        return fileName;
     }
 }

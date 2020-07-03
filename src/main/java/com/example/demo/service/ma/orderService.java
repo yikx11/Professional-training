@@ -53,4 +53,15 @@ public class orderService {
         return list;
     }
 
+    public Map<String,Object> doFindByOrderId(int order_id){
+
+        Map<String,Object> map=null;
+        try {
+            map=orderMapper.findById(order_id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return map;
+    }
+
 }

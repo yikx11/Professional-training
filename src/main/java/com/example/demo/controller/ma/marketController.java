@@ -22,7 +22,7 @@ public class marketController {
     }
 
     @RequestMapping("/goodsfind")
-    public Map<String,Object> findByUser_id(@RequestParam Map<String,String> map) {
+    public Map<String,Object> findByCart_id(@RequestParam Map<String,String> map) {
         int cart_id=Integer.valueOf(map.get("cart_id"));
         Map<String,Object> map2=marketService.doFindById(cart_id);
         return map2;
@@ -34,4 +34,34 @@ public class marketController {
         Map<String,Object> map2=marketService.doFindByGoodsId(cart_id);
         return map2;
     }
+
+    @RequestMapping("/goodsdelete")
+    public String delete(@RequestParam Map<String,String> map){
+        String msg="删除失败";
+        boolean flag=marketService.doDelete(map);
+        if(flag){
+            msg="删除成功";
+        }
+        return msg;
+    }
+    @RequestMapping("/goodsinsert")
+    public String insert(@RequestParam Map<String,String> map) {
+        boolean flag=marketService.doInsert(map);
+        String msg="添加商品失败！";
+        if(flag) {
+            msg="添加商品成功！";
+        }
+        return msg;
+    }
+
+    @RequestMapping("/goodsupdate")
+    public String change(@RequestParam Map<String,String> map) {
+        boolean flag=marketService.doUpdateGoods(map);
+        String msg="修改商品失败！";
+        if(flag) {
+            msg="修改商品成功！";
+        }
+        return msg;
+    }
+
 }
