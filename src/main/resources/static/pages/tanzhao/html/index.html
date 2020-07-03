@@ -1,0 +1,530 @@
+<!doctype html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+
+    <title>电子商务系统</title>
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/sub-menu.css">
+       <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/home.css">
+
+    <style>
+        .container1 {
+            background: cornsilk;
+        }
+        .carousel {
+            position: relative;
+            width: auto;
+            display: inline-block;
+        }
+        .carousel-inner>.item>img{
+            width: 100%;
+        }
+       .row{
+        height:470px;
+       }
+        .row.row-goods{
+            margin: 30px 0;
+        }
+        .row.row-goods img {
+            width: 100%;
+
+        }
+        .col-md-12.title{
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            font-size: 28px;
+            font-family:"微软雅黑" ;
+        }
+
+        ul.list-group.list-group-2 {
+            width: 83%;
+            text-align: right;
+        }
+        ul.list-group.list-group-2 li {
+           background: none;
+        }
+        ul.list-group.list-group-2 li img{
+            width: 100%;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<!--顶部填充-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12" style="height: 43px;background: #f66060">
+        </div>
+
+    <!--二级菜单、图片轮播-->
+
+        <div class="col-md-3">
+            <div class="toptitle">
+                <a style="padding-left:30px ;color:#fff;">全部商品分类</a>
+            </div>
+            <ul class="topmenu" id="topmenu">
+                <li><a href="#">服饰、珠宝首饰</a>
+                </li>
+                <li><a href="#">图书、音像、数字商品</a>
+                </li>
+                <li><a href="#">家用电器</a>
+                </li>
+                <li><a href="#">手机、数码</a>
+                </li>
+                <li><a href="#">个护化妆</a>
+                </li>
+                <li><a href="#">电脑、办公</a><span></span>
+                </li>
+                <li><a href="#">家居、家具、家装、厨具</a>
+                </li>
+                <li><a href="#">鞋靴、箱包、钟表、奢侈品</a>
+                </li>
+                <li><a href="#">运动户外</a>
+                </li>
+                <li><a href="#">汽车用品</a>
+                </li>
+                <li><a href="#">母婴、玩具乐器</a>
+                </li>
+            </ul>
+        </div>
+      <div id="slidershow" class="carousel slide" data-ride="carousel" data-interval = 2000 data-pause = "hover" data-wrap="true" style="margin-top: unset; width: 900px;height:auto; float:right ;margin-left:auto; margin-right:auto;">
+         <!-- 设置图片轮播的顺序 -->
+         <ol class="carousel-indicators">
+         <li class="active" data-target="#slidershow" data-slide-to="0" ></li>
+         <li data-target="#slidershow" data-slide-to="1"></li>
+         <li data-target="#slidershow" data-slide-to="2"></li>
+         </ol>
+         <!--设置轮播的图片-->
+         <div class="carousel-inner">
+         <div class="item active">
+         <a href="##"><img src="../images/1.jpg" alt="图书"></a>
+         </div>
+         <div class="item">
+         <a href="##"><img src="../images/2.jpg" alt="食品"></a>
+         </div>
+         <div class="item">
+         <a href="##"><img src="../images/3.jpg" alt="手机"></a>
+         </div>
+         </div>
+         <a class="left carousel-control" href="#slidershow" role="button" data-slide="prev" >
+         <span class="glyphicon glyphicon-chevron-left"></span>
+         </a>
+         <a class="right carousel-control" href="#slidershow" role="button" data-slide="next">
+         <span class="glyphicon glyphicon-chevron-right"></span>
+         </a>
+
+    </div>
+    </div>
+
+</div>
+
+
+
+<!-- 产品列表 -->
+<div class="homepageCetegolyProducts">
+    <div class="eachHomepageCetegolyProducts">
+        <div class="leftmark"></div>
+        <span class="cetegolyTitle">休闲食品</span>
+        <br />
+        <div class="productItem">
+            <a href="goodsinfo.html"><img width="100px" src="../images/9543.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">[热销]
+                    士力架 花生夹心巧克力（全家桶）
+                </span>
+                <span class="productPrice">
+                    ￥29.90
+                </span>
+            </a>
+        </div>
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/9532.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">[热销]
+            蔓越莓曲奇饼干 休闲零食 早餐糕点点心90g
+                </span>
+                <span class="productPrice">
+                   ￥9.9
+                </span>
+            </a>
+        </div>
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/9521.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">
+             抹茶味手造麻薯 零食特产小吃 点心糕点 150g
+                </span>
+                <span class="productPrice">
+                    ￥8.90
+                </span>
+            </a>
+        </div>
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/9510.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">
+                    食薯片 膨化食品 麦香鸡味块60g*3
+                </span>
+                <span class="productPrice">
+                   ￥8.90
+                </span>
+            </a>
+        </div>
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/9499.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">
+            营养早餐口袋面包乳酸菌小伴侣面包520g整箱装
+                </span>
+                <span class="productPrice">
+                    ￥39.9
+                </span>
+            </a>
+        </div>
+    </div>
+    <div class="eachHomepageCetegolyProducts">
+        <div class="leftmark"></div>
+        <span class="cetegolyTitle">小米官方</span>
+        <br />
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/10192.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">
+                    小米手环3(NFC) 长达20天续航能力
+                </span>
+                <span class="productPrice">
+                     ￥102.00
+                </span>
+            </a>
+        </div>
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/10181.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">
+                    小米电视4A/43英寸清晰的画质，搭载高性能的处理器
+                </span>
+                <span class="productPrice">
+                     ￥1,544.00
+                </span>
+            </a>
+        </div>
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/10170.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">
+                    飞利浦智睿球泡灯 Wi-Fi随时随地操控
+                </span>
+                <span class="productPrice">
+                    ￥49.00
+                </span>
+            </a>
+        </div>
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/10159.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">
+                    米家扫地机器人智能路径规划|大风压吸力|远程智能控制
+                </span>
+                <span class="productPrice">
+                    1,699.0
+                </span>
+            </a>
+        </div>
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/10148.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">
+                    小米笔记本 15.6"第八代酷睿™ 四核
+                </span>
+                <span class="productPrice">
+                    ￥1,993.60
+                </span>
+            </a>
+        </div>
+    </div>
+   <div class="eachHomepageCetegolyProducts">
+        <div class="leftmark"></div>
+        <span class="cetegolyTitle">小米官方</span>
+        <br />
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/10192.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">
+                    小米手环3(NFC) 长达20天续航能力
+                </span>
+                <span class="productPrice">
+                     ￥102.00
+                </span>
+            </a>
+        </div>
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/10181.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">
+                    小米电视4A/43英寸清晰的画质，搭载高性能的处理器
+                </span>
+                <span class="productPrice">
+                     ￥1,544.00
+                </span>
+            </a>
+        </div>
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/10170.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">
+                    飞利浦智睿球泡灯 Wi-Fi随时随地操控
+                </span>
+                <span class="productPrice">
+                    ￥49.00
+                </span>
+            </a>
+        </div>
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/10159.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">
+                    米家扫地机器人智能路径规划|大风压吸力|远程智能控制
+                </span>
+                <span class="productPrice">
+                    ￥1,699.0
+                </span>
+            </a>
+        </div>
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/10148.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">
+                    小米笔记本 15.6"第八代酷睿™ 四核
+                </span>
+                <span class="productPrice">
+                    ￥1,993.60
+                </span>
+            </a>
+        </div>
+    </div>
+    <div class="eachHomepageCetegolyProducts">
+        <div class="leftmark"></div>
+        <span class="cetegolyTitle">小米官方</span>
+        <br />
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/10192.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">
+                    小米手环3(NFC) 长达20天续航能力
+                </span>
+                <span class="productPrice">
+                     ￥102.00
+                </span>
+            </a>
+        </div>
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/10181.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">
+                    小米电视4A/43英寸清晰的画质，搭载高性能的处理器
+                </span>
+                <span class="productPrice">
+                     ￥1,544.00
+                </span>
+            </a>
+        </div>
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/10170.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">
+                    飞利浦智睿球泡灯 Wi-Fi随时随地操控
+                </span>
+                <span class="productPrice">
+                    ￥49.00
+                </span>
+            </a>
+        </div>
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/10159.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">
+                    米家扫地机器人智能路径规划|大风压吸力|远程智能控制
+                </span>
+                <span class="productPrice">
+                    ￥1,699.0
+                </span>
+            </a>
+        </div>
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/10148.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">
+                    小米笔记本 15.6"第八代酷睿™ 四核
+                </span>
+                <span class="productPrice">
+                    ￥1,993.60
+                </span>
+            </a>
+        </div>
+    </div>
+    <div class="eachHomepageCetegolyProducts">
+        <div class="leftmark"></div>
+        <span class="cetegolyTitle">小米官方</span>
+        <br />
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/10192.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">
+                    小米手环3(NFC) 长达20天续航能力
+                </span>
+                <span class="productPrice">
+                     ￥102.00
+                </span>
+            </a>
+        </div>
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/10181.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">
+                    小米电视4A/43英寸清晰的画质，搭载高性能的处理器
+                </span>
+                <span class="productPrice">
+                     ￥1,544.00
+                </span>
+            </a>
+        </div>
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/10170.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">
+                    飞利浦智睿球泡灯 Wi-Fi随时随地操控
+                </span>
+                <span class="productPrice">
+                    ￥49.00
+                </span>
+            </a>
+        </div>
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/10159.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">
+                    米家扫地机器人智能路径规划|大风压吸力|远程智能控制
+                </span>
+                <span class="productPrice">
+                    ￥1,699.0
+                </span>
+            </a>
+        </div>
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/10148.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">
+                    小米笔记本 15.6"第八代酷睿™ 四核
+                </span>
+                <span class="productPrice">
+                    ￥1,993.60
+                </span>
+            </a>
+        </div>
+    </div>
+    <div class="eachHomepageCetegolyProducts">
+        <div class="leftmark"></div>
+        <span class="cetegolyTitle">小米官方</span>
+        <br />
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/10192.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">
+                    小米手环3(NFC) 长达20天续航能力
+                </span>
+                <span class="productPrice">
+                     ￥102.00
+                </span>
+            </a>
+        </div>
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/10181.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">
+                    小米电视4A/43英寸清晰的画质，搭载高性能的处理器
+                </span>
+                <span class="productPrice">
+                     ￥1,544.00
+                </span>
+            </a>
+        </div>
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/10170.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">
+                    飞利浦智睿球泡灯 Wi-Fi随时随地操控
+                </span>
+                <span class="productPrice">
+                    ￥49.00
+                </span>
+            </a>
+        </div>
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/10159.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">
+                    米家扫地机器人智能路径规划|大风压吸力|远程智能控制
+                </span>
+                <span class="productPrice">
+                    ￥1,699.0
+                </span>
+            </a>
+        </div>
+        <div class="productItem">
+            <a href="#"><img width="100px" src="../images/10148.jpg"></a>
+            <a href="#" class="productItemDiscLink">
+                <span class="productItemDisc">
+                    小米笔记本 15.6"第八代酷睿™ 四核
+                </span>
+                <span class="productPrice">
+                    ￥1,993.60
+                </span>
+            </a>
+        </div>
+    </div>
+    <img class="endding" src="../images/end.png">
+</div>
+
+<div class="footer_top">
+    <div class="footer_ensure">
+        <a href="#">
+            <img src="../images/ensure.png">
+        </a>
+</div>
+
+
+
+</div>
+
+    <a href="#" onclick="gotoTop();return false;" class="totop"></a>
+
+
+</body>
+<script src="../bootstrap-3.3.7-dist/js/jquery-1.11.0.min.js"></script>
+<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$("#top-part").load("top-part.html");
+$("#search-part").load("search-part.html");
+</script>
+<script type="text/javascript">
+    window.onload = function () {
+        var Lis = document.getElementById("topmenu").getElementsByTagName("li");
+        for (i = 0; i<Lis.length; i++) {
+            Lis[i].onmouseover = function () {
+                this.className = "lihover";
+            }
+            Lis[i].onmouseout = function () {
+                this.className = "";
+            }
+        }
+    }
+</script>
+
+
+</html>

@@ -1,0 +1,40 @@
+/images/pay/u329.png		151行
+修改相对位置：https://blog.csdn.net/u010003835/article/details/49562015?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase
+
+1.轮图动起来    done
+2.女装男装照着淘宝改		点击之后进入相关商品详情	后续补充
+3.下面的图片 	可以点击跳转	后续补充
+4.改一下分类，最好多一点	done
+5.下面友情链接要可以点	done
+6.数码加电旁边三个点也要可以点		后续补充或者砍掉
+
+订单页面
+1.添加点击后可以添加收货地址，最好蹦出个模态框	(done)
+2.点击哪一个边框会变红			后续补充
+3.商品清单会随着商品的增加而变长		还不会
+4.提交订单也可点击				
+
+支付页面
+1.订单号要可以变化
+
+
+用户名、密码、密保、订单、购物车、收货信息	订单、购物车和对应的两张表联系
+商品id号、价格、状态、名称、标题、图片、库存、类别
+订单：订单号、创建时间、地址信息、订单状态、订单内容和信息	订单内容和信息与商品表联系，并且也要和创建订单的用户联系（收件人ID）
+购物车：商品内容、数量
+地址信息：省份、城市、详细地区、收件人、手机号
+
+上传图片，图片存在哪里，想的是可以自定义名字的话在数据库中记录名字
+
+收货信息只用搞一个
+
+商品表中状态列里1表示上架，0表示下架
+类别中1表示符合，0表示不符合
+
+
+注：order_id是序号，是自增的，order_number是订单号
+
+
+传参可用cookie传
+
+
