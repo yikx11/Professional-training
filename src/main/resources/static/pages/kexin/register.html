@@ -345,14 +345,20 @@
             username=jQuery("#username").val();
             var user_id=jQuery("#user_id").val();
             var password=jQuery("#password").val();
+            var pwdagain=jQuery("#passwordagain").val();
             var safe_q=jQuery("#safe_q").val();
             var safe_a=jQuery("#safe_a").val();
+            if(password!=pwdagain){
+                alert("再次确认密码和密码不一致！")
+            }
+            else {
             jQuery.post("/insert",{"username":username,"user_id":user_id,"password":password,"safe_q":safe_q,"safe_a":safe_a},function(rst){
                 jQuery("#reg_msg").html(rst);
                 jQuery('#myModal').modal("show");
-
             });
+            }
         });
+
         jQuery("#closeDilog").click(function(){
             jQuery('#myModal').modal("hide");
             var rst=jQuery("#reg_msg").html();

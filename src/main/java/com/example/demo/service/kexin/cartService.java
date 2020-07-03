@@ -115,6 +115,89 @@ public class cartService {
         return flag;
     }
 
+    public boolean count1(Map<String,String> map){
+        boolean flag=false;
+        try {
+            int r=cartMapper.count1(map);
+            //System.out.println(r);
+            if(r>0){
+                flag=true;
+            }
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+
+    public boolean count2(Map<String,String> map){
+        boolean flag=false;
+        try {
+            int r=cartMapper.count2(map);
+            //System.out.println(r);
+            if(r>0){
+                flag=true;
+            }
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+
+    public boolean count3(Map<String,String> map){
+        boolean flag=false;
+        try {
+            int r=cartMapper.count3(map);
+            //System.out.println(r);
+            if(r>0){
+                flag=true;
+            }
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+
+    public boolean count4(Map<String,String> map){
+        boolean flag=false;
+        try {
+            int r=cartMapper.count4(map);
+            //System.out.println(r);
+            if(r>0){
+                flag=true;
+            }
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+
+    public boolean count5(Map<String,String> map){
+        boolean flag=false;
+        try {
+            int r=cartMapper.count5(map);
+            //System.out.println(r);
+            if(r>0){
+                flag=true;
+            }
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+
+    public boolean totalcount(Map<String,String> map){
+        boolean flag=false;
+        try {
+            int r=cartMapper.totalcount(map);
+            //System.out.println(r);
+            if(r>0){
+                flag=true;
+            }
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
 
 
     //马写的要删

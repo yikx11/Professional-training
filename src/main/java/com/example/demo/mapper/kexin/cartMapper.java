@@ -12,24 +12,6 @@ public interface cartMapper {
      * @return
      */
 
-    @Update("update user_info" +
-            " set password=#{t.password}" +
-            " where username=#{t.username}" +
-            " and safe_a=#{t.safe_a}" )
-    public int findPWDByAnswer(@Param("t") Map<String,String> map);//试试这里的int，看如果更新不成功返回值是否是0，成功是否是有值的
-
-
-
-    //此函数用于确认用户名和问题答案都一致，之后才能进入修改密码环节
-    @Select("select safe_a from user_info where username=#{t.username}")
-    public String confirmAnswer(@Param("t") Map<String,String> map);
-
-    @Insert("insert into tea_info(tea_name,tea_sex,tea_no)" +
-            "value(#{tea.name},#{tea.sex},#{tea.no})")
-    public int save(@Param("tea") Map<String,String> map);
-
-
-
 
     //通过username获得cartID
     @Select("select cart_id from user_info where username=#{t.username}")
@@ -83,4 +65,27 @@ public interface cartMapper {
     @Update("update shoppingcart set goods_id5=null where cart_id=#{t.cart_id}")
     public int delete5(@Param("t") Map<String,String> tea);
 
+    //修改count1
+    @Update("update shoppingcart set count1=#{t.count1} where cart_id=#{t.cart_id}")
+    public int count1(@Param("t") Map<String,String> tea);
+
+    //修改count2
+    @Update("update shoppingcart set count2=#{t.count2} where cart_id=#{t.cart_id}")
+    public int count2(@Param("t") Map<String,String> tea);
+
+    //修改count3
+    @Update("update shoppingcart set count3=#{t.count3} where cart_id=#{t.cart_id}")
+    public int count3(@Param("t") Map<String,String> tea);
+
+    //修改count4
+    @Update("update shoppingcart set count4=#{t.count4} where cart_id=#{t.cart_id}")
+    public int count4(@Param("t") Map<String,String> tea);
+
+    //修改count5
+    @Update("update shoppingcart set count5=#{t.count5} where cart_id=#{t.cart_id}")
+    public int count5(@Param("t") Map<String,String> tea);
+
+    //修改totalcount
+    @Update("update shoppingcart set totalcount=#{t.totalcount} where cart_id=#{t.cart_id}")
+    public int totalcount(@Param("t") Map<String,String> tea);
 }

@@ -87,6 +87,66 @@ public class cartController {
         return msg;
     }
 
+    @RequestMapping("/count1")//这个里面的值绝对不要和别人的重复
+    public String count1(@RequestParam Map<String,String> map){ //不管删除什么，在前台传过来的数据都可以用Map封装起来
+        String msg="修改1失败";
+        boolean flag=cartService.count1(map);
+        if(flag){
+            msg="修改1成功";
+        }
+        return msg;
+    }
+
+    @RequestMapping("/count2")//这个里面的值绝对不要和别人的重复
+    public String count2(@RequestParam Map<String,String> map){ //不管删除什么，在前台传过来的数据都可以用Map封装起来
+        String msg="修改2失败";
+        boolean flag=cartService.count2(map);
+        if(flag){
+            msg="修改2成功";
+        }
+        return msg;
+    }
+
+    @RequestMapping("/count3")//这个里面的值绝对不要和别人的重复
+    public String count3(@RequestParam Map<String,String> map){ //不管删除什么，在前台传过来的数据都可以用Map封装起来
+        String msg="修改3失败";
+        boolean flag=cartService.count3(map);
+        if(flag){
+            msg="修改3成功";
+        }
+        return msg;
+    }
+
+    @RequestMapping("/count4")//这个里面的值绝对不要和别人的重复
+    public String count4(@RequestParam Map<String,String> map){ //不管删除什么，在前台传过来的数据都可以用Map封装起来
+        String msg="修改4失败";
+        boolean flag=cartService.count4(map);
+        if(flag){
+            msg="修改4成功";
+        }
+        return msg;
+    }
+
+    @RequestMapping("/count5")//这个里面的值绝对不要和别人的重复
+    public String count5(@RequestParam Map<String,String> map){ //不管删除什么，在前台传过来的数据都可以用Map封装起来
+        String msg="修改5失败";
+        boolean flag=cartService.count5(map);
+        if(flag){
+            msg="修改5成功";
+        }
+        return msg;
+    }
+
+    @RequestMapping("/totalcount")//这个里面的值绝对不要和别人的重复
+    public String totalcount(@RequestParam Map<String,String> map){ //不管删除什么，在前台传过来的数据都可以用Map封装起来
+        String msg="修改z失败";
+        boolean flag=cartService.totalcount(map);
+        if(flag){
+            msg="修改z成功";
+        }
+        return msg;
+    }
+
 
     //马写的要删
     @RequestMapping("/goodsfind2")
