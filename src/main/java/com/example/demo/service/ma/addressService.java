@@ -66,4 +66,15 @@ public class addressService {
         }
         return list;
     }
+
+    public Map<String,Object> doFindByAddId(int address_id){
+
+        Map<String,Object> map=null;
+        try {
+            map=addressMapper.findById(address_id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return map;
+    }
 }

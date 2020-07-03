@@ -5,6 +5,7 @@ import com.example.demo.mapper.ma.orderMapper;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Map;
 
 @Service //有了这个我们spring框架就知道，在BeanFactory中要管理该类
@@ -41,6 +42,15 @@ public class orderService {
         return flag;
     }
 
+    public List<Map<String,Object>> doFindByUser(int user_id){
 
+        List<Map<String,Object>> list=null;
+        try {
+            list=orderMapper.findByuser_Id(user_id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
 
 }

@@ -59,4 +59,13 @@ public class addressController {
         List<Map<String,Object>> list=addressService.doFindByUser(user_id);
         return list;
     }
+
+    @RequestMapping("/addressfind2")
+    public Map<String,Object> findByAdd_id(@RequestParam Map<String,String> map) {
+        int address_id=Integer.valueOf(map.get("address_id"));
+        Map<String,Object> map2=addressService.doFindByAddId(address_id);
+        return map2;
+    }
+
+
 }

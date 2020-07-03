@@ -37,4 +37,7 @@ public interface orderMapper {
     //通过id删除订单
     @Delete("delete from order_info where order_id=#{id}")
     public int delete(int id);
+
+    @Select("select * from order_info where user_id=#{n}")
+    public List<Map<String,Object>> findByuser_Id(int id);
 }
