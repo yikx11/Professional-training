@@ -332,9 +332,17 @@
 <script src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 <script>
 
+    var userID;
+    var cartID;
+    var username;
+    var d1 = $.Deferred();
+    var d2 = $.Deferred();
+    var d3 = $.Deferred();
+    var d4 = $.Deferred();
+
     jQuery(function(){
         jQuery("#submitbutton").click(function(){
-            var username=jQuery("#username").val();
+            username=jQuery("#username").val();
             var user_id=jQuery("#user_id").val();
             var password=jQuery("#password").val();
             var safe_q=jQuery("#safe_q").val();
@@ -350,8 +358,36 @@
             var rst=jQuery("#reg_msg").html();
             if(rst=='注册成功！')
             {
+                //通过用户注册创建与对应购物车联系的步骤2:去用刚刚的用户信息查询到用户的id
+                jQuery.post("/findIDByName",{"username":username},function(rst){
+                    userID=rst;
+                    d1.resolve( "Fish" );
+                });
+
+                $.when(d1).done(function () {
+                //通过用户注册创建与对应购物车联系的步骤3:创建一个以此用户id为value值的购物车
+                jQuery.post("/createCart",{"user_id":userID},function(rst){
+                    d2.resolve( "Fish" );
+                });
+                });
+
+                $.when(d2).done(function () {
+                //通过用户注册创建与对应购物车联系的步骤4:通过此用户id查出购物车的id
+                jQuery.post("/findIDByID",{"user_id":userID},function(rst){
+                    cartID=rst;
+                    d3.resolve( "Fish" );
+                });
+                });
+
+                $.when(d3).done(function () {
+                //通过用户注册创建与对应购物车联系的步骤5:将用户一列里的购物车id更新
+                jQuery.post("/updateCartID",{"cart_id":cartID,"user_id":userID},function(rst){
+                    alert(rst);
+                    d4.resolve( "Fish" );
+                });
+                });
                 //跳转页面
-                window.location.href="login.html";
+                //window.location.href="login.html";
             }
         });
     });

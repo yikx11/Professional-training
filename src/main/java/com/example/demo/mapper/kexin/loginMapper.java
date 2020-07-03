@@ -1,4 +1,4 @@
-package com.example.demo.mapper;
+package com.example.demo.mapper.kexin;
 
 import org.apache.ibatis.annotations.*;
 
@@ -14,14 +14,28 @@ public interface loginMapper {
     @Select("select * from user_info")
     public List<Map<String,Object>> findAll();
 
-    /**
-     * #{n} 表示一个占位符，用于通过变量赋值
-     * @param id
-     * @return
-     *
-     */
-    @Select("select * from user_info where user_id=#{n}")
-    public Map<String,Object> findById(int id);
+    //通过用户注册创建与对应购物车联系的步骤2:去用刚刚的用户信息查询到用户的id
+    @Select("select user_id from user_info where username=#{t.username}")
+    public int findIDByName(@Param("t") Map<String,String> map);
+
+
+    //通过用户注册创建与对应购物车联系的步骤3:3.创建一个以此用户id为value值的购物车
+    @Insert("insert into shoppingcart(user_id)" +
+            "value(#{user.user_id})")
+    public int createCart(@Param("user") Map <String,String> user);
+
+
+    //通过用户注册创建与对应购物车联系的步骤4:通过此用户id查出购物车的id
+    @Select("select cart_id from shoppingcart where user_id=#{t.user_id}")
+    public int findIDByID(@Param("t") Map<String,String> map);
+
+
+    //通过用户注册创建与对应购物车联系的步骤5:将用户一列里的购物车id更新
+    @Update("update user_info" +
+            " set cart_id=#{u.cart_id}" +
+            " where user_id=#{u.user_id}")
+    public int updateCartID(@Param("u") Map<String,String> map);
+
 
     //插入数据 有什么内容就要插什么
     //从上面的变成下面的,传递一个map,map里用string是因为从页面传过来的数据都是string类型的
@@ -29,6 +43,7 @@ public interface loginMapper {
     @Insert("insert into user_info(user_id,username,password,safe_q,safe_a)" +
             "value(#{user.user_id},#{user.username},#{user.password},#{user.safe_q},#{user.safe_a})")
     public int insert(@Param("user") Map <String,String> user);//@Param("tea") 表示参数的别名，在sql语句中使用
+
 
     /**
      * 根据用户的username修改用户的password
@@ -46,4 +61,5 @@ public interface loginMapper {
     //通过id删除用户
     @Delete("delete from user_info where user_id=#{id}")
     public int delete(int id);
+
 }
