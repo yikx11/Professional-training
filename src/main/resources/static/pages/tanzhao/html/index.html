@@ -69,28 +69,23 @@
                 <a style="padding-left:30px ;color:#fff;">全部商品分类</a>
             </div>
             <ul class="topmenu" id="topmenu">
-                <li><a href="#">服饰、珠宝首饰</a>
+                <li onclick="totype1()"><a href="#">女装/男装</a>
                 </li>
-                <li><a href="#">图书、音像、数字商品</a>
+                <li onclick="totype2()"><a href="#">鞋靴/箱包</a>
                 </li>
-                <li><a href="#">家用电器</a>
+                <li onclick="totype3()"><a href="#">童装/玩具</a>
                 </li>
-                <li><a href="#">手机、数码</a>
+                <li onclick="totype4()"><a href="#">家电/数码</a>
                 </li>
-                <li><a href="#">个护化妆</a>
+                <li onclick="totype5()"><a href="#">运动/户外</a>
                 </li>
-                <li><a href="#">电脑、办公</a><span></span>
+                <li onclick="totype6()"><a href="#">美食/生鲜</a>
                 </li>
-                <li><a href="#">家居、家具、家装、厨具</a>
+                <li onclick="totype7()"><a href="#">鲜花/宠物</a>
                 </li>
-                <li><a href="#">鞋靴、箱包、钟表、奢侈品</a>
+                <li onclick="totype8()"><a href="#">家具/家纺</a>
                 </li>
-                <li><a href="#">运动户外</a>
-                </li>
-                <li><a href="#">汽车用品</a>
-                </li>
-                <li><a href="#">母婴、玩具乐器</a>
-                </li>
+                <li onclick="totype9()"><a href="#">汽车/二手车</a>
             </ul>
         </div>
       <div id="slidershow" class="carousel slide" data-ride="carousel" data-interval = 2000 data-pause = "hover" data-wrap="true" style="margin-top: unset; width: 900px;height:auto; float:right ;margin-left:auto; margin-right:auto;">
@@ -125,371 +120,72 @@
 </div>
 
 
-
+<!--马修改开始-->
 <!-- 产品列表 -->
 <div class="homepageCetegolyProducts">
     <div class="eachHomepageCetegolyProducts">
         <div class="leftmark"></div>
-        <span class="cetegolyTitle">休闲食品</span>
+        <span class="cetegolyTitle">商品列表</span>
         <br />
-        <div class="productItem">
-            <a href="goodsinfo.html"><img width="100px" src="../images/9543.jpg"></a>
+        <div class="productItem" id="goods1">
+            <a href="goodsinfo.html"><img width="100px" src="../images/9543.jpg" id="goods1img"></a>
             <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">[热销]
+                <span class="productItemDisc" id="goods1name">[热销]
                     士力架 花生夹心巧克力（全家桶）
                 </span>
-                <span class="productPrice">
+                <span class="productPrice" id="goods1price">
                     ￥29.90
                 </span>
             </a>
         </div>
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/9532.jpg"></a>
+        <div class="productItem" id="goods2">
+            <a href="#"><img width="100px" src="../images/9532.jpg" id="goods2img"></a>
             <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">[热销]
+                <span class="productItemDisc" id="goods2name">[热销]
             蔓越莓曲奇饼干 休闲零食 早餐糕点点心90g
                 </span>
-                <span class="productPrice">
+                <span class="productPrice" id="goods2price">
                    ￥9.9
                 </span>
             </a>
         </div>
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/9521.jpg"></a>
+        <div class="productItem" id="goods3">
+            <a href="#"><img width="100px" src="../images/9521.jpg" id="goods3img"></a>
             <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">
+                <span class="productItemDisc" id="goods3name">
              抹茶味手造麻薯 零食特产小吃 点心糕点 150g
                 </span>
-                <span class="productPrice">
+                <span class="productPrice" id="goods3price">
                     ￥8.90
                 </span>
             </a>
         </div>
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/9510.jpg"></a>
+        <div class="productItem" id="goods4">
+            <a href="#"><img width="100px" src="../images/9510.jpg" id="goods4img"></a>
             <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">
+                <span class="productItemDisc" id="goods4name">
                     食薯片 膨化食品 麦香鸡味块60g*3
                 </span>
-                <span class="productPrice">
+                <span class="productPrice" id="goods4price">
                    ￥8.90
                 </span>
             </a>
         </div>
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/9499.jpg"></a>
+        <div class="productItem" id="goods5">
+            <a href="#"><img width="100px" src="../images/9499.jpg" id="goods5img"></a>
             <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">
+                <span class="productItemDisc" id="goods5name">
             营养早餐口袋面包乳酸菌小伴侣面包520g整箱装
                 </span>
-                <span class="productPrice">
+                <span class="productPrice" id="goods5price">
                     ￥39.9
-                </span>
-            </a>
-        </div>
-    </div>
-    <div class="eachHomepageCetegolyProducts">
-        <div class="leftmark"></div>
-        <span class="cetegolyTitle">小米官方</span>
-        <br />
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/10192.jpg"></a>
-            <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">
-                    小米手环3(NFC) 长达20天续航能力
-                </span>
-                <span class="productPrice">
-                     ￥102.00
-                </span>
-            </a>
-        </div>
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/10181.jpg"></a>
-            <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">
-                    小米电视4A/43英寸清晰的画质，搭载高性能的处理器
-                </span>
-                <span class="productPrice">
-                     ￥1,544.00
-                </span>
-            </a>
-        </div>
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/10170.jpg"></a>
-            <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">
-                    飞利浦智睿球泡灯 Wi-Fi随时随地操控
-                </span>
-                <span class="productPrice">
-                    ￥49.00
-                </span>
-            </a>
-        </div>
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/10159.jpg"></a>
-            <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">
-                    米家扫地机器人智能路径规划|大风压吸力|远程智能控制
-                </span>
-                <span class="productPrice">
-                    1,699.0
-                </span>
-            </a>
-        </div>
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/10148.jpg"></a>
-            <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">
-                    小米笔记本 15.6"第八代酷睿™ 四核
-                </span>
-                <span class="productPrice">
-                    ￥1,993.60
-                </span>
-            </a>
-        </div>
-    </div>
-   <div class="eachHomepageCetegolyProducts">
-        <div class="leftmark"></div>
-        <span class="cetegolyTitle">小米官方</span>
-        <br />
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/10192.jpg"></a>
-            <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">
-                    小米手环3(NFC) 长达20天续航能力
-                </span>
-                <span class="productPrice">
-                     ￥102.00
-                </span>
-            </a>
-        </div>
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/10181.jpg"></a>
-            <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">
-                    小米电视4A/43英寸清晰的画质，搭载高性能的处理器
-                </span>
-                <span class="productPrice">
-                     ￥1,544.00
-                </span>
-            </a>
-        </div>
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/10170.jpg"></a>
-            <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">
-                    飞利浦智睿球泡灯 Wi-Fi随时随地操控
-                </span>
-                <span class="productPrice">
-                    ￥49.00
-                </span>
-            </a>
-        </div>
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/10159.jpg"></a>
-            <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">
-                    米家扫地机器人智能路径规划|大风压吸力|远程智能控制
-                </span>
-                <span class="productPrice">
-                    ￥1,699.0
-                </span>
-            </a>
-        </div>
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/10148.jpg"></a>
-            <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">
-                    小米笔记本 15.6"第八代酷睿™ 四核
-                </span>
-                <span class="productPrice">
-                    ￥1,993.60
-                </span>
-            </a>
-        </div>
-    </div>
-    <div class="eachHomepageCetegolyProducts">
-        <div class="leftmark"></div>
-        <span class="cetegolyTitle">小米官方</span>
-        <br />
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/10192.jpg"></a>
-            <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">
-                    小米手环3(NFC) 长达20天续航能力
-                </span>
-                <span class="productPrice">
-                     ￥102.00
-                </span>
-            </a>
-        </div>
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/10181.jpg"></a>
-            <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">
-                    小米电视4A/43英寸清晰的画质，搭载高性能的处理器
-                </span>
-                <span class="productPrice">
-                     ￥1,544.00
-                </span>
-            </a>
-        </div>
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/10170.jpg"></a>
-            <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">
-                    飞利浦智睿球泡灯 Wi-Fi随时随地操控
-                </span>
-                <span class="productPrice">
-                    ￥49.00
-                </span>
-            </a>
-        </div>
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/10159.jpg"></a>
-            <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">
-                    米家扫地机器人智能路径规划|大风压吸力|远程智能控制
-                </span>
-                <span class="productPrice">
-                    ￥1,699.0
-                </span>
-            </a>
-        </div>
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/10148.jpg"></a>
-            <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">
-                    小米笔记本 15.6"第八代酷睿™ 四核
-                </span>
-                <span class="productPrice">
-                    ￥1,993.60
-                </span>
-            </a>
-        </div>
-    </div>
-    <div class="eachHomepageCetegolyProducts">
-        <div class="leftmark"></div>
-        <span class="cetegolyTitle">小米官方</span>
-        <br />
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/10192.jpg"></a>
-            <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">
-                    小米手环3(NFC) 长达20天续航能力
-                </span>
-                <span class="productPrice">
-                     ￥102.00
-                </span>
-            </a>
-        </div>
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/10181.jpg"></a>
-            <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">
-                    小米电视4A/43英寸清晰的画质，搭载高性能的处理器
-                </span>
-                <span class="productPrice">
-                     ￥1,544.00
-                </span>
-            </a>
-        </div>
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/10170.jpg"></a>
-            <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">
-                    飞利浦智睿球泡灯 Wi-Fi随时随地操控
-                </span>
-                <span class="productPrice">
-                    ￥49.00
-                </span>
-            </a>
-        </div>
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/10159.jpg"></a>
-            <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">
-                    米家扫地机器人智能路径规划|大风压吸力|远程智能控制
-                </span>
-                <span class="productPrice">
-                    ￥1,699.0
-                </span>
-            </a>
-        </div>
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/10148.jpg"></a>
-            <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">
-                    小米笔记本 15.6"第八代酷睿™ 四核
-                </span>
-                <span class="productPrice">
-                    ￥1,993.60
-                </span>
-            </a>
-        </div>
-    </div>
-    <div class="eachHomepageCetegolyProducts">
-        <div class="leftmark"></div>
-        <span class="cetegolyTitle">小米官方</span>
-        <br />
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/10192.jpg"></a>
-            <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">
-                    小米手环3(NFC) 长达20天续航能力
-                </span>
-                <span class="productPrice">
-                     ￥102.00
-                </span>
-            </a>
-        </div>
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/10181.jpg"></a>
-            <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">
-                    小米电视4A/43英寸清晰的画质，搭载高性能的处理器
-                </span>
-                <span class="productPrice">
-                     ￥1,544.00
-                </span>
-            </a>
-        </div>
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/10170.jpg"></a>
-            <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">
-                    飞利浦智睿球泡灯 Wi-Fi随时随地操控
-                </span>
-                <span class="productPrice">
-                    ￥49.00
-                </span>
-            </a>
-        </div>
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/10159.jpg"></a>
-            <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">
-                    米家扫地机器人智能路径规划|大风压吸力|远程智能控制
-                </span>
-                <span class="productPrice">
-                    ￥1,699.0
-                </span>
-            </a>
-        </div>
-        <div class="productItem">
-            <a href="#"><img width="100px" src="../images/10148.jpg"></a>
-            <a href="#" class="productItemDiscLink">
-                <span class="productItemDisc">
-                    小米笔记本 15.6"第八代酷睿™ 四核
-                </span>
-                <span class="productPrice">
-                    ￥1,993.60
                 </span>
             </a>
         </div>
     </div>
     <img class="endding" src="../images/end.png">
 </div>
+<!--马修改结束-->
 
 <div class="footer_top">
     <div class="footer_ensure">
@@ -508,23 +204,808 @@
 </body>
 <script src="../bootstrap-3.3.7-dist/js/jquery-1.11.0.min.js"></script>
 <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript"></script>
 <script type="text/javascript">
-$("#top-part").load("top-part.html");
-$("#search-part").load("search-part.html");
+
+
 </script>
-<script type="text/javascript">
-    window.onload = function () {
-        var Lis = document.getElementById("topmenu").getElementsByTagName("li");
-        for (i = 0; i<Lis.length; i++) {
-            Lis[i].onmouseover = function () {
-                this.className = "lihover";
+
+<!--马修改开始-->
+<script>
+    /*下面的是模拟数据，需要根据筛选来替换*/
+    var goodsnum=3;//这个是显示的商品的总数
+    var goods1_id=1;//一号商品id
+    var goods2_id=2;//二号商品id
+    var goods3_id=3;//三号商品id
+    var goods4_id=4;//四号商品id
+    var goods5_id=5;//五号商品id
+
+    var goods_type=4;//商品类别，由cookie中type读出
+    var searchtype=2;//搜素类型
+    var mainword="11";
+    var goodsname="";
+    var matchresult=false;
+
+
+    //按钮响应
+    function totype1(){
+        goods_type=1;
+        changegoodsbytype();
+    }
+
+    function totype2(){
+        goods_type=2;
+        changegoodsbytype();
+    }
+
+    function totype3(){
+        goods_type=3;
+        changegoodsbytype();
+    }
+
+    function totype4(){
+        goods_type=4;
+        changegoodsbytype();
+    }
+
+    function totype5(){
+        goods_type=5;
+        changegoodsbytype();
+    }
+
+    function totype6(){
+        goods_type=6;
+        changegoodsbytype();
+    }
+
+    function totype7(){
+        goods_type=7;
+        changegoodsbytype();
+    }
+
+    function totype8(){
+        goods_type=8;
+        changegoodsbytype();
+    }
+
+    function totype9(){
+        goods_type=9;
+        changegoodsbytype();
+    }
+    function initgoods()
+    {
+        //初始化商品信息
+        if(goodsnum==0)
+        {
+            //没有商品
+            document.getElementById("goods1").style.display="none";
+            document.getElementById("goods2").style.display="none";
+            document.getElementById("goods3").style.display="none";
+            document.getElementById("goods4").style.display="none";
+            document.getElementById("goods5").style.display="none";
+        }
+        if(goodsnum==1)
+        {
+            //一个商品
+            document.getElementById("goods1").style.display="inline-block";
+            document.getElementById("goods2").style.display="none";
+            document.getElementById("goods3").style.display="none";
+            document.getElementById("goods4").style.display="none";
+            document.getElementById("goods5").style.display="none";
+            //第一个商品具体信息
+            jQuery.post("/goodsdetailfind",{"goods_id":goods1_id},function (rst2) {
+                //获取的是商品的一行数据
+                var goods1img=document.getElementById("goods1img");
+                goods1img.src=rst2.imgurl;
+                jQuery("#goods1name").html(rst2.name);
+                jQuery("#goods1price").html(parseInt(rst2.price));
+
+            });
+
+
+        }
+        if(goodsnum==2)
+        {
+            //2个商品
+            document.getElementById("goods1").style.display="inline-block";
+            document.getElementById("goods2").style.display="inline-block";
+            document.getElementById("goods3").style.display="none";
+            document.getElementById("goods4").style.display="none";
+            document.getElementById("goods5").style.display="none";
+
+            //第一个商品具体信息
+            jQuery.post("/goodsdetailfind",{"goods_id":goods1_id},function (rst2) {
+                //获取的是商品的一行数据
+                var goods1img=document.getElementById("goods1img");
+                goods1img.src=rst2.imgurl;
+                jQuery("#goods1name").html(rst2.name);
+                jQuery("#goods1price").html(parseInt(rst2.price));
+
+            });
+            //第二个商品具体信息
+            jQuery.post("/goodsdetailfind",{"goods_id":goods2_id},function (rst2) {
+                //获取的是商品的一行数据
+                var goods2img=document.getElementById("goods2img");
+                goods2img.src=rst2.imgurl;
+                jQuery("#goods2name").html(rst2.name);
+                jQuery("#goods2price").html(parseInt(rst2.price));
+
+            });
+        }
+        if(goodsnum==3)
+        {
+            //3个商品
+            document.getElementById("goods1").style.display="inline-block";
+            document.getElementById("goods2").style.display="inline-block";
+            document.getElementById("goods3").style.display="inline-block";
+            document.getElementById("goods4").style.display="none";
+            document.getElementById("goods5").style.display="none";
+
+            //第一个商品具体信息
+            jQuery.post("/goodsdetailfind",{"goods_id":goods1_id},function (rst2) {
+                //获取的是商品的一行数据
+                var goods1img=document.getElementById("goods1img");
+                goods1img.src=rst2.imgurl;
+                jQuery("#goods1name").html(rst2.name);
+                jQuery("#goods1price").html(parseInt(rst2.price));
+
+            });
+            //第二个商品具体信息
+            jQuery.post("/goodsdetailfind",{"goods_id":goods2_id},function (rst2) {
+                //获取的是商品的一行数据
+                var goods2img=document.getElementById("goods2img");
+                goods2img.src=rst2.imgurl;
+                jQuery("#goods2name").html(rst2.name);
+                jQuery("#goods2price").html(parseInt(rst2.price));
+
+            });
+            //第三个商品具体信息
+            jQuery.post("/goodsdetailfind",{"goods_id":goods3_id},function (rst2) {
+                //获取的是商品的一行数据
+                var goods3img=document.getElementById("goods3img");
+                goods3img.src=rst2.imgurl;
+                jQuery("#goods3name").html(rst2.name);
+                jQuery("#goods3price").html(parseInt(rst2.price));
+
+            });
+        }
+        if(goodsnum==4)
+        {
+            //4个商品
+            document.getElementById("goods1").style.display="inline-block";
+            document.getElementById("goods2").style.display="inline-block";
+            document.getElementById("goods3").style.display="inline-block";
+            document.getElementById("goods4").style.display="inline-block";
+            document.getElementById("goods5").style.display="none";
+            //第一个商品具体信息
+            jQuery.post("/goodsdetailfind",{"goods_id":goods1_id},function (rst2) {
+                //获取的是商品的一行数据
+                var goods1img=document.getElementById("goods1img");
+                goods1img.src=rst2.imgurl;
+                jQuery("#goods1name").html(rst2.name);
+                jQuery("#goods1price").html(parseInt(rst2.price));
+
+            });
+            //第二个商品具体信息
+            jQuery.post("/goodsdetailfind",{"goods_id":goods2_id},function (rst2) {
+                //获取的是商品的一行数据
+                var goods2img=document.getElementById("goods2img");
+                goods2img.src=rst2.imgurl;
+                jQuery("#goods2name").html(rst2.name);
+                jQuery("#goods2price").html(parseInt(rst2.price));
+
+            });
+            //第三个商品具体信息
+            jQuery.post("/goodsdetailfind",{"goods_id":goods3_id},function (rst2) {
+                //获取的是商品的一行数据
+                var goods3img=document.getElementById("goods3img");
+                goods3img.src=rst2.imgurl;
+                jQuery("#goods3name").html(rst2.name);
+                jQuery("#goods3price").html(parseInt(rst2.price));
+
+            });
+            //第四个商品具体信息
+            jQuery.post("/goodsdetailfind",{"goods_id":goods4_id},function (rst2) {
+                //获取的是商品的一行数据
+                var goods4img=document.getElementById("goods4img");
+                goods4img.src=rst2.imgurl;
+                jQuery("#goods4name").html(rst2.name);
+                jQuery("#goods4price").html(parseInt(rst2.price));
+
+            });
+        }
+        if(goodsnum==5)
+        {
+            //5个商品
+            document.getElementById("goods1").style.display="inline-block";
+            document.getElementById("goods2").style.display="inline-block";
+            document.getElementById("goods3").style.display="inline-block";
+            document.getElementById("goods4").style.display="inline-block";
+            document.getElementById("goods5").style.display="inline-block";
+
+            //第一个商品具体信息
+            jQuery.post("/goodsdetailfind",{"goods_id":goods1_id},function (rst2) {
+                //获取的是商品的一行数据
+                var goods1img=document.getElementById("goods1img");
+                goods1img.src=rst2.imgurl;
+                jQuery("#goods1name").html(rst2.name);
+                jQuery("#goods1price").html(parseInt(rst2.price));
+
+            });
+            //第二个商品具体信息
+            jQuery.post("/goodsdetailfind",{"goods_id":goods2_id},function (rst2) {
+                //获取的是商品的一行数据
+                var goods2img=document.getElementById("goods2img");
+                goods2img.src=rst2.imgurl;
+                jQuery("#goods2name").html(rst2.name);
+                jQuery("#goods2price").html(parseInt(rst2.price));
+
+            });
+            //第三个商品具体信息
+            jQuery.post("/goodsdetailfind",{"goods_id":goods3_id},function (rst2) {
+                //获取的是商品的一行数据
+                var goods3img=document.getElementById("goods3img");
+                goods3img.src=rst2.imgurl;
+                jQuery("#goods3name").html(rst2.name);
+                jQuery("#goods3price").html(parseInt(rst2.price));
+
+            });
+            //第四个商品具体信息
+            jQuery.post("/goodsdetailfind",{"goods_id":goods4_id},function (rst2) {
+                //获取的是商品的一行数据
+                var goods4img=document.getElementById("goods4img");
+                goods4img.src=rst2.imgurl;
+                jQuery("#goods4name").html(rst2.name);
+                jQuery("#goods4price").html(parseInt(rst2.price));
+
+            });
+            //第五个商品具体信息
+            jQuery.post("/goodsdetailfind",{"goods_id":goods5_id},function (rst2) {
+                //获取的是商品的一行数据
+                var goods5img=document.getElementById("goods5img");
+                goods5img.src=rst2.imgurl;
+                jQuery("#goods5name").html(rst2.name);
+                jQuery("#goods5price").html(parseInt(rst2.price));
+
+            });
+        }
+        //location.reload();
+    }
+    //initgoods();
+
+
+    //按照商品类型来显示商品
+    function changegoodsbytype()
+    {
+        //根据商品的类别来显示商品
+        if(goods_type==1)
+        {
+            jQuery.post("/findByType1",function (rst2)
+            {
+                //返回的是符合商品的列表
+                alert(rst2.length);
+                goodsnum=rst2.length;
+                if(goodsnum==1)
+                {
+                    //alert("进到1了");
+                    goods1_id=parseInt(rst2[0].goods_id);
+                }
+                if(goodsnum==2)
+                {
+                    //alert("怎么进到2了");
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                }
+                if(goodsnum==3)
+                {
+                    //alert("怎么进到3了");
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                    goods3_id=parseInt(rst2[2].goods_id);
+                }
+                if(goodsnum==4)
+                {
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                    goods3_id=parseInt(rst2[2].goods_id);
+                    goods4_id=parseInt(rst2[3].goods_id);
+                }
+                if(goodsnum>4)
+                {
+                    //仅显示前5个
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                    goods3_id=parseInt(rst2[2].goods_id);
+                    goods4_id=parseInt(rst2[3].goods_id);
+                    goods5_id=parseInt(rst2[4].goods_id);
+                }
+            });
+            setTimeout(function(){initgoods();}, 800);
+            //initgoods();
+        }
+        if(goods_type==2)
+        {
+            jQuery.post("/findByType2",function (rst2)
+            {
+                //返回的是符合商品的列表
+                alert(rst2.length);
+                goodsnum=rst2.length;
+                if(goodsnum==1)
+                {
+                    //alert("进到1了");
+                    goods1_id=parseInt(rst2[0].goods_id);
+                }
+                if(goodsnum==2)
+                {
+                    //alert("怎么进到2了");
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                }
+                if(goodsnum==3)
+                {
+                    //alert("怎么进到3了");
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                    goods3_id=parseInt(rst2[2].goods_id);
+                }
+                if(goodsnum==4)
+                {
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                    goods3_id=parseInt(rst2[2].goods_id);
+                    goods4_id=parseInt(rst2[3].goods_id);
+                }
+                if(goodsnum>4)
+                {
+                    //仅显示前5个
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                    goods3_id=parseInt(rst2[2].goods_id);
+                    goods4_id=parseInt(rst2[3].goods_id);
+                    goods5_id=parseInt(rst2[4].goods_id);
+                }
+            });
+            setTimeout(function(){initgoods();}, 800);
+            //initgoods();
+        }
+        if(goods_type==3)
+        {
+            jQuery.post("/findByType3",function (rst2)
+            {
+                //返回的是符合商品的列表
+                alert(rst2.length);
+                goodsnum=rst2.length;
+                if(goodsnum==1)
+                {
+                    //alert("进到1了");
+                    goods1_id=parseInt(rst2[0].goods_id);
+                }
+                if(goodsnum==2)
+                {
+                    //alert("怎么进到2了");
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                }
+                if(goodsnum==3)
+                {
+                    //alert("怎么进到3了");
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                    goods3_id=parseInt(rst2[2].goods_id);
+                }
+                if(goodsnum==4)
+                {
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                    goods3_id=parseInt(rst2[2].goods_id);
+                    goods4_id=parseInt(rst2[3].goods_id);
+                }
+                if(goodsnum>4)
+                {
+                    //仅显示前5个
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                    goods3_id=parseInt(rst2[2].goods_id);
+                    goods4_id=parseInt(rst2[3].goods_id);
+                    goods5_id=parseInt(rst2[4].goods_id);
+                }
+            });
+            setTimeout(function(){initgoods();}, 800);
+            //initgoods();
+        }
+        if(goods_type==4)
+        {
+            jQuery.post("/findByType4",function (rst2)
+            {
+                //返回的是符合商品的列表
+                alert(rst2.length);
+                goodsnum=rst2.length;
+                if(goodsnum==1)
+                {
+                    //alert("进到1了");
+                    goods1_id=parseInt(rst2[0].goods_id);
+                }
+                if(goodsnum==2)
+                {
+                    //alert("怎么进到2了");
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                }
+                if(goodsnum==3)
+                {
+                    //alert("怎么进到3了");
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                    goods3_id=parseInt(rst2[2].goods_id);
+                }
+                if(goodsnum==4)
+                {
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                    goods3_id=parseInt(rst2[2].goods_id);
+                    goods4_id=parseInt(rst2[3].goods_id);
+                }
+                if(goodsnum>4)
+                {
+                    //仅显示前5个
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                    goods3_id=parseInt(rst2[2].goods_id);
+                    goods4_id=parseInt(rst2[3].goods_id);
+                    goods5_id=parseInt(rst2[4].goods_id);
+                }
+            });
+            setTimeout(function(){initgoods();}, 800);
+            //initgoods();
+        }
+        if(goods_type==5)
+        {
+            jQuery.post("/findByType5",function (rst2)
+            {
+                //返回的是符合商品的列表
+                alert(rst2.length);
+                goodsnum=rst2.length;
+                if(goodsnum==1)
+                {
+                    //alert("进到1了");
+                    goods1_id=parseInt(rst2[0].goods_id);
+                }
+                if(goodsnum==2)
+                {
+                    //alert("怎么进到2了");
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                }
+                if(goodsnum==3)
+                {
+                    //alert("怎么进到3了");
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                    goods3_id=parseInt(rst2[2].goods_id);
+                }
+                if(goodsnum==4)
+                {
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                    goods3_id=parseInt(rst2[2].goods_id);
+                    goods4_id=parseInt(rst2[3].goods_id);
+                }
+                if(goodsnum>4)
+                {
+                    //仅显示前5个
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                    goods3_id=parseInt(rst2[2].goods_id);
+                    goods4_id=parseInt(rst2[3].goods_id);
+                    goods5_id=parseInt(rst2[4].goods_id);
+                }
+            });
+            setTimeout(function(){initgoods();}, 800);
+            //initgoods();
+        }
+        if(goods_type==6)
+        {
+            jQuery.post("/findByType6",function (rst2)
+            {
+                //返回的是符合商品的列表
+                alert(rst2.length);
+                goodsnum=rst2.length;
+                if(goodsnum==1)
+                {
+                    //alert("进到1了");
+                    goods1_id=parseInt(rst2[0].goods_id);
+                }
+                if(goodsnum==2)
+                {
+                    //alert("怎么进到2了");
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                }
+                if(goodsnum==3)
+                {
+                    //alert("怎么进到3了");
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                    goods3_id=parseInt(rst2[2].goods_id);
+                }
+                if(goodsnum==4)
+                {
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                    goods3_id=parseInt(rst2[2].goods_id);
+                    goods4_id=parseInt(rst2[3].goods_id);
+                }
+                if(goodsnum>4)
+                {
+                    //仅显示前5个
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                    goods3_id=parseInt(rst2[2].goods_id);
+                    goods4_id=parseInt(rst2[3].goods_id);
+                    goods5_id=parseInt(rst2[4].goods_id);
+                }
+            });
+            setTimeout(function(){initgoods();}, 800);
+            //initgoods();
+        }
+        if(goods_type==7)
+        {
+            jQuery.post("/findByType7",function (rst2)
+            {
+                //返回的是符合商品的列表
+                alert(rst2.length);
+                goodsnum=rst2.length;
+                if(goodsnum==1)
+                {
+                    //alert("进到1了");
+                    goods1_id=parseInt(rst2[0].goods_id);
+                }
+                if(goodsnum==2)
+                {
+                    //alert("怎么进到2了");
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                }
+                if(goodsnum==3)
+                {
+                    //alert("怎么进到3了");
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                    goods3_id=parseInt(rst2[2].goods_id);
+                }
+                if(goodsnum==4)
+                {
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                    goods3_id=parseInt(rst2[2].goods_id);
+                    goods4_id=parseInt(rst2[3].goods_id);
+                }
+                if(goodsnum>4)
+                {
+                    //仅显示前5个
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                    goods3_id=parseInt(rst2[2].goods_id);
+                    goods4_id=parseInt(rst2[3].goods_id);
+                    goods5_id=parseInt(rst2[4].goods_id);
+                }
+            });
+            setTimeout(function(){initgoods();}, 800);
+            //initgoods();
+        }
+        if(goods_type==8)
+        {
+            jQuery.post("/findByType8",function (rst2)
+            {
+                //返回的是符合商品的列表
+                alert(rst2.length);
+                goodsnum=rst2.length;
+                if(goodsnum==1)
+                {
+                    //alert("进到1了");
+                    goods1_id=parseInt(rst2[0].goods_id);
+                }
+                if(goodsnum==2)
+                {
+                    //alert("怎么进到2了");
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                }
+                if(goodsnum==3)
+                {
+                    //alert("怎么进到3了");
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                    goods3_id=parseInt(rst2[2].goods_id);
+                }
+                if(goodsnum==4)
+                {
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                    goods3_id=parseInt(rst2[2].goods_id);
+                    goods4_id=parseInt(rst2[3].goods_id);
+                }
+                if(goodsnum>4)
+                {
+                    //仅显示前5个
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                    goods3_id=parseInt(rst2[2].goods_id);
+                    goods4_id=parseInt(rst2[3].goods_id);
+                    goods5_id=parseInt(rst2[4].goods_id);
+                }
+            });
+            setTimeout(function(){initgoods();}, 800);
+            //initgoods();
+        }
+        if(goods_type==9)
+        {
+            jQuery.post("/findByType9",function (rst2)
+            {
+                //返回的是符合商品的列表
+                alert(rst2.length);
+                goodsnum=rst2.length;
+                if(goodsnum==1)
+                {
+                    //alert("进到1了");
+                    goods1_id=parseInt(rst2[0].goods_id);
+                }
+                if(goodsnum==2)
+                {
+                    //alert("怎么进到2了");
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                }
+                if(goodsnum==3)
+                {
+                    //alert("怎么进到3了");
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                    goods3_id=parseInt(rst2[2].goods_id);
+                }
+                if(goodsnum==4)
+                {
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                    goods3_id=parseInt(rst2[2].goods_id);
+                    goods4_id=parseInt(rst2[3].goods_id);
+                }
+                if(goodsnum>4)
+                {
+                    //仅显示前5个
+                    goods1_id=parseInt(rst2[0].goods_id);
+                    goods2_id=parseInt(rst2[1].goods_id);
+                    goods3_id=parseInt(rst2[2].goods_id);
+                    goods4_id=parseInt(rst2[3].goods_id);
+                    goods5_id=parseInt(rst2[4].goods_id);
+                }
+            });
+            setTimeout(function(){initgoods();}, 800);
+            //initgoods();
+        }
+    }
+    //changegoodsbytype();//到时候这个代码放在按钮响应函数中
+
+    function matchStr()
+    {
+        //串匹配算法
+        var input=mainword;
+        var m=input.length;
+        //alert(m);
+        var n=goodsname.length;
+        var i=0;
+        var j=0;
+        while(i<n&&j<m) {
+            //匹配上则同时转到下一个字符
+            if (input.charAt(j) == goodsname.charAt(i)) {
+                i++;
+                j++;
             }
-            Lis[i].onmouseout = function () {
-                this.className = "";
+            //没匹配到则input回退，goodsname复位
+            else {
+                i = i - (j - 1);
+                j = 0;
             }
+        }
+        //匹配成功返回true，否则返回false
+        if (j==m)
+        {
+            matchresult=true;
+            alert("匹配成功")
+        }
+        else
+        {
+            matchresult=false;
+        }
+
+
+    }
+
+    //按关键字来显示商品
+    function changebymainword()
+    {
+        //串匹配搜索
+        //商品名字传给goodsname
+        goodsnum=0;//有匹配的再增
+        jQuery.post("/findAllGoods",function(rst){
+            //这里rst是一个列表
+            //假设要取第一行的数据，可以：
+            //var json=rst[0];
+            //这里json就是第一行商品数据了
+            //假设还想取第一行商品的名字，就可以：
+            //var goodsname=json.name;
+            var totalnum=rst.length;
+            var i=0;
+            for(;i<totalnum;i++)
+            {
+                goodsname=rst[i].name;
+                matchStr();
+                if(matchresult)
+                {
+                    alert("有匹配的");
+                    //匹配了则记录
+                    goodsnum++;
+                    var tempid=parseInt(rst[i].goods_id);
+                    switch (goodsnum)
+                    {
+                        case 1:goods1_id=tempid;break;
+                        case 2:goods2_id=tempid;break;
+                        case 3:goods3_id=tempid;break;
+                        case 4:goods4_id=tempid;break;
+                        case 5:goods5_id=tempid;break;
+                        default:break;
+                    }
+                }
+            }
+        });
+        setTimeout(function(){initgoods();}, 1800);
+    }
+    changebymainword();//到时候放在getcookie中
+
+    //读取cookie，需要调用
+    function getCookie()
+    {
+        //读cookie，需要读搜索类型，商品类型，搜素关键字
+        var cookies=document.cookie.split(";");
+        for(var i=0;i<cookies.length;i++)
+        {
+            var cookie=cookies[i].trim();
+            if(cookie.indexOf("searchtype")==0)
+            {
+                searchtype=parseInt(cookie.substring("searchtype".length+1));
+                break;
+            }
+        }
+        if(searchtype==1)
+        {
+            //关键字搜索
+            for(var i=0;i<cookies.length;i++)
+            {
+                var cookie=cookies[i].trim();
+                if(cookie.indexOf("mainword")==0)
+                {
+                    mainword=cookie.substring("mainword".length+1);
+                    break;
+                }
+            }
+            //这里调用串匹配算法
+            changebymainword();
+        }
+        else
+        {
+            //类型搜索
+            for(var i=0;i<cookies.length;i++)
+            {
+                var cookie=cookies[i].trim();
+                if(cookie.indexOf("type")==0)
+                {
+                    goods_type=parseInt(cookie.substring("type".length+1));
+                    break;
+                }
+            }
+            changegoodsbytype();
         }
     }
 </script>
-
-
+<!--马修改结束-->
 </html>
