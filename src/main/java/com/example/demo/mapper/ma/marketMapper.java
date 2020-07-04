@@ -30,4 +30,35 @@ public interface marketMapper {
             " set price=#{a.price},state=#{a.state},name=#{a.name},amount=#{a.amount},type1=#{a.type1},type2=#{a.type2},type3=#{a.type3},type4=#{a.type4},type5=#{a.type5},type6=#{a.type6},type7=#{a.type7},type8=#{a.type8},type9=#{a.type9},imgurl=#{a.imgurl}" +
             " where goods_id=#{a.goods_id}")
     public int update(@Param("a") Map<String, String> map);
+
+
+    /*添加第一个商品有关信息*/
+    @Update("update shoppingcart" +
+            " set goods_id1=#{a.goods_id1},count1=#{a.count1},totalcount=#{a.totalcount}" +
+            " where cart_id=#{a.cart_id}")
+    public int updatecart1(@Param("a") Map<String, String> map);
+
+    /*添加第2个商品有关信息*/
+    @Update("update shoppingcart" +
+            " set goods_id2=#{a.goods_id2},count2=#{a.count2},totalcount=#{a.totalcount}" +
+            " where cart_id=#{a.cart_id}")
+    public int updatecart2(@Param("a") Map<String, String> map);
+
+    /*添加第3个商品有关信息*/
+    @Update("update shoppingcart" +
+            " set goods_id3=#{a.goods_id3},count3=#{a.count3},totalcount=#{a.totalcount}" +
+            " where cart_id=#{a.cart_id}")
+    public int updatecart3(@Param("a") Map<String, String> map);
+
+    /*添加第4个商品有关信息*/
+    @Update("update shoppingcart" +
+            " set goods_id4=#{a.goods_id4},count4=#{a.count4},totalcount=#{a.totalcount}" +
+            " where cart_id=#{a.cart_id}")
+    public int updatecart4(@Param("a") Map<String, String> map);
+
+    /*添加第5个商品有关信息*/
+    @Update("update shoppingcart" +
+            " set goods_id5=#{a.goods_id5},count5=#{a.count5},totalcount=#{a.totalcount}" +
+            " where cart_id=#{a.cart_id}")
+    public int updatecart5(@Param("a") Map<String, String> map);
 }

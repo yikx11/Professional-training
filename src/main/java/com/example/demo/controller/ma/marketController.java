@@ -64,4 +64,49 @@ public class marketController {
         return msg;
     }
 
+    @RequestMapping("/goods1update")
+    public String addgood1(@RequestParam Map<String,String> map) {
+        boolean flag=marketService.doUpdategood1(map);
+        String msg="修改商品失败！";
+        if(flag) {
+            msg="修改商品成功！";
+        }
+        return msg;
+    }
+    @RequestMapping("/goods2update")
+    public String addgood2(@RequestParam Map<String,String> map) {
+        boolean flag=marketService.doUpdategood2(map);
+        String msg="修改商品失败！";
+        if(flag) {
+            msg="修改商品成功！";
+        }
+        return msg;
+    }
+    @RequestMapping("/goods3update")
+    public String addgood3(@RequestParam Map<String,String> map) {
+        boolean flag=marketService.doUpdategood3(map);
+        String msg="修改商品失败！";
+        if(flag) {
+            msg="修改商品成功！";
+        }
+        return msg;
+    }
+    @RequestMapping("/goods4update")
+    public String addgood4(@RequestParam Map<String,String> map) {
+        boolean flag=marketService.doUpdategood4(map);
+        String msg="修改商品失败！";
+        if(flag) {
+            msg="修改商品成功！";
+        }
+        return msg;
+    }
+    @RequestMapping("/goods5update")
+    public String addgood5(@RequestParam Map<String,String> map) {
+        boolean flag=marketService.doUpdategood5(map);
+        String msg="修改商品失败！";
+        if(flag) {
+            msg="修改商品成功！";
+        }
+        return msg;
+    }
 }

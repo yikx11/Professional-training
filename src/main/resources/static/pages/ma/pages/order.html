@@ -145,8 +145,8 @@
     <!-- Unnamed (矩形) -->
     <div id="u247" class="ax_default box_1">
         <img id="u247_img" class="img " src="/pages/ma/images/main/u5.svg" alt=""/>
-        <div id="u247_text" class="text " style="display:none; visibility: hidden">
-            <p></p>
+        <div id="u247_text" class="text ">
+            <p id="greeting"></p>
         </div>
     </div>
 
@@ -155,7 +155,7 @@
         <img id="u248_img" class="img " src="/pages/ma/images/main/u6.svg" alt=""/>
         <div id="u248_text" class="text ">
             <p>
-                <a href="" class="color">登录</a>
+                <a href="/pages/kexin/login.html" class="color">登录</a>
                 <!--<span style="text-decoration:none;">登录</span>-->
             </p>
         </div>
@@ -166,7 +166,7 @@
         <img id="u249_img" class="img " src="/pages/ma/images/main/u6.svg" alt=""/>
         <div id="u249_text" class="text ">
             <p>
-                <a href="" class="color">注册</a>
+                <a href="/pages/kexin/register.html" class="color">注册</a>
                 <!--<span style="text-decoration:none;">注册</span>-->
             </p>
         </div>
@@ -177,7 +177,7 @@
         <img id="u250_img" class="img " src="/pages/ma/images/main/u8.svg" alt=""/>
         <div id="u250_text" class="text ">
             <p>
-                <a href="" class="color">购物车</a>
+                <a href="/pages/xinchuan/car.html" class="color">购物车</a>
                 <!--<span style="text-decoration:none;">购物车</span>-->
             </p>
         </div>
@@ -188,7 +188,7 @@
         <img id="u251_img" class="img " src="/pages/ma/images/main/u9.svg" alt=""/>
         <div id="u251_text" class="text ">
             <p>
-                <a href="/pages/ma/pages/order.html" class="color">我的订单</a>
+                <a href="/pages/kexin/userCenter.html" class="color">我的订单</a>
                 <!--<span style="text-decoration:none;">我的订单</span>-->
             </p>
         </div>
@@ -199,7 +199,7 @@
         <img id="u252_img" class="img " src="/pages/ma/images/main/u8.svg" alt=""/>
         <div id="u252_text" class="text ">
             <p>
-                <a href="" class="color">收藏夹</a>
+                <a href="/pages/ma/pages/main.html" class="color">回首页</a>
                 <!--<span style="text-decoration:none;">收藏夹</span>-->
             </p>
         </div>
@@ -210,7 +210,7 @@
         <img id="u253_img" class="img " src="/pages/ma/images/main/u11.svg" alt=""/>
         <div id="u253_text" class="text ">
             <p>
-                <a href="" class="color">我的AIBUY</a>
+                <a href="/pages/kexin/userCenter.html" class="color">我的AIBUY</a>
                 <!--<span style="text-decoration:none;">我的AIBUY</span>-->
             </p>
         </div>
@@ -868,7 +868,7 @@
     function init_userid()
     {
         //从cookie中获取用户id
-        write_userid();
+        //write_userid();
         var cookies=document.cookie.split(";");
         for(var i=0;i<cookies.length;i++)
         {
@@ -1177,7 +1177,7 @@
 
     function pay() {
         var ordernumber=20200702000000+Math.ceil(Math.random()*10000) ;
-        alert(ordernumber);
+        alert("订单号为："+ordernumber);
         var d=new Date();
         var e=new Date();
         d.setTime(d.getTime()+2*24*60*60);
@@ -1281,7 +1281,7 @@
     {
         //更新商品信息
         //读取cookie信息
-        write_cookiefortest();//之后这句删掉
+        //write_cookiefortest();//之后这句删掉
         var cookies=document.cookie.split(";");
         for(var i=0;i<cookies.length;i++)
         {
@@ -1305,7 +1305,7 @@
             {
                 //获取商品Id
                 goods_id = parseInt(cookie.substring("goods_id".length + 1));
-                alert("从商品进入的订单，商品id：" + goods_id);
+                //alert("从商品进入的订单，商品id：" + goods_id);
 
                 break;
             }
@@ -1317,10 +1317,10 @@
             {
                 //获取商品Id
                 goods_num=parseInt(cookie.substring("goods_num".length+1));
-                alert("商品数量："+goods_num);
+                //alert("商品数量："+goods_num);
                 jQuery.post("/goodsdetailfind",{"goods_id":goods_id},function (rst2) {
                     var goods1_name=rst2.name;
-                    alert("商品名字是："+goods1_name);
+                    //alert("商品名字是："+goods1_name);
 
                     var goods1img=document.getElementById("goods1_img");
                     goods1img.src=rst2.imgurl;
@@ -1354,7 +1354,7 @@
             {
                 //获取购物车id
                 market_id=parseInt(cookie.substring("market_id".length+1));
-                alert("从购物车进入的订单，购物车id："+market_id);
+                //alert("从购物车进入的订单，购物车id："+market_id);
                 break;
             }
 
@@ -1403,7 +1403,7 @@
                 //从商品表中取对应行的数据
                 jQuery.post("/goodsdetailfind",{"goods_id":goods_id1},function (rst2) {
                     var goods1_name=rst2.name;
-                    alert("购物车id："+market_id+"中第一件商品名字是："+goods1_name);
+                    //alert("购物车id："+market_id+"中第一件商品名字是："+goods1_name);
 
                     var goods1img=document.getElementById("goods1_img");
                     goods1img.src=rst2.imgurl;
@@ -2053,5 +2053,20 @@
     }
     init_goods();
 
+    function checkusername()
+    {
+        var cookies=document.cookie.split(";");
+        for(var i=0;i<cookies.length;i++)
+        {
+            var cookie=cookies[i].trim();
+            if(cookie.indexOf("username")==0)
+            {
+                var greeting="欢迎用户："+cookie.substring("username".length+1)+"      希望您购物愉快";
+                jQuery("#greeting").html(greeting);
+                break;
+            }
+        }
+    }
+    checkusername();
 </script>
 </html>

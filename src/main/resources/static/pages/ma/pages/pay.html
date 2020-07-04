@@ -45,8 +45,8 @@
     <!-- Unnamed (矩形) -->
     <div id="u316" class="ax_default box_1">
         <img id="u316_img" class="img " src="/pages/ma/images/main/u5.svg" alt=""/>
-        <div id="u316_text" class="text " style="display:none; visibility: hidden">
-            <p></p>
+        <div id="u316_text" class="text ">
+            <p id="greeting"></p>
         </div>
     </div>
 
@@ -54,7 +54,7 @@
     <div id="u317" class="ax_default box_1">
         <img id="u317_img" class="img " src="/pages/ma/images/main/u6.svg" alt=""/>
         <div id="u317_text" class="text ">
-            <a href="" class="color">登录</a>
+            <a href="/pages/kexin/login.html" class="color">登录</a>
 <!--            <p><span style="text-decoration:none;">登录</span></p>-->
         </div>
     </div>
@@ -63,7 +63,7 @@
     <div id="u318" class="ax_default box_1">
         <img id="u318_img" class="img " src="/pages/ma/images/main/u6.svg" alt=""/>
         <div id="u318_text" class="text ">
-            <a href="" class="color">注册</a>
+            <a href="/pages/kexin/register.html" class="color">注册</a>
             <!--<p><span style="text-decoration:none;">注册</span></p>-->
         </div>
     </div>
@@ -72,7 +72,7 @@
     <div id="u319" class="ax_default box_1">
         <img id="u319_img" class="img " src="/pages/ma/images/main/u8.svg" alt=""/>
         <div id="u319_text" class="text ">
-            <a href="" class="color">购物车</a>
+            <a href="/pages/xinchuan/car.html" class="color">购物车</a>
             <!--<p><span style="text-decoration:none;">购物车</span></p>-->
         </div>
     </div>
@@ -81,7 +81,7 @@
     <div id="u320" class="ax_default box_1">
         <img id="u320_img" class="img " src="/pages/ma/images/main/u9.svg" alt=""/>
         <div id="u320_text" class="text ">
-            <a href="/pages/ma/pages/order.html" class="color">我的订单</a>
+            <a href="/pages/kexin/userCenter.html" class="color">我的订单</a>
             <!--<p><span style="text-decoration:none;">我的订单</span></p>-->
         </div>
     </div>
@@ -90,7 +90,7 @@
     <div id="u321" class="ax_default box_1">
         <img id="u321_img" class="img " src="/pages/ma/images/main/u8.svg" alt=""/>
         <div id="u321_text" class="text ">
-            <a href="" class="color">收藏夹</a>
+            <a href="/pages/ma/pages/main.html" class="color">回首页</a>
             <!--<p><span style="text-decoration:none;">收藏夹</span></p>-->
         </div>
     </div>
@@ -99,7 +99,7 @@
     <div id="u322" class="ax_default box_1">
         <img id="u322_img" class="img " src="/pages/ma/images/main/u11.svg" alt=""/>
         <div id="u322_text" class="text ">
-            <a href="" class="color">我的AIBUY</a>
+            <a href="/pages/kexin/userCenter.html" class="color">我的AIBUY</a>
             <!--<p><span style="text-decoration:none;">我的AIBUY</span></p>-->
         </div>
     </div>
@@ -192,5 +192,21 @@
     }
 
     getCookie();
+    function checkusername()
+    {
+        var cookies=document.cookie.split(";");
+        for(var i=0;i<cookies.length;i++)
+        {
+            var cookie=cookies[i].trim();
+            if(cookie.indexOf("username")==0)
+            {
+                var greeting="欢迎用户："+cookie.substring("username".length+1)+"      希望您购物愉快";
+                jQuery("#greeting").html(greeting);
+                break;
+            }
+        }
+    }
+    checkusername();
+
 </script>
 </html>

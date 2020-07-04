@@ -88,4 +88,65 @@ public class marketService {
         }
         return flag;
     }
+
+    public boolean doUpdategood1(Map<String,String> map){
+        boolean flag=false;
+        try {
+            int r=marketMapper.updatecart1(map);
+            if(r>0){
+                flag=true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+    public boolean doUpdategood2(Map<String,String> map){
+        boolean flag=false;
+        try {
+            int r=marketMapper.updatecart2(map);
+            if(r>0){
+                flag=true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+    public boolean doUpdategood3(Map<String,String> map){
+        boolean flag=false;
+        try {
+            int r=marketMapper.updatecart3(map);
+            if(r>0){
+                flag=true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+    public boolean doUpdategood4(Map<String,String> map){
+        boolean flag=false;
+        try {
+            int r=marketMapper.updatecart4(map);
+            if(r>0){
+                flag=true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+    public boolean doUpdategood5(Map<String,String> map){
+        boolean flag=false;
+        try {
+            int r=marketMapper.updatecart5(map);
+            if(r>0){
+                flag=true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
 }

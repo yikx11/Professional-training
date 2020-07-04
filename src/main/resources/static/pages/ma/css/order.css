@@ -616,7 +616,7 @@ body {
     border-width:0px;
     word-wrap:break-word;
     text-transform:none;
-    visibility:hidden;
+    /*visibility:hidden;*/
 }
 #u248_img {
     border-width:0px;

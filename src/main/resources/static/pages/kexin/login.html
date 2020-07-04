@@ -214,7 +214,7 @@
           <td style="min-width:700px"><a href="">注册</a></td>
           <td style="min-width:70px;"><a href="">购物车</a></td>
           <td style="min-width:80px;"><a href="">我的订单</a></td>
-          <td style="min-width:70px;"><a href="">收藏夹</a></td>
+          <td style="min-width:70px;"><a href="/pages/ma/pages/main.html">回首页</a></td>
           <td style="min-width:70px;"><a href="">我的AIBUY</a></td>
   </table>
 </div>
@@ -334,10 +334,11 @@
 <script src="/jquery/jquery-3.4.1.min.js"></script>
 <script src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 <script>
-
+    var username="";
+    var user_id=1;
     jQuery(function(){
         jQuery("#submitbutton").click(function(){
-            var username=jQuery("#username").val();
+            username=jQuery("#username").val();
             var password=jQuery("#password").val();
             jQuery.post("/login",{"username":username,"password":password},function(rst){
                 jQuery("#reg_msg").html(rst);
@@ -351,7 +352,10 @@
             if(rst=='登录成功！')
             {
                 //跳转页面
-                window.location.href="login.html";
+                var d=new Date();
+                d.setTime(d.getTime()+2*24*60*60);
+                document.cookie="username="+username+"; path=/; expires="+d.toGMTString();
+                window.location.href="/pages/ma/pages/main.html";
             }
         });
     });

@@ -29,6 +29,12 @@ a {
 {
     color: #d43f3a;
 }
+ma20
+{
+    position: absolute;
+    left: 350px;
+    /*z-index: ;*/
+}
 .slide {
     width: 790px;
     height: 340px;
@@ -775,7 +781,7 @@ body {
     border-width:0px;
     word-wrap:break-word;
     text-transform:none;
-    visibility:hidden;
+    /*visibility:hidden;*/
 }
 #u6_img {
     border-width:0px;

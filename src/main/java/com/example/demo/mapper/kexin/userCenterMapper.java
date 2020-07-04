@@ -3,6 +3,7 @@ package com.example.demo.mapper.kexin;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.*;
 
+import java.util.List;
 import java.util.Map;
 
 @Mapper
@@ -30,4 +31,11 @@ public interface userCenterMapper {
             " set password=#{t.password}" +
             " where user_id=#{t.user_id}")
     public int updatepwd(@Param("t") Map<String,String> tea);
+
+    @Select("select * from user_info where username=#{n}")
+    public Map<String,Object> findByusername(String username);
+
+    @Select("select * from user_info where user_id=#{n}")
+    public Map<String,Object> findByuserid(int user_id);
+
 }

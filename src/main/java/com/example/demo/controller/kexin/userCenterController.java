@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -57,5 +58,21 @@ public class userCenterController {
             msg="修改成功";
         }
         return msg;
+    }
+
+    @RequestMapping("/findbyusername")
+    public Map<String,Object> findByUsername(@RequestParam Map<String,String> map) {
+
+        String username=map.get("username");
+        Map<String,Object> list=userCenterService.doFindByUsername(username);
+        return list;
+    }
+
+    @RequestMapping("/findbyuserid")
+    public Map<String,Object> findByUser_id(@RequestParam Map<String,String> map) {
+
+        int user_id=Integer.valueOf(map.get("user_id"));
+        Map<String,Object> list=userCenterService.doFindByUserId(user_id);
+        return list;
     }
 }

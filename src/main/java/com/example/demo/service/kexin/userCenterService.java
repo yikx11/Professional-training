@@ -79,5 +79,25 @@ public class userCenterService {
         return flag;
     }
 
+    public Map<String,Object> doFindByUsername(String username){
 
+        Map<String,Object> map=null;
+        try {
+            map=userCenterMapper.findByusername(username);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return map;
+    }
+
+    public Map<String,Object> doFindByUserId(int user_id){
+
+        Map<String,Object> map=null;
+        try {
+            map=userCenterMapper.findByuserid(user_id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return map;
+    }
 }

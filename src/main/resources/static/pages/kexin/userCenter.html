@@ -263,11 +263,11 @@
 
             <div id="upper">
                 <table class="upperfont" >
-                    <td style="min-width:40px;"><a href="">登录</a></td>
-                    <td style="min-width:700px"><a href="">注册</a></td>
-                    <td style="min-width:70px;"><a href="">购物车</a></td>
+                    <td style="min-width:40px;"><a href="/pages/kexin/login.html">登录</a></td>
+                    <td style="min-width:700px"><a href="/pages/kexin/register.html">注册</a></td>
+                    <td style="min-width:70px;"><a href="/pages/xinchuan/car.html">购物车</a></td>
                     <td style="min-width:80px;"><a href="">我的订单</a></td>
-                    <td style="min-width:70px;"><a href="">收藏夹</a></td>
+                    <td style="min-width:70px;"><a href="/pages/ma/pages/main.html">回首页</a></td>
                     <td style="min-width:70px;"><a href="">我的AIBUY</a></td>
                 </table>
             </div>
@@ -617,7 +617,7 @@
     function init_userid()
     {
         //从cookie中获取用户id
-        write_userid();
+        //write_userid();
         var cookies=document.cookie.split(";");
         for(var i=0;i<cookies.length;i++)
         {
@@ -630,7 +630,7 @@
             }
 
         }
-        //alert(user_id);
+        alert(user_id);
     }
     init_userid();
 
@@ -639,7 +639,7 @@
         jQuery.post("/orderfind",{"user_id":user_id},function (rst) {
             if(rst.length==0)
             {
-                alert("id为："+user_id+"的用户有0个对应订单");
+                //alert("id为："+user_id+"的用户有0个对应订单");
                 document.getElementById("order1").style.display="none";
                 document.getElementById("foot2").style.display="block";
                 document.getElementById("order2").style.display="none";
@@ -648,7 +648,7 @@
             else if(rst.length==1)
             {
                 var totalsum=0;
-                alert("id为："+user_id+"的用户有1个对应订单");
+                //alert("id为："+user_id+"的用户有1个对应订单");
                 document.getElementById("order1").style.display="block";
                 document.getElementById("order2").style.display="none";
                 document.getElementById("order3").style.display="none";
@@ -663,7 +663,7 @@
                 jQuery.post("/addressfind2",{"address_id":address_id},function (rst2) {
                     var str2="";
                     str2="收件人："+rst2.receiver+" "+rst2.province+" "+rst2.city+" "+rst2.detail;
-                    alert(str2);
+                    //alert(str2);
                     jQuery("#1_2").html(str2);
                 });
 
@@ -1410,7 +1410,7 @@
             }
             else if(rst.length==2)
             {
-                alert("id为："+user_id+"的用户有2个对应订单");
+                //alert("id为："+user_id+"的用户有2个对应订单");
                 document.getElementById("order1").style.display="block";
                 document.getElementById("foot2").style.display="none";
                 document.getElementById("order2").style.display="block";
@@ -1426,7 +1426,7 @@
                 jQuery.post("/addressfind2",{"address_id":address_id},function (rst2) {
                     var str2="";
                     str2="收件人："+rst2.receiver+" "+rst2.province+" "+rst2.city+" "+rst2.detail;
-                    alert(str2);
+                    //alert(str2);
                     jQuery("#1_2").html(str2);
                 });
 
@@ -1450,7 +1450,7 @@
                 jQuery.post("/addressfind2",{"address_id":address_id_2},function (rst2) {
                     var str2_2="";
                     str2_2="收件人："+rst2.receiver+" "+rst2.province+" "+rst2.city+" "+rst2.detail;
-                    alert(str2_2);
+                    //alert(str2_2);
                     jQuery("#2_2").html(str2_2);
                 });
 
@@ -2922,7 +2922,7 @@
                 setTimeout(function(){jQuery("#totalsum2").html(totalsum_2);}, 800);
             }
             else if(rst.length==3) {
-                alert("id为：" + user_id + "的用户有3个对应订单");
+                //alert("id为：" + user_id + "的用户有3个对应订单");
                 document.getElementById("order1").style.display = "block";
                 document.getElementById("foot2").style.display = "none";
                 document.getElementById("order2").style.display = "block";
@@ -2939,7 +2939,7 @@
                 jQuery.post("/addressfind2", {"address_id": address_id}, function (rst2) {
                     var str2 = "";
                     str2 = "收件人：" + rst2.receiver + " " + rst2.province + " " + rst2.city + " " + rst2.detail;
-                    alert(str2);
+                    //alert(str2);
                     jQuery("#1_2").html(str2);
                 });
 
@@ -5211,7 +5211,7 @@
 
     function myupdate() {
 
-        user_id=1;
+        //user_id=1;
         var beforepwd = $('input[id="inputPassword1"]').val();
         var nowpwd = $('input[id="inputPassword2"]').val();
         var confirmpwd = $('input[id="inputPassword3"]').val();
@@ -5240,7 +5240,7 @@
         //modal.find('.modal-body input').val(recipient);
     })
     function mysend() {
-        user_id=1;
+        //user_id=1;
         var name = $('input[id="username"]').val();
         var Question = $('input[id="inputQuestion"]').val();
         var Answer = $('input[id="inputAnswer"]').val();
@@ -5255,5 +5255,42 @@
         $("#myquestion").html(Question);
         $("#myanswer").html(Answer);
     }
+
+
+    <!--新增代码用于刷新个人信息-->
+    var username="";
+    function initpermsg()
+    {
+        //初始化个人信息
+
+        var cookies=document.cookie.split(";");
+        for(var i=0;i<cookies.length;i++)
+        {
+            var cookie=cookies[i].trim();
+            if(cookie.indexOf("username")==0)
+            {
+                username=cookie.substring("username".length+1);
+
+                break;
+            }
+        }
+
+        jQuery.post("/findbyuserid",{"user_id":user_id},function (rst2) {
+            //rst2是一行用户数据
+            alert(user_id);
+            jQuery("#myquestion").html(rst2.safe_q);
+            jQuery("#myanswer").html(rst2.safe_a);
+        });
+        jQuery("#myname").html(username);
+
+
+    }
+    initpermsg();
+</script>
+
+
+<script>
+
+
 </script>
 </html>
