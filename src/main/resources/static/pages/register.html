@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <style>
+        body{
+            margin: 0px;
+            background-image: none;
+            position: static;
+            left: auto;
+            width: 1100px;
+            margin-left: 0;
+            margin-right: 0;
+            text-align: left;
+            display: block;
+        }
+        ul li{
+            list-style: none;
+        }
+        *{
+            margin:0;
+            padding:0;
+        }
+        #upper{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 1100px;
+            height: 31px;
+            background-color: #ECE9EC;
+        }
+        #center{
+            position: absolute;
+            left: 0px;
+            top: 30px;
+            width: 1100px;
+            height: 877px;
+            background-color: #F5F5F5;
+        }
+        #animate{
+            position: absolute;
+            left:18px;
+            top: 134px;
+            width: 1048px;
+            height: 582px;
+        }
+        #brand{
+            position: absolute;
+            left:66px;
+            top: 20px;
+            width: 121px;
+            height: 56px;
+            font-family: Arial;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 36px;
+            color: #C2001A;
+        }
+        .upperfont {
+            position: absolute;
+            top: 6px;
+            /*width: 39px;*/
+            height: 18px;
+            font-family: "微软雅黑 Regular", 微软雅黑;
+            font-weight: 400;
+            font-style: normal;
+            color: rgb(148, 148, 148);
+            float: left;
+        }
+        #loginpanel{
+            position: absolute;
+            left: 672px;
+            top: 120px;
+            width: 343px;
+            height: 585px;
+            background-color: rgba(242,242,242,1);
+            box-sizing: border-box;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 3px;
+            border-color: rgba(121,121,121,1);
+        }
+        #logintitle{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 341px;
+            height: 59px;
+            font-size: 24px;
+            background-color:rgb(236,233,236);
+            color: #C2001A;
+            text-align: center;
+        }
+        .username_rec {
+            position: absolute;
+            left: 693px;
+            top: 327px;
+            width: 300px;
+            height: 56px;
+            background: inherit;
+            background-color: rgba(255, 255, 255, 1);
+            box-sizing: border-box;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgba(121, 121, 121, 1);
+        }
+        #submitbutton {
+            position: absolute;
+            left: 90px;
+            top: 515px;
+            width: 140px;
+            height: 40px;
+            background-color: rgba(194, 0, 26, 1);
+            box-sizing: border-box;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgba(121, 121, 121, 1);
+            border-radius: 5px;
+            font-size: 18px;
+            color: #FFFFFF;
+            text-align: center;
+        }
+        .loginfont{
+            position: absolute;
+            top: 560px;
+            width: 200px;
+            height: 22px;
+            font-family: "微软雅黑 Regular", 微软雅黑;
+            font-weight: 400;
+            font-style: normal;
+            color: rgb(148,148,148);
+        }
+
+        #footer{
+            position: absolute;
+            top: 800px;
+            left: 200px;
+        }
+
+        .end_1{
+            margin-left:280px;
+            color: gray;
+        }
+        .end_2{
+            margin-left:200px;
+            color: gray;
+        }
+        .end_3{
+            margin-left:150px;
+            color: gray;
+        }
+        .div1 {
+            position: relative;
+            width: 1000px;
+            height: 600px;
+        }
+
+        .div1>img {
+            position: absolute;
+            width: 1000px;
+            height: 600px;
+            transition: opacity 1s linear;
+
+        }
+        .div2{
+            position: relative;
+            width: 1000px;
+            height: 600px;
+            margin: 100px auto;
+        }
+        .newop{
+            opacity: 1;
+        }
+        .oldop{
+            opacity: 0;
+        }
+        .point{
+            position: absolute;
+            z-index: 999;
+            bottom: 20px;
+            left: 40px;
+            height: 13px;
+        }
+        .point>div{
+            width: 13px;
+            height: 13px;
+            border: 1px solid white;
+            background-color: transparent;
+            box-sizing: border-box;
+            float: left;
+            margin: 0 3px;
+            border-radius: 50%;
+            transition: background-color 1s linear;
+        }
+        .new_color{
+            background-color: red !important;
+        }
+    </style>
+</head>
+<body>
+<div id="base">
+    <div id="upper">
+        <table class="upperfont" >
+            <td style="min-width:40px;"><a href="">登录</a></td>
+            <td style="min-width:700px"><a href="">注册</a></td>
+            <td style="min-width:70px;"><a href="">购物车</a></td>
+            <td style="min-width:80px;"><a href="">我的订单</a></td>
+            <td style="min-width:70px;"><a href="../pages/main.html">回首页</a></td>
+            <td style="min-width:70px;"><a href="">我的AIBUY</a></td>
+        </table>
+    </div>
+    <div id="center">
+        <!--动图位置-->
+        <div class="div2">
+            <div class="div1">
+                <img src="../images/1.jpg" alt="" class="newop">
+                <img src="../images/2.jpg" alt="" class="oldop">
+                <img src="../images/3.jpg" alt="" class="oldop">
+                <img src="../images/4.jpg" alt="" class="oldop">
+            </div>
+
+            <div class="point">
+                <div class="new_color"></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <!--AIBUY位置-->
+        <div id="brand">
+            <p>
+                <span>AIBUY</span>
+            </p>
+        </div>
+        <div id="loginpanel" style="z-index: 999">
+            <div id="logintitle">
+                <p>
+                    <span>新用户注册</span>
+                </p>
+            </div>
+            <!--
+          <div class="username_rec">
+              <p>
+                  <span>用户名</span>
+              </p>
+          </div>
+            <div class="username_rec">
+                <p>
+                    <span>用户密码</span>
+                </p>
+            </div>
+            -->
+            <form class="form-horizontal" style="position: absolute;left: 40px;top: 60px">
+                <div class="form-group">
+                    <label class="col-sm-10 control-label" style="text-align: left">输入用户名</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="username" id="username" placeholder="Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-10 control-label" style="text-align: left">输入密码</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-10 control-label" style="text-align: left">再次输入密码</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" name="passwordagain" id="passwordagain" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-10 control-label" style="text-align: left">输入密码提示问题</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="safe_q" id="safe_q" placeholder="Question">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-10 control-label" style="text-align: left">输入密码提示问题答案</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="safe_a" id="safe_a" placeholder="Answer">
+                    </div>
+                </div>
+                <!--
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">Sign in</button>
+                    </div>
+                </div>
+                -->
+            </form>
+            <div>
+                <p>
+                    <button type="submit" id="submitbutton" style="position: center">立即注册</button>
+                </p>
+            </div>
+            <div class="loginfont" style="left: 200px">
+                <p>
+                    <span><a href="login.html"> 已有账户，去登陆>></a></span>
+                </p>
+            </div>
+        </div>
+        <div id="myModal" class="modal fade">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="gridSystemModalLabel">提示信息</h4>
+                    </div>
+                    <div class="modal-body">
+                        <span id="reg_msg"></span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" id="closeDilog">确定</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    </div>
+    <div id="footer">
+        <ul><li class="end_1">友情链接:</li>
+            <li class="end_2"><a href="https://www.alipay.com/">支付宝</a>|<a href="https://www.taobao.com/">淘宝</a>|<a href="https://www.kaola.com/">网易考拉</a>|<a href="https://daddylab.com/">老爸测评</a></li>
+            <li class="end_3">Copyright 2020 AIBUY.com All Rights Reserved</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+<script src="../jquery/jquery-3.4.1.min.js"></script>
+<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script>
+
+    var userID;
+    var cartID;
+    var username;
+    var d1 = $.Deferred();
+    var d2 = $.Deferred();
+    var d3 = $.Deferred();
+    var d4 = $.Deferred();
+
+    jQuery(function(){
+        jQuery("#submitbutton").click(function(){
+            username=jQuery("#username").val();
+            var user_id=jQuery("#user_id").val();
+            var password=jQuery("#password").val();
+            var pwdagain=jQuery("#passwordagain").val();
+            var safe_q=jQuery("#safe_q").val();
+            var safe_a=jQuery("#safe_a").val();
+            if(password!=pwdagain){
+                alert("再次确认密码和密码不一致！")
+            }
+            else {
+            jQuery.post("/insert",{"username":username,"user_id":user_id,"password":password,"safe_q":safe_q,"safe_a":safe_a},function(rst){
+                jQuery("#reg_msg").html(rst);
+                jQuery('#myModal').modal("show");
+            });
+            }
+        });
+
+        jQuery("#closeDilog").click(function(){
+            jQuery('#myModal').modal("hide");
+            var rst=jQuery("#reg_msg").html();
+            if(rst=='注册成功！')
+            {
+                //通过用户注册创建与对应购物车联系的步骤2:去用刚刚的用户信息查询到用户的id
+                jQuery.post("/findIDByName",{"username":username},function(rst){
+                    userID=rst;
+                    d1.resolve( "Fish" );
+                });
+
+                $.when(d1).done(function () {
+                //通过用户注册创建与对应购物车联系的步骤3:创建一个以此用户id为value值的购物车
+                jQuery.post("/createCart",{"user_id":userID},function(rst){
+                    d2.resolve( "Fish" );
+                });
+                });
+
+                $.when(d2).done(function () {
+                //通过用户注册创建与对应购物车联系的步骤4:通过此用户id查出购物车的id
+                jQuery.post("/findIDByID",{"user_id":userID},function(rst){
+                    cartID=rst;
+                    d3.resolve( "Fish" );
+                });
+                });
+
+                $.when(d3).done(function () {
+                //通过用户注册创建与对应购物车联系的步骤5:将用户一列里的购物车id更新
+                jQuery.post("/updateCartID",{"cart_id":cartID,"user_id":userID},function(rst){
+                    alert(rst);
+                    d4.resolve( "Fish" );
+                });
+                });
+                //跳转页面
+                //window.location.href="login.html";
+            }
+        });
+    });
+
+    var bolck1=document.getElementsByClassName('div1')[0];
+    var bolck2=document.getElementsByClassName('div2')[0];
+    var point=document.getElementsByClassName('point')[0];
+    var nowcolor=point.children[0];
+    var time;
+    // console.log(bolck1.children.length)
+    for(var i=0;i<bolck1.children.length;i++){
+        bolck1.children[i].style.zIndex=bolck1.children.length-1-i;
+        // 即将每张图片按照从大到小排列，第一张图最先显示
+    }
+    showimg();
+    // 为了之后重启计时器方便调用，进行函数封装
+    function showimg(){
+        time=setInterval(function(){
+            countimg(1);
+        },2000)
+    }
+    function countimg(num){//形参num 为执行下方小点时需要的参数，建议开始时不写，先实现翻页和循环后再写
+        // 实现层的算法为自加；也可以搭配自减
+        // 具体方案为：写上计时器 封装函数为 count_img() 但先不调用 function count_img)(num) for ->z-index-- ->if(index==0){index=4   为当前显示样式和图片} ->
+        // if(index==bolck1.children.length-1){为之前的显示样式和图片，需要给它不显示的样式}
+        for(var k=0;k<num;k++){
+            for(var i=0;i<bolck1.children.length;i++){
+                var index=bolck1.children[i].style.zIndex;
+                index++;
+                if(index==bolck1.children.length){//前一张显示的图
+                    index=0;
+                    bolck1.children[i].className='oldop'
+                    point.children[i].className='';//后续代码，实现下方小点的鼠标跟随
+                }
+                if(index==bolck1.children.length-1){//当前会显示的图
+                    bolck1.children[i].className='newop';
+                    point.children[i].className='new_color';//后续代码，实现下方小点的鼠标跟随
+                    nowcolor=point.children[i];//记录当前的变色点
+                }
+                bolck1.children[i].style.zIndex=index;//赋值，完成一次轮播
+
+            }
+        }
+    }
+    // 下面主要是功能完善和修改bug
+    // 当鼠标进入图片区域时，停止轮播，即清空计时器
+    bolck2.onmouseenter=function(){
+        clearInterval(time);
+    }
+    // 当鼠标离开时，开始计时器
+    bolck2.onmouseleave=function(){
+        showimg();
+    }
+    // 比较难的地方，实现了鼠标进入小点，显示对应的图片
+    for(var i=0;i<point.children.length;i++){
+        point.children[i].index = i;
+        // 取出索引值
+        point.children[i].onmouseenter=function(){
+            // 每个小点的鼠标进入事件
+            nowcolor.className='';
+            this.className='new_color';
+            var num=0;
+            // console.log(this.index);
+            if(this.index-nowcolor.index>0){
+                // 判断当前的鼠标进入点和之前点的位置关系，如果大于，利用做差来得出参数
+                // 即需要执行coutimg的次数
+                num=this.index-nowcolor.index;
+            }
+            else{
+                // num=Math.abs(this.index-nowcolor.index)；
+                num=point.children.length-Math.abs(this.index-nowcolor.index);
+                // 同方向的执行，不嫌麻烦也可以写为反方向执行，143行写了具体思路；
+            }
+            // console.log(num);
+            countimg(num);
+            // 函数调用
+            nowcolor=this;
+            // 记录当前颜色
+        }
+    }
+    document.onselectstart=function(){
+        // 选择开始事件
+        // 消除点击图片变色bug，同样可以禁止用户复制
+        return false;
+    }
+</script>
+</html>

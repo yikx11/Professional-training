@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页面</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../bootstrap-3.3.7-dist/css/main.css" type="text/css" rel="stylesheet"/>
+    <link href="../bootstrap-3.3.7-dist/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
+
+</head>
+<body>
+
+
+    <!--(矩形) -->
+    <div id="base" class="">
+
+        <!--(矩形) -->
+        <div id="u0" class="ax_default" style="margin:0 auto">
+            <img id="u0_img" class="img " src="../images/main/u0.svg" alt=""/>
+            <div id="u0_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
+            </div>
+        </div>
+
+
+         <!-- (动态面板) -->
+        <div id="u1" class="ax_default">
+            <!--<div id="u1_state0" class="panel_state" data-label="State1" style="">
+                <div id="u1_state0_content" class="panel_state_content">
+                </div>
+            </div>
+            <div id="u1_state1" class="panel_state" data-label="State2" style="visibility: hidden;">
+                <div id="u1_state1_content" class="panel_state_content">
+                </div>
+            </div>
+            <div id="u1_state2" class="panel_state" data-label="State3" style="visibility: hidden;">
+                <div id="u1_state2_content" class="panel_state_content">
+                </div>
+            </div>-->
+            <div class="slide">
+                <img class="carousel_img" src="../images/main/u1_state0.jpg" name="1" alt="">
+                <img class="carousel_img" src="../images/main/u1_state1.jpg" name="2" alt="">
+                <img class="carousel_img" src="../images/main/u1_state2.jpg" name="3" alt="">
+                <!--<div class="icon">
+                    <i name="1" class="fa fa-circle"></i>
+                    <i name="2" class="fa fa-circle"></i>
+                    <i name="3" class="fa fa-circle"></i>
+                </div>-->
+                <div class="prev prevNext" onclick="PrevNextClick(1)"><span
+                        class="glyphicon glyphicon-menu-left"></span></div>
+                <div class="next prevNext" onclick="PrevNextClick(2)"><span
+                        class="glyphicon glyphicon-menu-right"></span></div>
+            </div>
+        </div>
+
+        <!--(矩形) -->
+        <div id="u2" class="ax_default label">
+            <div id="u2_div" class=""></div>
+            <div id="u2_text" class="text ">
+                <p><span style="text-decoration:none;">AIBUY</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u3" class="ax_default flow_shape ">
+            <div id="u3_div" class="">
+                <input type="text" class="form-control ma12" name="u_name" id="u_name"
+                       placeholder="请输入待查询商品名称"/>
+            </div>
+
+            <!--<div id="u3_text" class="text " style="display:none; visibility: hidden">-->
+            <p></p>
+
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u4" class="ax_default flow_shape">
+            <div id="u4_div" class=""></div>
+            <div id="u4_text" class="text ">
+                <button type="button" class="btn ma13" onclick="state1()">搜索</button>
+                <!--<p><span style="text-decoration:none;">搜索</span></p>-->
+            </div>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u5" class="ax_default box_1">
+            <img id="u5_img" class="img " src="../images/main/u5.svg" alt=""/>
+            <div id="u5_text" class="text ">
+                <p id="greeting"></p>
+            </div>
+
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u6" class="ax_default box_1">
+            <img id="u6_img" class="img " src="../images/main/u6.svg" alt=""/>
+            <div id="u6_text" class="text ">
+                <a href="../pages/login.html" class="color">登录</a>
+                <!--登录的页面还需要设置，放在herf中-->
+                <!--<p><span style="text-decoration:none;">登录</span></p>-->
+            </div>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u7" class="ax_default box_1">
+            <img id="u7_img" class="img " src="../images/main/u6.svg" alt=""/>
+            <div id="u7_text" class="text ">
+                <a href="../pages/register.html" class="color">注册</a>
+
+                <!--注册的页面还需要设置，放在herf中-->
+                <!--<p><span style="text-decoration:none;">注册</span></p>-->
+            </div>
+
+        </div>
+
+
+        <!-- Unnamed (矩形) -->
+        <div id="u8" class="ax_default box_1">
+            <img id="u8_img" class="img " src="../images/main/u8.svg" alt=""/>
+            <div id="u8_text" class="text ">
+                <a href="../pages/car.html" class="color">购物车</a>
+                <!--<p><span style="text-decoration:none;">购物车</span></p>-->
+            </div>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u9" class="ax_default box_1">
+            <img id="u9_img" class="img " src="../images/main/u9.svg" alt=""/>
+            <div id="u9_text" class="text ">
+                <a href="../pages/userCenter.html" class="color">我的订单</a>
+                <!--<p><span style="text-decoration:none;">我的订单</span></p>-->
+            </div>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u10" class="ax_default box_1">
+            <img id="u10_img" class="img " src="../images/main/u8.svg" alt=""/>
+            <div id="u10_text" class="text ">
+                <a href="" class="color">回首页</a>
+                <!--<p><span style="text-decoration:none;">收藏夹</span></p>-->
+            </div>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u11" class="ax_default box_1">
+            <img id="u11_img" class="img " src="../images/main/u11.svg" alt=""/>
+            <div id="u11_text" class="text ">
+                <a href="../pages/userCenter.html" class="color">我的AIBUY</a>
+                <!--<p><span style="text-decoration:none;">我的AIBUY</span></p>-->
+            </div>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u12" class="ax_default box_1">
+            <div id="u12_div" class=""></div>
+            <div id="u12_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u13" class="ax_default box_1">
+            <img id="u13_img" class="img " src="../images/main/u13.svg" alt=""/>
+            <div id="u13_text" class="text ">
+                <a class="color" onclick="type1()">女装/男装</a>
+                <!--<p><span style="text-decoration:none;">女装/男装 &gt;</span></p>-->
+            </div>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u14" class="ax_default box_1">
+            <img id="u14_img" class="img " src="../images/main/u14.svg" alt=""/>
+            <div id="u14_text" class="text ">
+                <a class="color" onclick="type2()">鞋靴/箱包</a>
+                <!--<p><span style="text-decoration:none;">女装/男装 &gt;</span></p>-->
+            </div>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u15" class="ax_default box_1">
+            <img id="u15_img" class="img " src="../images/main/u14.svg" alt=""/>
+            <div id="u15_text" class="text ">
+                <a class="color" onclick="type3()">童装/玩具</a>
+                <!--<p><span style="text-decoration:none;">女装/男装 &gt;</span></p>-->
+            </div>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u16" class="ax_default box_1">
+            <img id="u16_img" class="img " src="../images/main/u14.svg" alt=""/>
+            <div id="u16_text" class="text ">
+                <a class="color" onclick="type4()">家电/数码</a>
+                <!--<p><span style="text-decoration:none;">女装/男装 &gt;</span></p>-->
+            </div>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u17" class="ax_default box_1">
+            <img id="u17_img" class="img " src="../images/main/u14.svg" alt=""/>
+            <div id="u17_text" class="text ">
+                <a class="color" onclick="type5()">运动/户外</a>
+                <!--<p><span style="text-decoration:none;">女装/男装 &gt;</span></p>-->
+            </div>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u18" class="ax_default box_1">
+            <img id="u18_img" class="img " src="../images/main/u14.svg" alt=""/>
+            <div id="u18_text" class="text ">
+                <a class="color" onclick="type6()">美食/生鲜</a>
+                <!--<p><span style="text-decoration:none;">女装/男装 &gt;</span></p>-->
+            </div>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u19" class="ax_default box_1">
+            <img id="u19_img" class="img " src="../images/main/u14.svg" alt=""/>
+            <div id="u19_text" class="text ">
+                <a class="color" onclick="type7()">鲜花/宠物</a>
+                <!--<p><span style="text-decoration:none;">女装/男装 &gt;</span></p>-->
+            </div>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u20" class="ax_default box_1">
+            <img id="u20_img" class="img " src="../images/main/u14.svg" alt=""/>
+            <div id="u20_text" class="text ">
+                <a class="color" onclick="type8()">家具/家纺</a>
+                <!--<p><span style="text-decoration:none;">女装/男装 &gt;</span></p>-->
+            </div>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u21" class="ax_default box_1">
+            <img id="u21_img" class="img " src="../images/main/u14.svg" alt=""/>
+            <div id="u21_text" class="text ">
+                <a class="color" onclick="type9()">汽车/二手车</a>
+                <!--<p><span style="text-decoration:none;">女装/男装 &gt;</span></p>-->
+            </div>
+        </div>
+
+        <!--&lt;!&ndash; Unnamed (椭圆形) &ndash;&gt;
+        <div id="u22" class="ax_default ellipse">
+            <img id="u22_img" class="img " src="../images/main/u22.svg" alt=""/>
+            <div id="u22_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
+            </div>
+        </div>
+
+        &lt;!&ndash; Unnamed (椭圆形) &ndash;&gt;
+        <div id="u23" class="ax_default ellipse">
+            <img id="u23_img" class="img " src="../images/main/u22.svg" alt=""/>
+            <div id="u23_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
+            </div>
+        </div>
+
+        &lt;!&ndash; Unnamed (椭圆形) &ndash;&gt;
+        <div id="u24" class="ax_default ellipse">
+            <img id="u24_img" class="img " src="../images/main/u22.svg" alt=""/>
+            <div id="u24_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
+            </div>
+        </div>-->
+
+        <!-- Unnamed (组 合) -->
+        <div id="u25" class="ax_default" data-left="1060" data-top="752" data-width="30" data-height="57">
+
+            <!-- Unnamed (矩形) -->
+            <div id="u26" class="ax_default box_1">
+                <img id="u26_img" class="img " src="../images/main/u26.svg" alt=""/>
+                <div id="u26_text" class="text ">
+                    <p><span style="text-decoration:none;">客服</span></p>
+                </div>
+            </div>
+
+            <!-- Unnamed (矩形) -->
+            <div id="u27" class="ax_default box_1">
+
+                <img id="u27_img" class="img " src="../images/main/u26.svg" alt=""/>
+                <div id="u27_text" class="text ">
+                    <p><a href="#base">^</a></p>
+                    <!--<p><span style="text-decoration:none;">^</span></p>-->
+                </div>
+            </div>
+        </div>
+
+        <!-- Unnamed (矩形)
+        <div id="u28" class="ax_default box_1">
+            <img id="u28_img" class="img " src="../images/main/u28.svg" alt=""/>
+            <div id="u28_text" class="text ">
+                <p><span style="text-decoration:none;">&lt;</span></p>
+            </div>
+        </div>
+
+        &lt;!&ndash; Unnamed (矩形) &ndash;&gt;
+        <div id="u29" class="ax_default box_1">
+            <img id="u29_img" class="img " src="../images/main/u28.svg" alt=""/>
+            <div id="u29_text" class="text ">
+                <p><span style="text-decoration:none;">&gt;</span></p>
+            </div>
+        </div>-->
+
+        <!-- Unnamed (图片) -->
+        <div id="u30" class="ax_default _图片">
+
+
+            <img id="u30_img" class="img " src="../images/detail/u181.jpg" alt="" onclick="goods1()"/>
+            <div id="u30_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (图片) -->
+        <div id="u31" class="ax_default _图片">
+            <img id="u31_img" class="img " src="../images/main/p3.jpg" alt="" onclick="goods2()"/>
+            <div id="u31_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u32" class="ax_default box_1">
+            <img id="u32_img" class="img " src="../images/main/u32.svg" alt=""/>
+            <div id="u32_text" class="text ">
+                <p><span style="text-decoration:none;">数码家电</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (图片) -->
+        <div id="u33" class="ax_default _图片">
+            <img id="u33_img" class="img " src="../images/main/p5.jpg" alt="" onclick="goods5()"/>
+            <div id="u33_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (图片) -->
+        <div id="u34" class="ax_default _图片">
+            <img id="u34_img" class="img " src="../images/main/p7.jpg" alt="" onclick="goods3()"/>
+            <div id="u34_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (图片) -->
+        <div id="u35" class="ax_default _图片">
+            <img id="u35_img" class="img " src="../images/main/p9.jpg" alt="" onclick="goods4()"/>
+            <div id="u35_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (图片) -->
+        <div id="u36" class="ax_default _图片">
+            <img id="u36_img" class="img " src="../images/main/u36.jpg" alt=""/>
+            <div id="u36_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (线) -->
+        <div id="u37" class="ax_default line">
+            <img id="u37_img" class="img " src="../images/main/u37.svg" alt=""/>
+            <div id="u37_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (图片) -->
+        <div id="u38" class="ax_default _图片">
+            <img id="u38_img" class="img " src="../images/main/p10.png" alt="" onclick="goods6()"/>
+            <div id="u38_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (图片) -->
+        <div id="u39" class="ax_default _图片">
+            <img id="u39_img" class="img " src="../images/main/p11.png" alt="" onclick="goods7()"/>
+            <div id="u39_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u40" class="ax_default box_1">
+            <img id="u40_img" class="img " src="../images/main/u32.svg" alt=""/>
+            <div id="u40_text" class="text ">
+                <p><span style="text-decoration:none;">美食生鲜</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (图片) -->
+        <div id="u41" class="ax_default _图片">
+            <img id="u41_img" class="img " src="../images/main/p12.png" alt="" onclick="goods10()"/>
+            <div id="u41_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (图片) -->
+        <div id="u42" class="ax_default _图片">
+            <img id="u42_img" class="img " src="../images/main/p13.png" alt="" onclick="goods8()"/>
+            <div id="u42_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (图片) -->
+        <div id="u43" class="ax_default _图片">
+            <img id="u43_img" class="img " src="../images/main/p15.png" alt="" onclick="goods9()"/>
+            <div id="u43_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (图片) -->
+        <div id="u44" class="ax_default _图片">
+            <img id="u44_img" class="img " src="../images/main/u36.jpg" alt=""/>
+            <div id="u44_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u45" class="ax_default box_1">
+            <img id="u45_img" class="img " src="../images/main/u45.svg" alt=""/>
+            <div id="u45_text" class="text ">
+                <p><span style="text-decoration:none;">Copyright 2020 AIBUY.com All Rights Reserved</span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u46" class="ax_default box_1">
+            <img id="u46_img" class="img " src="../images/main/u45.svg" alt=""/>
+            <div id="u46_text" class="text ">
+                <p><span style="text-decoration:none;">友情链接：</span></p>
+                <p><span style="text-decoration:none;"><a href="https://www.alipay.com/" class="color">支付宝</a>&nbsp; |&nbsp;<a href="https://www.taobao.com/" class="color">淘宝</a>&nbsp; |&nbsp; <a href="https://www.kaola.com/" class="color">网易考拉</a>&nbsp; |&nbsp; <a href="https://daddylab.com/" class="color">老爸测评</a> </span></p>
+            </div>
+        </div>
+
+        <!-- Unnamed (线) -->
+        <div id="u47" class="ax_default line">
+            <img id="u47_img" class="img " src="../images/main/u37.svg" alt=""/>
+            <div id="u47_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+<script src="../jquery/jquery-3.4.1.min.js"></script>
+<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../bootstrap-3.3.7-dist/js/main.js"></script>
+<script>
+    function findUser_id()
+    {
+        //    通过传入的用户名来生成用户Id
+        var username="";
+        var cookies=document.cookie.split(";");
+        for(var i=0;i<cookies.length;i++)
+        {
+            var cookie=cookies[i].trim();
+            if(cookie.indexOf("username")==0)
+            {
+                username=cookie.substring("username".length+1);
+
+                break;
+            }
+        }
+        jQuery.post("/findbyusername",{"username":username},function (rst2) {
+            var d=new Date();
+            d.setTime(d.getTime()+2*24*60*60);
+            var user_id=parseInt(rst2.user_id);
+            document.cookie="user_id="+user_id+"; path=/; expires="+d.toGMTString();
+        });
+    }
+    findUser_id();
+    /*采用的是关键字搜索*/
+    function state1() {
+
+        var mainword=jQuery("#u_name").val();
+        var d=new Date();
+        d.setTime(d.getTime()+2*24*60*60);
+        var searchtype="1";
+        document.cookie="searchtype="+searchtype+"; path=/; expires="+d.toGMTString();
+        document.cookie="mainword="+mainword+"; path=/; expires="+d.toGMTString();
+        location.href='../pages/index.html';
+    }
+    function type1() {
+        //location.href='../pages/index.html';
+        var type="1";
+        var d=new Date();
+        d.setTime(d.getTime()+2*24*60*60);
+        var searchtype="2";
+        document.cookie="searchtype="+searchtype+"; path=/; expires="+d.toGMTString();
+        document.cookie="type="+type+"; path=/; expires="+d.toGMTString();
+        location.href='../pages/index.html';
+    }
+    function type2() {
+        //location.href='../pages/index.html';
+        var type="2";
+        var d=new Date();
+        d.setTime(d.getTime()+2*24*60*60);
+        var searchtype="2";
+        document.cookie="searchtype="+searchtype+"; path=/; expires="+d.toGMTString();
+        document.cookie="type="+type+"; path=/; expires="+d.toGMTString();
+        location.href='../pages/index.html';
+    }
+    function type3() {
+        //location.href='/pages/index.html';
+        var type="3";
+        var d=new Date();
+        d.setTime(d.getTime()+2*24*60*60);
+        var searchtype="2";
+        document.cookie="searchtype="+searchtype+"; path=/; expires="+d.toGMTString();
+        document.cookie="type="+type+"; path=/; expires="+d.toGMTString();
+        location.href='../pages/index.html';
+    }
+    function type4() {
+        //location.href='../pages/index.html';
+        var type="4";
+        var d=new Date();
+        d.setTime(d.getTime()+2*24*60*60);
+        var searchtype="2";
+        document.cookie="searchtype="+searchtype+"; path=/; expires="+d.toGMTString();
+        document.cookie="type="+type+"; path=/; expires="+d.toGMTString();
+        location.href='../pages/index.html';
+    }
+    function type5() {
+       // location.href='../pages/index.html';
+        var type="5";
+        var d=new Date();
+        d.setTime(d.getTime()+2*24*60*60);
+        var searchtype="2";
+        document.cookie="searchtype="+searchtype+"; path=/; expires="+d.toGMTString();
+        document.cookie="type="+type+"; path=/; expires="+d.toGMTString();
+        location.href='../pages/index.html';
+    }
+    function type6() {
+        //location.href='../pages/index.html';
+        var type="6";
+        var d=new Date();
+        d.setTime(d.getTime()+2*24*60*60);
+        var searchtype="2";
+        document.cookie="searchtype="+searchtype+"; path=/; expires="+d.toGMTString();
+        document.cookie="type="+type+"; path=/; expires="+d.toGMTString();
+        location.href='../pages/index.html';
+    }
+    function type7() {
+        //location.href='../pages/index.html';
+        var type="7";
+        var d=new Date();
+        d.setTime(d.getTime()+2*24*60*60);
+        var searchtype="2";
+        document.cookie="searchtype="+searchtype+"; path=/; expires="+d.toGMTString();
+        document.cookie="type="+type+"; path=/; expires="+d.toGMTString();
+        location.href='../pages/index.html';
+    }
+    function type8() {
+       // location.href='../pages/index.html';
+        var type="8";
+        var d=new Date();
+        d.setTime(d.getTime()+2*24*60*60);
+        var searchtype="2";
+        document.cookie="searchtype="+searchtype+"; path=/; expires="+d.toGMTString();
+        document.cookie="type="+type+"; path=/; expires="+d.toGMTString();
+        location.href='../pages/index.html';
+    }
+    function type9() {
+       // location.href='../pages/index.html';
+        var type="9";
+        var d=new Date();
+        d.setTime(d.getTime()+2*24*60*60);
+        var searchtype="2";
+        document.cookie="searchtype="+searchtype+"; path=/; expires="+d.toGMTString();
+        document.cookie="type="+type+"; path=/; expires="+d.toGMTString();
+        location.href='../pages/index.html';
+    }
+
+    function goods1() {
+        //location.href='../pages/goodsinfo.html';
+        var goods_id="1";
+        var d=new Date();
+        d.setTime(d.getTime()+2*24*60*60);
+        document.cookie="goods_id="+goods_id+"; path=/; expires="+d.toGMTString();
+        location.href='../pages/goodsinfo.html';
+    }
+    function goods2() {
+        //location.href='../pages/goodsinfo.html';
+        var goods_id="2";
+        var d=new Date();
+        d.setTime(d.getTime()+2*24*60*60);
+        document.cookie="goods_id="+goods_id+"; path=/; expires="+d.toGMTString();
+        location.href='../pages/goodsinfo.html';
+    }
+    function goods3() {
+        //location.href='../pages/goodsinfo.html';
+        var goods_id="3";
+        var d=new Date();
+        d.setTime(d.getTime()+2*24*60*60);
+        document.cookie="goods_id="+goods_id+"; path=/; expires="+d.toGMTString();
+        location.href='../pages/goodsinfo.html';
+    }
+    function goods4() {
+        //location.href='../pages/goodsinfo.html';
+        var goods_id="4";
+        var d=new Date();
+        d.setTime(d.getTime()+2*24*60*60);
+        document.cookie="goods_id="+goods_id+"; path=/; expires="+d.toGMTString();
+        location.href='../pages/goodsinfo.html';
+    }
+
+    function goods5() {
+        //location.href='../pages/goodsinfo.html';
+        var goods_id="5";
+        var d=new Date();
+        d.setTime(d.getTime()+2*24*60*60);
+        document.cookie="goods_id="+goods_id+"; path=/; expires="+d.toGMTString();
+        location.href='../pages/goodsinfo.html';
+    }
+    function goods6() {
+        //location.href='../pages/goodsinfo.html';
+        var goods_id="6";
+        var d=new Date();
+        d.setTime(d.getTime()+2*24*60*60);
+        document.cookie="goods_id="+goods_id+"; path=/; expires="+d.toGMTString();
+        location.href='../pages/goodsinfo.html';
+    }
+    function goods7() {
+        //location.href='../pages/goodsinfo.html';
+        var goods_id="7";
+        var d=new Date();
+        d.setTime(d.getTime()+2*24*60*60);
+        document.cookie="goods_id="+goods_id+"; path=/; expires="+d.toGMTString();
+        location.href='../pages/goodsinfo.html';
+    }
+    function goods8() {
+        //location.href='/pages/goodsinfo.html';
+        var goods_id="8";
+        var d=new Date();
+        d.setTime(d.getTime()+2*24*60*60);
+        document.cookie="goods_id="+goods_id+"; path=/; expires="+d.toGMTString();
+        location.href='../pages/goodsinfo.html';
+    }
+    function goods9() {
+        //location.href='/pages/goodsinfo.html';
+        var goods_id="9";
+        var d=new Date();
+        d.setTime(d.getTime()+2*24*60*60);
+        document.cookie="goods_id="+goods_id+"; path=/; expires="+d.toGMTString();
+        location.href='../pages/goodsinfo.html';
+    }
+    function goods10() {
+        //location.href='../pages/goodsinfo.html';
+        var goods_id="10";
+        var d=new Date();
+        d.setTime(d.getTime()+2*24*60*60);
+        document.cookie="goods_id="+goods_id+"; expires="+d.toGMTString();
+        location.href='../pages/goodsinfo.html';
+    }
+
+    //上面的欢迎语
+    function checkusername()
+    {
+        var cookies=document.cookie.split(";");
+        for(var i=0;i<cookies.length;i++)
+        {
+            var cookie=cookies[i].trim();
+            if(cookie.indexOf("username")==0)
+            {
+                var greeting="欢迎用户："+cookie.substring("username".length+1)+"      希望您购物愉快";
+                jQuery("#greeting").html(greeting);
+                break;
+            }
+        }
+    }
+    checkusername();
+
+
+</script>
+</html>

@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<style>
+		#greeting{
+			left: 200px;
+
+
+		}
+
+		#back{
+			margin-left: 55px;
+			padding:0px;
+			background-color: #F5F5F5;
+			width: 1100px;
+
+		}
+		ul{
+			list-style-type:none;
+		}
+
+		/**顶部菜单**/
+
+		#top ul{
+			list-style-type:none;
+			margin:0px;
+			padding:0px;
+			background-image:url(../images/top.png);
+			height: 31px;
+		}
+
+		.li_1{
+			font-size:14px;
+			float:left;
+			text-align:center;
+			width:40px;
+			padding-top:5px;
+		}
+
+		.li_2{
+			font-size:14px;
+			float:right;
+			text-align:center;
+			width:80px;
+			padding-top:5px;
+			margin-left:5px
+		}
+
+		.a{
+			  text-decoration:none;
+			  color:gray;
+		}
+
+		.a:hover{
+			 color:dimgray;
+		}
+
+		/**搜索框**/
+		#logol{
+			margin-left: 60px;
+			padding: 10px;
+		}
+
+		#search{
+			margin-top:-60px;
+			margin-left:260px;
+			height:60px;
+		}
+
+		#search_txt{
+			border:2px solid #c5464a;
+			border-radius:5px;
+			background:transparent;
+			width: 540px;
+			height: 40px;
+			font-size: medium;
+		}
+
+		.search_button{
+			width: 80px;
+			height: 40px;
+			background-color: #c91623;
+			border: 0px;
+			color: #FFFFFF;
+			border-radius:5px;
+			margin-left: -82px;
+			font-size: large;
+			font-weight: 800;
+		}
+
+
+		#title{
+			margin-top: 50px;
+			margin-left: 55px;
+			color:gray;
+		}
+
+		/**商品栏表头**/
+
+		.tips{
+			width: 967px;
+			height: 41px;
+			margin-left: 50px;
+			background-image: url(../images/line.png);
+		}
+		.tips li{
+			list-style:none;
+			float: left;
+			line-height: 50px;
+			font-size: 12px;
+			color: black;
+
+		}
+		.tips li:nth-child(1){width: 80px;}
+		.tips li:nth-child(2){margin-left: 80px;}
+		.tips li:nth-child(3){margin-left: 350px;}
+		.tips li:nth-child(4){margin-left: 100px;}
+		.tips li:nth-child(5){margin-left: 100px;}
+		.tips li:nth-child(6){margin-left: 50px;}
+
+		/**商品信息**/
+
+		.item{
+			list-style-type:none;
+			margin-left: 50px;
+			width: 967px;
+			height: 211px;
+			background-image: url(../images/itemlist.png);
+			margin-top: 20px;
+
+		}
+
+		.info li{
+			float:  left;
+			margin-top: 20px;
+		}
+		.info a{
+			font-size: 12px;
+			color: #333333;
+		}
+		.info_1{
+			line-height:150px;
+		}
+		.info_2{
+			margin-left: 80px;
+			border: 1px  solid firebrick;
+		}
+		.info_2 img{
+			width:150px;
+			height:150px;
+		}
+		.info_3{
+			margin-left: 50px;
+			line-height:150px;
+			width: 220px;
+			height: 20px;
+		}
+
+		.info_4{
+			margin-left: 30px;
+			line-height:150px;
+		}
+		.info_5{
+			margin-left: 65px;
+		}
+		.info_5 input{
+			width: 30px;
+			height: 20px;
+			text-align: center;
+			position: relative;
+			border-width:1px;
+			border-color: #101010;
+			top:-2px;
+			left: -5px;
+		}
+
+		.info_5 button{
+			background-color: transparent;
+			margin-top:65px;
+			border-width:1px;
+			border-color: #101010;
+			text-align: center;
+			width: 20px;
+			height: 20px;
+		}
+
+		.bot{
+			position: relative;
+			left: -10px;
+		}
+		.info_6{
+
+			margin-left: 60px;
+			line-height:150px;
+		}
+		.info_7{
+
+			margin-left: 40px;
+			line-height:150px;
+		}
+
+		/**结算**/
+
+		.balance{
+			margin-top: 20px;
+			margin-left: 50px;
+			background-image: url(../images/line.png);
+			width: 967px;
+			height: 41px;
+		}
+
+		.balance ul{
+			float: right;
+			width: 300px;
+		}
+		.butt{
+			margin-top: -38px;
+		}
+		#balance{
+			width: 100px;
+			height: 50px;
+			background-color: #C91623;
+			border: 0px;
+			color: #FFFFFF;
+			font-size: 20px;
+			font-weight: bold;
+			margin-left: 130px;
+		}
+		.balance span{
+			font-size: 18px;
+			color: #C91623 ;
+			font-weight: bold;
+		}
+
+		/**底部**/
+
+		.end{
+			margin-top: 30px;
+		}
+
+		.end_1{
+			margin-left:500px;
+			color: gray;
+		}
+		.end_2{
+			margin-left: 430px;
+			color: gray;
+		}
+		.end_3{
+			margin-left: 400px;
+			color: gray;
+		}
+
+
+
+
+	</style>
+</head>
+<body>
+<div id="back">
+	<!--顶部菜单-->
+	<div id="top">
+		<ul>
+			<li class="li_1"><a href="../pages/login.html" class="a">登录</a></li>
+			<li class="li_1"><a href="../pages/register.html" class="a">注册</a></li>
+			<li class="li_2"><a href="../pages/userCenter.html" class="a">我的AIBUY</a></li>
+			<li class="li_2"><a href="../pages/main.html" class="a">回首页</a></li>
+			<li class="li_2"><a href="../pages/userCenter.html" class="a">我的订单</a></li>
+			<li class="li_2"><a href="" class="a">购物车</a></li>
+		</ul>
+	</div>
+	<!--中间部分-->
+	<div>
+		<img id="logol" src="../images/logol.png"/>
+		<div id="search">
+			<input id="search_txt" name="search_txt" type="text" style="padding-left: 10px;" />
+			<button class="search_button" type="submit" value="搜索" />搜索
+		</div>
+		<div id="title">AIBUY>购物车</div>
+	</div>
+	<div class="tips">
+		<ul>
+			<li>
+				<input type="checkbox" name="checkall" value="全选" onclick="checkAll(this.checked)"/>全选
+			</li>
+			<li>商品信息</li>
+			<li>单价</li>
+			<li>数量</li>
+			<li>合计</li>
+			<li>操作</li>
+		</ul>
+	</div>
+
+	<div class="info">
+		<ul class="item" id="item_1" name="item">
+			<li class="info_1"><input type="checkbox" name="ch" onclick="check()"></li>
+			<li class="info_2"><img src="../images/u358.jpg" id="goodsimg1"></li>
+			<li class="info_3" id="getname1"><a href=""></a></li>
+			<li class="info_4">￥<span id="price_1" class="product-price"></span></li>
+			<li class="info_5">
+				<button onclick="minus(this,'1')">-</button>
+				<input type="text" class="text_box" name="amount" id="amount1" value="1" />
+				<button class="bot" onclick="plus(this,1)">+</button>
+			</li>
+			<li class="info_6">￥<span id="total_1" class="total-price"></span></li>
+			<li class="info_7"><a href="###" onclick="delete1(this)">删除</a></li>
+		</ul>
+
+
+		<ul class="item" id="item_2" name="item">
+			<li class="info_1"><input type="checkbox" name="ch" onclick="check()"></li>
+			<li class="info_2"><img src="../images/u358.jpg" id="goodsimg2"></li>
+			<li class="info_3" id="getname2"><a href="">IPhone8 128G/256G 金色银色苹果手机</a></li>
+			<li class="info_4">￥<span id="price_2" class="product-price"></span></li>
+			<li class="info_5">
+				<button onclick="minus(this,2)">-</button>
+				<input type="text" class="text_box" name="amount" id="amount2" value="1" />
+				<button class="bot" onclick="plus(this,2)">+</button>
+			</li>
+			<li class="info_6">￥<span id="total_2" class="total-price"></span></li>
+			<li class="info_7"><a href="###" onclick="delete2(this)">删除</a></li>
+		</ul>
+
+		<ul class="item" id="item_3" name="item">
+			<li class="info_1"><input type="checkbox" name="ch" onclick="check()"></li>
+			<li class="info_2"><img src="../images/u358.jpg" id="goodsimg3"></li>
+			<li class="info_3" id="getname3"><a href="">IPhone8 128G/256G 金色银色苹果手机</a></li>
+			<li class="info_4">￥<span id="price_3" class="product-price"></span></li>
+			<li class="info_5">
+				<button onclick="minus(this,3)">-</button>
+				<input type="text" class="text_box" name="amount" id="amount3" value="1" />
+				<button class="bot" onclick="plus(this,3)">+</button>
+			</li>
+			<li class="info_6">￥<span id="total_3" class="total-price"></span></li>
+			<li class="info_7"><a href="###" onclick="delete3(this)">删除</a></li>
+		</ul>
+
+		<ul class="item" id="item_4" name="item">
+			<li class="info_1"><input type="checkbox" name="ch" onclick="check()"></li>
+			<li class="info_2"><img src="../images/u358.jpg" id="goodsimg4"></li>
+			<li class="info_3" id="getname4"><a href="">IPhone8 128G/256G 金色银色苹果手机</a></li>
+			<li class="info_4">￥<span id="price_4" class="product-price"></span></li>
+			<li class="info_5">
+				<button onclick="minus(this,4)">-</button>
+				<input type="text" class="text_box" name="amount" id="amount4" value="1" />
+				<button class="bot" onclick="plus(this,4)">+</button>
+			</li>
+			<li class="info_6">￥<span id="total_4" class="total-price"></span></li>
+			<li class="info_7"><a href="###" onclick="delete4(this)">删除</a></li>
+		</ul>
+
+		<ul class="item" id="item_5" name="item">
+			<li class="info_1"><input type="checkbox" name="ch" onclick="check()"></li>
+			<li class="info_2"><img src="../images/u358.jpg" id="goodsimg5"></li>
+			<li class="info_3" id="getname5"><a href="">IPhone8 128G/256G 金色银色苹果手机</a></li>
+			<li class="info_4">￥<span id="price_5" class="product-price"></span></li>
+			<li class="info_5">
+				<button onclick="minus(this,5)">-</button>
+				<input type="text" class="text_box" name="amount" id="amount5" value="1" />
+				<button class="bot" onclick="plus(this,5)">+</button>
+			</li>
+			<li class="info_6">￥<span id="total_5" class="total-price"></span></li>
+			<li class="info_7"><a href="###" onclick="delete5(this)">删除</a></li>
+		</ul>
+	</div>
+
+	<div class="balance">
+		<ul>
+			<li>总价 <span id="blc">￥0</span></li>
+			<li class="butt"><button type="submit" id="balance" name="balance" onclick="pay()">去结算</button></li>
+		</ul>
+	</div>
+
+	<div class="end">
+		<div>
+			<ul ><li class="end_1">友情链接:</li>
+				<li class="end_2"><a href="https://www.alipay.com/">支付宝</a>|<a href="https://www.taobao.com/">淘宝</a>|<a href="https://www.kaola.com/">网易考拉</a>|<a href="https://daddylab.com/">老爸测评</a></li>
+				<li class="end_3">Copyright 2020 AIBUY.com All Rights Reserved</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<script src="../jquery/jquery-3.4.1.min.js"></script>
+<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+
+	var username="你";
+	var userID;
+	var cookies=document.cookie.split(";");
+	for(var i=0;i<cookies.length;i++)
+	{
+		var cookie=cookies[i].trim();
+		if(cookie.indexOf("username")==0)
+		{
+			username=cookie.substring("username".length+1);
+
+			break;
+		}
+	}
+	var cartID;
+	var da = $.Deferred();
+	var goodsID1;//第一件商品id号
+	var price1;//第一件商品价格
+	var name1;//第一件商品名称
+	var amount1;//第一件商品库存
+	//下为第二到第五件商品信息
+	var goodsID2;
+	var price2;
+	var name2;
+	var amount2;
+
+	var goodsID3;
+	var price3;
+	var name3;
+	var amount3;
+
+	var goodsID4;
+	var price4;
+	var name4;
+	var amount4;
+
+	var goodsID5;
+	var price5;
+	var name5;
+	var amount5;
+
+	//购物车价格设为全局变量
+	var count1;
+	var count2;
+	var count3;
+	var count4;
+	var count5;
+	var totalcount=0;
+
+
+	var d1 = $.Deferred();
+	var d2 = $.Deferred();
+	var d3 = $.Deferred();
+	var d4 = $.Deferred();
+	var dtotal = $.Deferred();
+
+
+	jQuery(function(){
+		//第一步先得到username对应的cart_id，购物车和user是多对一的关系
+		//第二步用得到的cart_id去得到所有购物车里的商品和商品的所有内容，得到商品内容可用多张表内连接的方法
+
+		//第一步
+		jQuery.post("/getcartidykx",{"username":username},function(rst){
+			cartID=rst;
+			da.resolve( "Fish" );
+		});
+
+		//第二步
+		$.when(da).done(function () {
+			jQuery.post("/goodsfind2",{"cart_id":cartID},function(rst){
+				//这里如何把得到的price和name分开呢？
+				//alert(cartID);
+				var a=rst.goods_id1;
+				//alert(a);
+				var goods_id1=parseInt(rst.goods_id1);
+				var goods_id2=parseInt(rst.goods_id2);
+				var goods_id3=parseInt(rst.goods_id3);
+				var goods_id4=parseInt(rst.goods_id4);
+				var goods_id5=parseInt(rst.goods_id5);
+				//取出所有不为空的goods_id的商品详情
+				if(!isNaN(goods_id1)) {
+					jQuery.post("/goodsdetailfind2", {"goods_id": goods_id1}, function (rst2) {
+						goodsID1=rst2.goods_id;
+						price1=rst2.price;
+						name1=rst2.name;
+						amount1=rst2.amount;
+						//更新图片
+						var goods1img=document.getElementById("goodsimg1");
+						goods1img.src=rst2.imgurl;
+						jQuery("#getname1").html(name1);
+						jQuery("#price_1").html(price1);
+						jQuery("#total_1").html(price1);
+						totalcount++;
+					});
+				}
+				else{
+					$("#item_1").css("display","none");
+				}
+
+				if(!isNaN(goods_id2)) {
+					jQuery.post("/goodsdetailfind2", {"goods_id": goods_id2}, function (rst2) {
+						goodsID2=rst2.goods_id;
+						price2=rst2.price;
+						name2=rst2.name;
+						amount2=rst2.amount;
+						//更新图片
+						var goods2img=document.getElementById("goodsimg2");
+						goods2img.src=rst2.imgurl;
+						jQuery("#getname2").html(name2);
+						jQuery("#price_2").html(price2);
+						jQuery("#total_2").html(price2);
+						//var goods1_name = rst2.name;
+						//alert("购物车id：" + goods_id1 + "中第一件商品名字是：" + goods1_name);
+						totalcount++;
+					});
+				}
+				else{
+					$("#item_2").css("display","none");
+				}
+
+				if(!isNaN(goods_id3)) {
+					jQuery.post("/goodsdetailfind2", {"goods_id": goods_id3}, function (rst2) {
+						goodsID3=rst2.goods_id;
+						price3=rst2.price;
+						name3=rst2.name;
+						amount3=rst2.amount;
+						//更新图片
+						var goods3img=document.getElementById("goodsimg3");
+						goods3img.src=rst2.imgurl;
+						jQuery("#getname3").html(name3);
+						jQuery("#price_3").html(price3);
+						jQuery("#total_3").html(price3);
+						//var goods1_name = rst2.name;
+						///alert("购物车id：" + goods_id1 + "中第一件商品名字是：" + goods1_name);
+						totalcount++;
+					});
+				}
+				else{
+					$("#item_3").css("display","none");
+				}
+
+				if(!isNaN(goods_id4)) {
+					jQuery.post("/goodsdetailfind2", {"goods_id": goods_id4}, function (rst2) {
+						goodsID4=rst2.goods_id;
+						price4=rst2.price;
+						name4=rst2.name;
+						amount4=rst2.amount;
+						//更新图片
+						var goods4img=document.getElementById("goodsimg4");
+						goods4img.src=rst2.imgurl;
+						jQuery("#getname4").html(name4);
+						jQuery("#price_4").html(price4);
+						jQuery("#total_4").html(price4);
+						//var goods1_name = rst2.name;
+						//alert("购物车id：" + goods_id1 + "中第一件商品名字是：" + goods1_name);
+						totalcount++;
+					});
+				}
+				else{
+					$("#item_4").css("display","none");
+				}
+
+				if(!isNaN(goods_id5)) {
+					jQuery.post("/goodsdetailfind2", {"goods_id": goods_id5}, function (rst2) {
+						goodsID5=rst2.goods_id;
+						price5=rst2.price;
+						name5=rst2.name;
+						amount5=rst2.amount;
+						//更新图片
+						var goods5img=document.getElementById("goodsimg5");
+						goods5img.src=rst2.imgurl;
+						jQuery("#getname5").html(name5);
+						jQuery("#price_5").html(price5);
+						jQuery("#total_5").html(price5);
+						//var goods1_name = rst2.name;
+						//alert("购物车id：" + goods_id1 + "中第一件商品名字是：" + goods1_name);
+						totalcount++;
+					});
+				}
+				else{
+					$("#item_5").css("display","none");
+				}
+				//jQuery("#getname1").html(rst);
+			});
+		});
+
+	});
+
+
+	//删除商品后把css样式设置为none，并且在数据库里删除购物车该商品栏位id
+	function delete1(q){
+		totalcount--;
+		jQuery.post("/delete1",{"cart_id":cartID,"totalcount":totalcount},function(rst){
+			alert("删除成功！！")
+			$(q).parent().parent().remove();
+		});
+
+	}
+
+
+	function delete2(q){
+		totalcount--;
+		jQuery.post("/delete2",{"cart_id":cartID,"totalcount":totalcount},function(rst){
+			alert("删除成功！！")
+			$(q).parent().parent().remove();
+		});
+
+	}
+
+	function delete3(q){
+		totalcount--;
+		jQuery.post("/delete3",{"cart_id":cartID,"totalcount":totalcount},function(rst){
+			alert("删除成功！！")
+			$(q).parent().parent().remove();
+		});
+
+	}
+
+	function delete4(q){
+		totalcount--;
+		jQuery.post("/delete4",{"cart_id":cartID,"totalcount":totalcount},function(rst){
+			alert("删除成功！！")
+			$(q).parent().parent().remove();
+		});
+
+	}
+
+	function delete5(q){
+		totalcount--;
+		jQuery.post("/delete5",{"cart_id":cartID,"totalcount":totalcount},function(rst){
+			alert("删除成功！！")
+			$(q).parent().parent().remove();
+		});
+
+	}
+
+
+	function check() {
+		var a = $(".total-price");//找到所有商品的总价
+		var good_num = $(".text_box");//找到商品数量
+		var chs = document.getElementsByName("ch");
+		var m = 0;      //遍历,获取,将字符串转化为数字,并相加
+		for (var i = 0; i < a.length; i++) {
+			if (chs[i].checked == true) {
+				if(i==0){
+					//count1=Number(good_num[i].textContent);
+				}
+				if(i==1){
+					//count2=Number(good_num[i].textContent);
+				}
+				if(i==2){
+					//count3=Number(good_num[i].textContent);
+				}
+				if(i==3){
+					//count4=Number(good_num[i].textContent);
+				}
+				if(i==4){
+					//count5=Number(good_num[i].textContent);
+				}
+				m += Number(a[i].textContent);
+			}
+			$("#blc").text("￥" + m);    //赋值给总商品价格
+		}
+		//alert($("#blc").html().substring(1));
+	}
+
+	function checkAll(f){
+		//获取name为ch所有控件,是一个数组
+		var chs=document.getElementsByName("ch");
+		var total_prices=$(".total-price");
+		var good_num = $(".text_box");//找到商品数量
+		var blc=0;
+		for(var i=0;i<total_prices.length;i++){
+			if(f==true)     //选中全选按钮改变合计
+			{
+				var ch=chs[i];
+				ch.checked=true;
+				if(i==0){
+					//count1=Number(good_num[i].textContent);
+				}
+				if(i==1){
+					//count2=Number(good_num[i].textContent);
+				}
+				if(i==2){
+					//count3=Number(good_num[i].textContent);
+				}
+				if(i==3){
+					//count4=Number(good_num[i].textContent);
+				}
+				if(i==4){
+					//count5=Number(good_num[i].textContent);
+				}
+				blc = blc + Number(total_prices[i].textContent);
+			}
+			else {
+				var ch=chs[i];
+				ch.checked=false;
+			}
+		}
+		$("#blc").text("￥" + blc);
+	}
+
+
+	function plus(q,num) {
+		//加法操作
+		var good_num = $(q).parent().find('input[class*=text_box]');  //找到商品数量
+		var old_num = $(good_num).val();　//获取商品数量的值
+		var new_num = parseInt(old_num) + 1; //商品数量+1
+		$(good_num).val(new_num);　　　　//商品数量赋值
+		//单个商品总价
+		var one_price = $(q).parent().parent().find('span[class*=product-price]').text();  //找到该商品单价
+		var new_money = parseFloat(one_price) * parseInt((good_num).val());　//获取单价*数量的总价的值
+		var total_price = $(q).parent().parent().find('span[class*=total-price]');　//找到该商品总价
+		//alert(new_money);
+		if(num==1){
+			count1=new_num;
+		}
+		if(num==2){
+			count2=new_num;
+		}
+		if(num==3){
+			count3=new_num;
+		}
+		if(num==4){
+			count4=new_num;
+		}
+		if(num==5){
+			count5=new_num;
+		}
+		$(total_price).text(new_money);　//该商品总价赋值
+
+		//总价
+		var a = $(".total-price");//找到所有商品的总价
+
+		var chs = document.getElementsByName("ch");
+		var m = 0;      //遍历,获取,将字符串转化为数字,并相加
+		for (var i = 0; i < a.length; i++) {
+			if (chs[i].checked == true) {
+				m += Number(a[i].textContent);
+			}
+			$("#blc").text("￥" + m);    //赋值给总商品价格
+		}
+	}
+
+	function minus(q,num) {
+		//减法操作
+		var good_num = $(q).parent().find('input[class*=text_box]');　//找到商品数量
+		var old_num = $(good_num).val();　 //获取商品数量的值
+		if (old_num == 0) {
+			alert("不能再减了！")
+		} else {
+			var new_num = parseInt(old_num) - 1;　//商品数量-1
+			$(good_num).val(new_num);  //商品数量赋值
+		}
+
+		//单个商品总价
+		var one_price = $(q).parent().parent().find('span[class*=product-price]').text();  //找到该商品单价
+		var new_money = parseFloat(one_price) * parseInt((good_num).val());　//获取单价*数量的总价的值
+		var total_price = $(q).parent().parent().find('span[class*=total-price]');　//找到该商品总价
+		$(total_price).text(new_money);　//该商品总价赋值
+		if(num==1){
+			count1=new_num;
+		}
+		if(num==2){
+			count2=new_num;
+		}
+		if(num==3){
+			count3=new_num;
+		}
+		if(num==4){
+			count4=new_num;
+		}
+		if(num==5){
+			count5=new_num;
+		}
+		//总价
+		var a = $(".total-price");//找到所有商品的总价
+
+		var chs = document.getElementsByName("ch");
+		var m = 0;      //遍历,获取,将字符串转化为数字,并相加
+		for (var i = 0; i < a.length; i++) {
+			if (chs[i].checked == true) {
+				m += Number(a[i].textContent);
+			}
+			$("#blc").text("￥" + m);    //赋值给总商品价格
+		}
+	}
+
+	function pay() {
+		if(parseFloat($("#blc").html().substring(1))>0) {
+			var a = $(".total-price");
+			var chs = document.getElementsByName("ch");
+			for (var i = 0; i < a.length; i++) {
+				//alert(parseFloat($("#blc").html().substring(1)));
+				if (chs[i].checked == true) {
+					if(i==0) {
+						jQuery.post("/count1", {"count1": count1,"cart_id":cartID}, function (rst) {
+						});
+					}
+					if(i==1) {
+						jQuery.post("/count2", {"count2": count2,"cart_id":cartID}, function (rst) {
+						});
+					}
+					if(i==2) {
+						jQuery.post("/count3", {"count3": count3,"cart_id":cartID}, function (rst) {
+						});
+					}
+					if(i==3) {
+						jQuery.post("/count4", {"count4": count4,"cart_id":cartID}, function (rst) {
+						});
+					}
+					if(i==4) {
+						jQuery.post("/count5", {"count5": count5,"cart_id":cartID}, function (rst) {
+							alert(rst);
+						});
+					}
+				}
+			}
+
+			jQuery.post("/totalcount", {"totalcount": totalcount,"cart_id":cartID}, function (rst) {
+			});
+
+			dtotal.resolve("ff");
+
+			//跳转订单页面
+			var ordertype=2;
+			//将当前购物车的user_id置为空
+			$.when(dtotal).done(function () {
+			jQuery.post("/deleteid",{"cart_id":cartID},function(rst){
+				alert("成功将原购物车用户id清空");
+				d4.resolve( "Fish" );
+			});
+			});
+
+			//为用户新创建一个购物车
+			//通过用户注册创建与对应购物车联系的步骤2:去用刚刚的用户信息查询到用户的id
+			$.when(d4).done(function () {
+
+				jQuery.post("/findIDByName",{"username":username},function(rst){
+					//alert("rst="+rst);
+					userID=rst;
+					//alert(userID);
+					d1.resolve( "Fish" );
+				});
+			});
+
+			$.when(d1).done(function () {
+				//通过用户注册创建与对应购物车联系的步骤3:创建一个以此用户id为value值的购物车
+				jQuery.post("/createCart",{"user_id":userID},function(rst){
+					alert(rst);
+					d2.resolve( "Fish" );
+				});
+			});
+
+			$.when(d2).done(function () {
+				//通过用户注册创建与对应购物车联系的步骤4:通过此用户id查出购物车的id
+				jQuery.post("/findIDByID",{"user_id":userID},function(rst){
+					cartID=rst;
+					alert(cartID);
+					d3.resolve( "Fish" );
+				});
+			});
+
+			$.when(d3).done(function () {
+				//通过用户注册创建与对应购物车联系的步骤5:将用户一列里的购物车id更新
+				jQuery.post("/updateCartID",{"cart_id":cartID,"user_id":userID},function(rst){
+					alert(rst);
+				});
+			});
+
+			//写cookie
+			var d=new Date();
+			d.setTime(d.getTime()+2*24*60*60);
+			document.cookie="ordertype="+ordertype+"; path=/; expires="+d.toGMTString();
+			document.cookie="market_id="+cartID+"; path=/; expires="+d.toGMTString();
+
+			setTimeout(function(){location.href='../pages/order.html';}, 800);
+		}
+		//为0说明什么都没选，不能跳转页面
+	}
+
+
+
+</script>
+
+</body>
+<script src="../jquery/jquery-3.4.1.min.js"></script>
+
+</html>
